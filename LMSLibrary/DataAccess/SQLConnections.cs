@@ -10,34 +10,12 @@ namespace LMSLibrary.DataAccess
 {
     public class SqlConnections
     {
-
-        public String Login(string emailAddress, string password)
-        {
-            List<Models.User> Login = new List<Models.User>();
-            //var output = "";
-            var s = "";
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
-            {
-                
-                //var output = connection.Query<Person>($"select * from people where LastName = '{ lastName }'").ToList();
-                var output = connection.Query<Models.User>("spUserLogin @EmailAddress, @Password", new { EmailAddress = emailAddress, Password = password }).ToList();
-                s = LoginValidation(output);
-            }
-            return s;
-        }
-
-        public String LoginValidation(List<Models.User> users)
-        {
-            if (users.Count > 0)
-            {
-                return "Login Successful";
-            }
-            else
-            {
-                return "Invalid Login Credentials";
-            }
-        }
-
+        /// <summary>
+        /// retrieves the email and password from the SQLConnection class.
+        /// </summary>
+        /// <param name="emailAddress"></param>
+        /// <param name="password"></param>
+        /// <returns> Returns a list that contains the email and password. </returns>
         public List<Models.User> Login2(string emailAddress, string password)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
@@ -47,9 +25,6 @@ namespace LMSLibrary.DataAccess
             }
         }
 
-        public void Validation2()
-        {
 
-        }
     }
 }

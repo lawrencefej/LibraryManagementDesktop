@@ -7,9 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LMSLibrary;
 using LMSLibrary.Models;
 using LMSLibrary.DataAccess;
 using System.Data.SqlClient;
+using LMSLibrary.Validation;
 
 namespace LMS
 {
@@ -24,23 +26,38 @@ namespace LMS
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
 
         private void loginbtn_Click(object sender, EventArgs e)
         {
-            // Initiialize instance of SQLConnections
-            SqlConnections access = new SqlConnections();
-           
-            var login = access.Login2(emailaddressltxt.Text, Passwordtxt.Text);
-            var message = access.LoginValidation(login);
+            try
+            {
+                InputValidation();
+                LoginValidation access = new LoginValidation();
+                access.InputValidation(emailaddressltxt.Text, Passwordtxt.Text);
+                Dashboard dashboard = new Dashboard();
+                this.Hide();
+                dashboard.Show();
+            }
+            catch (Exception ex)
+            {
 
-            MessageBox.Show(message);
-
-            Dashboard db = new Dashboard();
-            db.Show();
-            //this.Close();
-            this.Hide();
-
+                MessageBox.Show(ex.Message);
+            }
         }
+        /// <summary>
+        /// Method to validate the user input
+        /// </summary>
+        private void InputValidation()
+        {
+            if (emailaddressltxt.Text.Length == 0 || Passwordtxt.Text.Length == 0)
+            {
+                throw new Exception("Please enter a valid email and password");
+                //MessageBox.Show("Please enter a valid email and password");
+            }
+        }
+
+
     }
 }
