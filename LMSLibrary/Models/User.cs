@@ -11,7 +11,7 @@ namespace LMSLibrary.Models
         /// <summary>
         /// Represents the id of one user.
         /// </summary>
-        public int UserID { get; }
+        public int UserID { get; set; }
         /// <summary>
         /// Represents the first name of this user.
         /// </summary>
@@ -32,7 +32,7 @@ namespace LMSLibrary.Models
         /// <summary>
         /// Represents phone number of this user.
         /// </summary>
-        public string Phonenumber { get; set; }
+        public string PhoneNumber { get; set; }
         /// <summary>
         /// Represents address line 1 of this user.
         /// </summary>
