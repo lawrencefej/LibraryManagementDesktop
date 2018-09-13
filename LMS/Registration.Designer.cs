@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.firstNamelbl = new System.Windows.Forms.Label();
             this.firstNametxt = new System.Windows.Forms.TextBox();
             this.lastNametxt = new System.Windows.Forms.TextBox();
@@ -50,6 +51,22 @@
             this.zipcodelbl = new System.Windows.Forms.Label();
             this.registerbtn = new System.Windows.Forms.Button();
             this.loginlink = new System.Windows.Forms.LinkLabel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider6 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider7 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider8 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider8)).BeginInit();
             this.SuspendLayout();
             // 
             // firstNamelbl
@@ -71,6 +88,7 @@
             this.firstNametxt.Name = "firstNametxt";
             this.firstNametxt.Size = new System.Drawing.Size(162, 22);
             this.firstNametxt.TabIndex = 1;
+            this.firstNametxt.TextChanged += new System.EventHandler(this.textboxTextChange);
             // 
             // lastNametxt
             // 
@@ -81,6 +99,7 @@
             this.lastNametxt.Name = "lastNametxt";
             this.lastNametxt.Size = new System.Drawing.Size(162, 22);
             this.lastNametxt.TabIndex = 3;
+            this.lastNametxt.TextChanged += new System.EventHandler(this.textboxTextChange);
             // 
             // lastNamelbl
             // 
@@ -101,6 +120,7 @@
             this.emailAddresstxt.Name = "emailAddresstxt";
             this.emailAddresstxt.Size = new System.Drawing.Size(162, 22);
             this.emailAddresstxt.TabIndex = 5;
+            this.emailAddresstxt.TextChanged += new System.EventHandler(this.textboxTextChange);
             // 
             // emailAddresslbl
             // 
@@ -141,6 +161,7 @@
             this.passwordtxt.Name = "passwordtxt";
             this.passwordtxt.Size = new System.Drawing.Size(162, 22);
             this.passwordtxt.TabIndex = 9;
+            this.passwordtxt.TextChanged += new System.EventHandler(this.textboxTextChange);
             // 
             // passwordlbl
             // 
@@ -161,6 +182,7 @@
             this.address1txt.Name = "address1txt";
             this.address1txt.Size = new System.Drawing.Size(162, 22);
             this.address1txt.TabIndex = 11;
+            this.address1txt.TextChanged += new System.EventHandler(this.textboxTextChange);
             // 
             // address1lbl
             // 
@@ -201,6 +223,7 @@
             this.citytxt.Name = "citytxt";
             this.citytxt.Size = new System.Drawing.Size(162, 22);
             this.citytxt.TabIndex = 15;
+            this.citytxt.TextChanged += new System.EventHandler(this.textboxTextChange);
             // 
             // citylbl
             // 
@@ -276,12 +299,44 @@
             this.loginlink.TabStop = true;
             this.loginlink.Text = "Login";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            this.errorProvider3.ContainerControl = this;
+            // 
+            // errorProvider4
+            // 
+            this.errorProvider4.ContainerControl = this;
+            // 
+            // errorProvider5
+            // 
+            this.errorProvider5.ContainerControl = this;
+            // 
+            // errorProvider6
+            // 
+            this.errorProvider6.ContainerControl = this;
+            // 
+            // errorProvider7
+            // 
+            this.errorProvider7.ContainerControl = this;
+            // 
+            // errorProvider8
+            // 
+            this.errorProvider8.ContainerControl = this;
+            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(391, 523);
+            this.ClientSize = new System.Drawing.Size(485, 523);
             this.Controls.Add(this.loginlink);
             this.Controls.Add(this.registerbtn);
             this.Controls.Add(this.zipcodetxt);
@@ -308,6 +363,14 @@
             this.Name = "Registration";
             this.ShowIcon = false;
             this.Text = "Registration";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,5 +400,13 @@
         private System.Windows.Forms.Label zipcodelbl;
         private System.Windows.Forms.Button registerbtn;
         private System.Windows.Forms.LinkLabel loginlink;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider errorProvider3;
+        private System.Windows.Forms.ErrorProvider errorProvider4;
+        private System.Windows.Forms.ErrorProvider errorProvider5;
+        private System.Windows.Forms.ErrorProvider errorProvider6;
+        private System.Windows.Forms.ErrorProvider errorProvider7;
+        private System.Windows.Forms.ErrorProvider errorProvider8;
     }
 }

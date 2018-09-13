@@ -35,10 +35,17 @@ namespace LMS
             {
                 InputValidation();
                 LoginValidation access = new LoginValidation();
-                access.InputValidation(emailaddressltxt.Text, Passwordtxt.Text);
+                var data = access.InputValidation(emailaddressltxt.Text, Passwordtxt.Text);
                 Dashboard dashboard = new Dashboard();
                 this.Hide();
-                dashboard.Show();
+                if (access.GetRole(data))
+                {
+                    dashboard.Show();
+                }
+                else
+                {
+                    MessageBox.Show("you are not an admin");
+                }
             }
             catch (Exception ex)
             {

@@ -37,7 +37,19 @@ namespace LMS
             p.State = statetxt.Text;
             p.Zipcode = zipcodetxt.Text;
 
-            p = access.UserRegistration(p);
+            try
+            {
+                p = access.UserRegistration(p);
+            }
+            catch (System.Data.SqlClient.SqlException)
+            {
+
+                MessageBox.Show($"Email {p.EmailAddress.ToString()} has already been registered");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
@@ -85,6 +97,15 @@ namespace LMS
 
             return true;
 
+        }
+
+        private void textboxTextChange(object sender, EventArgs e)
+        {
+            if (firstNametxt.Text.Length == 0)
+            {
+                var error = errorProvider1 = errorProvider2 = errorProvider3 = errorProvider4 = errorProvider5 = errorProvider6;
+                error.SetError(firstNametxt,  "Mandatory Field");
+            }
         }
     }
 }

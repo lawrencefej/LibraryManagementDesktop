@@ -21,7 +21,7 @@ namespace LMSLibrary.DataAccess
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
             {
-                var output = connection.Query<User>("spUserLogin @EmailAddress, @Password", new { EmailAddress = emailAddress, Password = password }).ToList();
+                var output = connection.Query<User>("spUserLogin2 @EmailAddress, @Password", new { EmailAddress = emailAddress, Password = password }).ToList();
                 return output;
             }
         }
@@ -51,19 +51,25 @@ namespace LMSLibrary.DataAccess
             }
         }
 
-        public void UserRegistration2(string firstName, string lastName, string emailAddress, string password, string phoneNumber, string address1, string address2, string city, string state, string zipcode)
-        {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LawDevDB")))
-            {
-                //Person newPerson = new Person { FirstName = firstName, LastName = lastName, EmailAddress = emailAddress, PhoneNumber = phoneNumber };
-                //TODO
-                List<User> user = new List<User>();
+        //public List<User> Login(string emailAddress, string password)
+        //{
+        //    using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
+        //    {
+        //        User user = new User();
+                
+        //        var p = new DynamicParameters();
+        //        p.Add("@EmailAddress", user.EmailAddress);
+        //        p.Add("@Password", user.Password);
 
-                user.Add(new User { FirstName = firstName, LastName = lastName, EmailAddress = emailAddress, PhoneNumber = phoneNumber });
-                connection.Execute("dbo.People_Insert @FirstName, @LastName, @EmailAddress, @PhoneNumber", user);
-            }
-        }
+        //        //var output = connection.Query<User>("spUserLogin2", p, commandType: CommandType.StoredProcedure).ToList();
+        //        var output = connection.Query("spUserLogin2", p, commandType: CommandType.StoredProcedure).ToList();
 
+        //        var a = user.EmailAddress;
+        //        var b = user.Password;
+        //        var c = user.StatusID;
 
+        //        return output;
+        //    }
+        //}
     }
 }
