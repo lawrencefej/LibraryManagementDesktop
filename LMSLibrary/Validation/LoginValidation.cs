@@ -33,7 +33,7 @@ namespace LMSLibrary.Validation
         {
             bool role = false;
                      
-            if (user[0].StatusID == 2)
+            if (user[0].RoleID == 2)
             {
                     role = true;
             }

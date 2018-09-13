@@ -57,6 +57,10 @@ namespace LMSLibrary.Models
         /// Represents the status of this user.
         /// </summary>
         public int StatusID { get; set; }
+        /// <summary>
+        /// Represents the role of this user.
+        /// </summary>
+        public int RoleID { get; set; }
 
     }
 }
