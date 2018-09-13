@@ -23,6 +23,7 @@ namespace LMS
 
         private void registerbtn_Click(object sender, EventArgs e)
         {
+            // Todo Add registration validation.    
             SqlConnections access = new SqlConnections();
             User p = new User();
 
@@ -101,6 +102,7 @@ namespace LMS
 
         private void textboxTextChange(object sender, EventArgs e)
         {
+            // Todo validation errors for registration.
             if (firstNametxt.Text.Length == 0)
             {
                 var error = errorProvider1 = errorProvider2 = errorProvider3 = errorProvider4 = errorProvider5 = errorProvider6;
