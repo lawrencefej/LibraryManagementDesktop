@@ -51,25 +51,14 @@ namespace LMSLibrary.DataAccess
             }
         }
 
-        //public List<User> Login(string emailAddress, string password)
-        //{
-        //    using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
-        //    {
-        //        User user = new User();
-                
-        //        var p = new DynamicParameters();
-        //        p.Add("@EmailAddress", user.EmailAddress);
-        //        p.Add("@Password", user.Password);
+        public List<Book> GetBooks()
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
+            {
+                var output = connection.Query<Book>("spGetBooks").ToList();
 
-        //        //var output = connection.Query<User>("spUserLogin2", p, commandType: CommandType.StoredProcedure).ToList();
-        //        var output = connection.Query("spUserLogin2", p, commandType: CommandType.StoredProcedure).ToList();
-
-        //        var a = user.EmailAddress;
-        //        var b = user.Password;
-        //        var c = user.StatusID;
-
-        //        return output;
-        //    }
-        //}
+                return output;
+            }
+        }
     }
 }
