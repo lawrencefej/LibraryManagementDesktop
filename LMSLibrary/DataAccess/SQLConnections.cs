@@ -25,7 +25,11 @@ namespace LMSLibrary.DataAccess
                 return output;
             }
         }
-
+        /// <summary>
+        /// inserts the user into the databse using the parameters provided
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns>returns a list of type User</returns>
         public User UserRegistration(User user)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
@@ -44,18 +48,41 @@ namespace LMSLibrary.DataAccess
                 p.Add("@UserID", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
 
                 connection.Execute("spUserRegistration", p, commandType: CommandType.StoredProcedure);
-
+                
                 user.UserID = p.Get<int>("@UserID");
-
+                
                 return user;
             }
         }
-
+        /// <summary>
+        /// Retrieves all the books in the database
+        /// </summary>
+        /// <returns>Returns a list of type book</returns>
         public List<Book> GetBooks()
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
             {
                 var output = connection.Query<Book>("spGetBooks").ToList();
+
+                return output;
+            }
+        }
+
+        //public List<Book> SearchBooks(string search)
+        //{
+        //    using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
+        //    {
+        //        var output = connection.Query<Book>("BookSearch @Search", new {  Search = search }).ToList();
+
+        //        return output;
+        //    }
+        //}
+
+        public List<Book> SearchBooks(string search)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
+            {
+                var output = connection.Query<Book>("spBookViewSearch @Search", new { Search = search }).ToList();
 
                 return output;
             }

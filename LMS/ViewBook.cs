@@ -18,16 +18,31 @@ namespace LMS
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private string txt = "";
+        public void ViewBook_Load(object sender, EventArgs e)
         {
-
+            DisplayData(txt);
         }
 
-        private void ViewBook_Load(object sender, EventArgs e)
+        public void Search(string search)
+        {
+            DisplayData(search);
+            //dataGridView1.Update();
+            //dataGridView1.Refresh();
+        }
+
+        private void DisplayData(string search)
         {
             SqlConnections access = new SqlConnections();
-            var data = access.GetBooks();
+            search = searchtxt.text;
+            var data = access.SearchBooks(search);
             dataGridView1.DataSource = data;
+            dataGridView1.Columns[0].Visible = false;
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            DisplayData(searchtxt.text.Trim());
         }
     }
 }

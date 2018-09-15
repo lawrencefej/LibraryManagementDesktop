@@ -8,11 +8,13 @@ namespace LMSLibrary.Models
 {
     public class Book
     {
+        /// <summary>
+        /// Reperesents the ID of one book.
+        /// </summary>
         public int BookID { get; }
         /// <summary>
         /// Reperesents the title of one book.
         /// </summary>
-        
         public string Title { get; set; }
         /// <summary>
         /// Reperesents the year this book was published.

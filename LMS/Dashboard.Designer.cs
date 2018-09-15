@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.booksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mediaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.mediaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +47,7 @@
             this.toolStripMenuItem1});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(974, 24);
+            this.menuStrip.Size = new System.Drawing.Size(969, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -65,45 +66,55 @@
             this.viewToolStripMenuItem,
             this.addToolStripMenuItem});
             this.booksToolStripMenuItem.Name = "booksToolStripMenuItem";
-            this.booksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.booksToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.booksToolStripMenuItem.Text = "Books";
-            // 
-            // mediaToolStripMenuItem
-            // 
-            this.mediaToolStripMenuItem.Name = "mediaToolStripMenuItem";
-            this.mediaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.mediaToolStripMenuItem.Text = "Media";
             // 
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.viewToolStripMenuItem.Text = "View";
             this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click);
             // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.addToolStripMenuItem.Text = "Add";
             // 
-            // textBox1
+            // mediaToolStripMenuItem
             // 
-            this.textBox1.Location = new System.Drawing.Point(770, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(114, 20);
-            this.textBox1.TabIndex = 4;
+            this.mediaToolStripMenuItem.Name = "mediaToolStripMenuItem";
+            this.mediaToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.mediaToolStripMenuItem.Text = "Media";
+            // 
+            // bunifuGradientPanel1
+            // 
+            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
+            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.White;
+            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.White;
+            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.White;
+            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.White;
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 24);
+            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
+            this.bunifuGradientPanel1.Quality = 10;
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(200, 684);
+            this.bunifuGradientPanel1.TabIndex = 7;
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 708);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(969, 708);
+            this.Controls.Add(this.bunifuGradientPanel1);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "Dashboard";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -121,7 +132,7 @@
         private System.Windows.Forms.ToolStripMenuItem mediaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
-        private System.Windows.Forms.TextBox textBox1;
+        private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
     }
 }
 
