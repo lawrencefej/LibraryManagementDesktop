@@ -47,6 +47,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.titletxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.inputPanel.SuspendLayout();
@@ -178,7 +181,7 @@
             this.inputPanel.Location = new System.Drawing.Point(0, 36);
             this.inputPanel.Name = "inputPanel";
             this.inputPanel.Size = new System.Drawing.Size(300, 640);
-            this.inputPanel.TabIndex = 2;
+            this.inputPanel.TabIndex = 0;
             this.inputPanel.Visible = false;
             // 
             // menuCloseBtn
@@ -245,7 +248,7 @@
             this.isbntxt.Location = new System.Drawing.Point(82, 117);
             this.isbntxt.Name = "isbntxt";
             this.isbntxt.Size = new System.Drawing.Size(205, 20);
-            this.isbntxt.TabIndex = 1;
+            this.isbntxt.TabIndex = 3;
             // 
             // label3
             // 
@@ -262,7 +265,7 @@
             this.authortxt.Location = new System.Drawing.Point(82, 91);
             this.authortxt.Name = "authortxt";
             this.authortxt.Size = new System.Drawing.Size(205, 20);
-            this.authortxt.TabIndex = 1;
+            this.authortxt.TabIndex = 2;
             // 
             // label2
             // 
@@ -279,14 +282,14 @@
             this.yeartxt.Location = new System.Drawing.Point(82, 143);
             this.yeartxt.Name = "yeartxt";
             this.yeartxt.Size = new System.Drawing.Size(205, 20);
-            this.yeartxt.TabIndex = 1;
+            this.yeartxt.TabIndex = 4;
             // 
             // quantitytxt
             // 
             this.quantitytxt.Location = new System.Drawing.Point(82, 167);
             this.quantitytxt.Name = "quantitytxt";
             this.quantitytxt.Size = new System.Drawing.Size(205, 20);
-            this.quantitytxt.TabIndex = 1;
+            this.quantitytxt.TabIndex = 5;
             this.quantitytxt.Text = "1";
             // 
             // label5
@@ -358,5 +361,8 @@
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private Bunifu.Framework.UI.BunifuFlatButton menubtn;
         private Bunifu.Framework.UI.BunifuImageButton menuCloseBtn;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker3;
     }
 }
