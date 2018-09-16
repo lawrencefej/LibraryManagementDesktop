@@ -15,29 +15,15 @@ namespace LMS
 {
     public partial class ViewBook : Form
     {
-        //int pw;
-        //bool hidden;
         public ViewBook()
         {
             InitializeComponent();
-            //pw = inputPanel.Width;
-            //hidden = false;
         }
-
+        /// <summary>
+        /// Hides the menu panel.
+        /// </summary>
         private void HidePanel()
         {
-            //if (hidden)
-            //{
-            //    inputPanel.Width = inputPanel.Width + 300;
-            //    hidden = false;
-            //    this.Refresh();
-            //}
-            //else
-            //{
-            //    inputPanel.Width = inputPanel.Width - 300;
-            //    hidden = true;
-            //    this.Refresh();
-            //}
             if (inputPanel.Visible == false)
             {
                 inputPanel.Visible = true;
@@ -91,61 +77,65 @@ namespace LMS
         private void searchbtn_Click(object sender, EventArgs e)
         {
             DisplayData(searchtxt.text.Trim());
+            searchtxt.text = "";
         }
-
+        /// <summary>
+        /// Menu button that opens or closes the input panel.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void menubtn_Click(object sender, EventArgs e)
         {
             HidePanel();
         }
-
-        //private void AddBook()
-        //{
-        //    // Todo Add book input validation.    
-        //    SqlConnections access = new SqlConnections();
-        //    Book book = new Book();
-
-        //    book.Title = titletxt.Text;
-        //    book.Author = authortxt.Text;
-        //    book.ISBN = isbntxt.Text;
-        //    book.Year = yeartxt.Text;
-        //    book.Quantity = int.Parse(quantitytxt.Text);
-        //    try
-        //    {
-        //        access.AddBook(book);
-        //        MetroFramework.MetroMessageBox.Show(this, "Successfully added");
-        //    }
-        //    catch (System.Data.SqlClient.SqlException)
-        //    {
-
-        //        MessageBox.Show($"This ISBN {book.ISBN.ToString()} has already been added");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //}
-
-        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Throws an exception if there are empty strings in all required textboxes.
+        /// </summary>
+        private void InputValidation()
         {
-            // Todo Add book input validation.    
-            SqlConnections access = new SqlConnections();
-            Book book = new Book();
+            if (titletxt.Text.Length == 0 || authortxt.Text.Length == 0 || isbntxt.Text.Length == 0 || yeartxt.Text.Length == 0 || quantitytxt.Text.Length == 0)
+            {
+                throw new Exception("Please fill out all tabs");
+            }
+        }
 
+        private void AddBook()
+        {
+            Book book = new Book();
+            SqlConnections access = new SqlConnections();
             book.Title = titletxt.Text;
             book.Author = authortxt.Text;
             book.ISBN = isbntxt.Text;
             book.Year = yeartxt.Text;
             book.Quantity = int.Parse(quantitytxt.Text);
-            
+            book = access.AddBook(book);
+            DisplayData(searchtxt.text.Trim());
+            MetroFramework.MetroMessageBox.Show(this, "Successfully added");
+            this.Refresh();
+        }
+        /// <summary>
+        /// Clears the form input.
+        /// </summary>
+        private void Clear()
+        {
+            titletxt.Text = authortxt.Text = isbntxt.Text = yeartxt.Text = "";
+            quantitytxt.Text = "1";
+        }
+        /// <summary>
+        /// Validates, adds and clears the input form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            Book book = new Book();
 
             try
             {
-                book = access.AddBook(book);
-                DisplayData(searchtxt.text.Trim());
-                MetroFramework.MetroMessageBox.Show(this, "Successfully added");
-                titletxt.Text = authortxt.Text = isbntxt.Text = yeartxt.Text = "";
-                book.Quantity = 1;
-                this.Refresh();
+                // Todo Add book input validation.
+                InputValidation();
+                AddBook();
+                Clear();
             }
             catch (System.Data.SqlClient.SqlException)
             {
@@ -156,11 +146,13 @@ namespace LMS
             {
                 MessageBox.Show(ex.Message);
             }
-
-
         }
-
-        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Calls the hidepanel method
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void menuCloseBtn_Click(object sender, EventArgs e)
         {
             HidePanel();
         }

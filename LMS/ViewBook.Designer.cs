@@ -35,6 +35,7 @@
             this.searchbtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.searchtxt = new Bunifu.Framework.UI.BunifuTextbox();
             this.inputPanel = new System.Windows.Forms.Panel();
+            this.menuCloseBtn = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label4 = new System.Windows.Forms.Label();
             this.isbntxt = new System.Windows.Forms.TextBox();
@@ -46,11 +47,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.titletxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.inputPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.menuCloseBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -114,7 +114,7 @@
             // searchbtn
             // 
             this.searchbtn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.searchbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
+            this.searchbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.searchbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.searchbtn.BorderRadius = 0;
             this.searchbtn.ButtonText = "";
@@ -162,7 +162,7 @@
             // 
             this.inputPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(125)))), ((int)(((byte)(196)))));
             this.inputPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.inputPanel.Controls.Add(this.bunifuImageButton1);
+            this.inputPanel.Controls.Add(this.menuCloseBtn);
             this.inputPanel.Controls.Add(this.bunifuFlatButton1);
             this.inputPanel.Controls.Add(this.label4);
             this.inputPanel.Controls.Add(this.isbntxt);
@@ -180,6 +180,20 @@
             this.inputPanel.Size = new System.Drawing.Size(300, 640);
             this.inputPanel.TabIndex = 2;
             this.inputPanel.Visible = false;
+            // 
+            // menuCloseBtn
+            // 
+            this.menuCloseBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(125)))), ((int)(((byte)(196)))));
+            this.menuCloseBtn.Image = ((System.Drawing.Image)(resources.GetObject("menuCloseBtn.Image")));
+            this.menuCloseBtn.ImageActive = null;
+            this.menuCloseBtn.Location = new System.Drawing.Point(271, 6);
+            this.menuCloseBtn.Name = "menuCloseBtn";
+            this.menuCloseBtn.Size = new System.Drawing.Size(26, 26);
+            this.menuCloseBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.menuCloseBtn.TabIndex = 4;
+            this.menuCloseBtn.TabStop = false;
+            this.menuCloseBtn.Zoom = 10;
+            this.menuCloseBtn.Click += new System.EventHandler(this.menuCloseBtn_Click);
             // 
             // bunifuFlatButton1
             // 
@@ -273,6 +287,7 @@
             this.quantitytxt.Name = "quantitytxt";
             this.quantitytxt.Size = new System.Drawing.Size(205, 20);
             this.quantitytxt.TabIndex = 1;
+            this.quantitytxt.Text = "1";
             // 
             // label5
             // 
@@ -301,20 +316,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Title:";
             // 
-            // bunifuImageButton1
-            // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(125)))), ((int)(((byte)(196)))));
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(271, 6);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(26, 26);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.bunifuImageButton1.TabIndex = 4;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
-            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
-            // 
             // ViewBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,7 +333,7 @@
             this.panel1.ResumeLayout(false);
             this.inputPanel.ResumeLayout(false);
             this.inputPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.menuCloseBtn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -356,6 +357,6 @@
         private System.Windows.Forms.Label label5;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private Bunifu.Framework.UI.BunifuFlatButton menubtn;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private Bunifu.Framework.UI.BunifuImageButton menuCloseBtn;
     }
 }
