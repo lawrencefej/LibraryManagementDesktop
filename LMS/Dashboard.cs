@@ -102,7 +102,29 @@ namespace LMS
         {
             ViewBook viewBook = new ViewBook();
             viewBook.MdiParent = this;
-            viewBook.Show();
+            if (viewBook.Visible )
+            {
+                viewBook.Close();
+                viewBook.ShowDialog();
+            }
+        }
+
+        private void bunifuFlatButton3_Click(object sender, EventArgs e)
+        {
+            //ViewBook viewBook = new ViewBook();
+            //viewBook.MdiParent = this;
+            //viewBook.Show();
+            // looking for opened forms collection
+            ViewBook form = ViewBook.GetInstance();
+            form.MdiParent = this;
+            if (!form.Visible)
+            {
+                form.Show();
+            }
+            else
+            {
+                form.BringToFront();
+            }
         }
 
         //private void Searchbtn_Click(object sender, EventArgs e)

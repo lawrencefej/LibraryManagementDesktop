@@ -68,16 +68,6 @@ namespace LMSLibrary.DataAccess
             }
         }
 
-        //public List<Book> SearchBooks(string search)
-        //{
-        //    using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
-        //    {
-        //        var output = connection.Query<Book>("BookSearch @Search", new {  Search = search }).ToList();
-
-        //        return output;
-        //    }
-        //}
-
         public List<Book> SearchBooks(string search)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
@@ -85,6 +75,26 @@ namespace LMSLibrary.DataAccess
                 var output = connection.Query<Book>("spBookViewSearch @Search", new { Search = search }).ToList();
 
                 return output;
+            }
+        }
+
+        public Book AddBook(Book book)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@Title", book.Title);
+                p.Add("@Author", book.Author);
+                p.Add("@ISBN", book.ISBN);
+                p.Add("@Quantity", book.Quantity);
+                p.Add("@Year", book.Year);
+                p.Add("@BookID", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                connection.Execute("spAddBook", p, commandType: CommandType.StoredProcedure);
+
+                book.BookID = p.Get<int>("@BookID");
+
+                return book;
             }
         }
     }
