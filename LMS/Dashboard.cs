@@ -127,6 +127,11 @@ namespace LMS
             }
         }
 
+        private void closeAppbtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         //private void Searchbtn_Click(object sender, EventArgs e)
         //{
         //    ViewBook viewBook = new ViewBook();
