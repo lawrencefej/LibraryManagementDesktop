@@ -27,7 +27,6 @@ namespace LMSLibrary.Models
         /// <summary>
         /// Represents the password of this user.
         /// </summary>
-        /// 
         public string Password { get; set; }
         /// <summary>
         /// Represents phone number of this user.
@@ -53,6 +52,10 @@ namespace LMSLibrary.Models
         /// Represents the zipcode of this user.
         /// </summary>
         public string Zipcode { get; set; }
+        /// <summary>
+        /// Represents the date registered of this user.
+        /// </summary>
+        public string DateRegistered { get; set; }
         /// <summary>
         /// Represents the status of this user.
         /// </summary>

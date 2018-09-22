@@ -18,16 +18,16 @@ namespace LMS
             InitializeComponent();
         }
 
-        private void viewToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ViewBook viewBook = new ViewBook();
-            viewBook.MdiParent = this;
-            if (viewBook.Visible )
-            {
-                viewBook.Close();
-                viewBook.ShowDialog();
-            }
-        }
+        //private void viewToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    ViewBook viewBook = new ViewBook();
+        //    viewBook.MdiParent = this;
+        //    if (viewBook.Visible )
+        //    {
+        //        viewBook.Close();
+        //        viewBook.ShowDialog();
+        //    }
+        //}
 
         //private void bunifuFlatButton3_Click(object sender, EventArgs e)
         //{
@@ -62,18 +62,57 @@ namespace LMS
 
             if (dashboardMenuPanel.Width == 50)
             {
+                //dashboardMenuPanel.Visible = false;
+                //dashboardMenuPanel.Width = 200;
+                //PanelAnimator.ShowSync(dashboardMenuPanel);
+                //PictureAnimator.ShowSync(libraryPicture);
+                OpenPanel();
+            }
+            else
+            {
+                //PictureAnimator.Hide(libraryPicture);
+                //dashboardMenuPanel.Visible = false;
+                //dashboardMenuPanel.Width = 50;
+                //PanelAnimator.ShowSync(dashboardMenuPanel);
+                MinimizePanel();
+            }
+
+        }
+
+        private void OpenPanel()
+        {
+            if (dashboardMenuPanel.Width == 50)
+            {
                 dashboardMenuPanel.Visible = false;
                 dashboardMenuPanel.Width = 200;
                 PanelAnimator.ShowSync(dashboardMenuPanel);
-                PictureAnimator.ShowSync(libraryPicture);
+                PictureAnimator.ShowSync(libraryPicture); 
             }
-            else
+        }
+
+        private void MinimizePanel()
+        {
+            if (dashboardMenuPanel.Width == 200)
             {
                 PictureAnimator.Hide(libraryPicture);
                 dashboardMenuPanel.Visible = false;
                 dashboardMenuPanel.Width = 50;
-                PanelAnimator.ShowSync(dashboardMenuPanel);
+                PanelAnimator.ShowSync(dashboardMenuPanel); 
             }
+            //if (dashboardMenuPanel.Width == 50)
+            //{
+            //    dashboardMenuPanel.Visible = false;
+            //    dashboardMenuPanel.Width = 200;
+            //    PanelAnimator.ShowSync(dashboardMenuPanel);
+            //    PictureAnimator.ShowSync(libraryPicture);
+            //}
+            //else
+            //{
+            //    PictureAnimator.Hide(libraryPicture);
+            //    dashboardMenuPanel.Visible = false;
+            //    dashboardMenuPanel.Width = 50;
+            //    PanelAnimator.ShowSync(dashboardMenuPanel);
+            //}
         }
 
         //private void bunifuFlatButton2_Click(object sender, EventArgs e)
@@ -92,26 +131,35 @@ namespace LMS
             form.TopLevel = false;
             displayPanel.Controls.Add(form);
             form.Show();
+            MinimizePanel();
         }
 
         private void myProfileBtn_Click(object sender, EventArgs e)
         {
             displayPanel.Controls.Clear();
+            MinimizePanel(); 
         }
 
         private void mediaBtn_Click(object sender, EventArgs e)
         {
             displayPanel.Controls.Clear();
+            MinimizePanel();
         }
 
         private void dashboardBtn_Click(object sender, EventArgs e)
         {
             displayPanel.Controls.Clear();
+            MinimizePanel();
         }
 
         private void userBtn_Click(object sender, EventArgs e)
         {
             displayPanel.Controls.Clear();
+            Users users = new Users();
+            users.TopLevel = false;
+            displayPanel.Controls.Add(users);
+            users.Show();
+            MinimizePanel();
         }
     }
 }

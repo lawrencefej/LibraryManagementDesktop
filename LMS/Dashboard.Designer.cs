@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.header = new System.Windows.Forms.Panel();
+            this.closeAppbtn = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.displayPanel = new System.Windows.Forms.Panel();
             this.PanelAnimator = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.PictureAnimator = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.dashboardMenuPanel = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.menuBtn = new Bunifu.Framework.UI.BunifuImageButton();
             this.libraryPicture = new System.Windows.Forms.PictureBox();
@@ -46,12 +46,12 @@
             this.booksBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.userBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.myProfileBtn = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.closeAppbtn = new Bunifu.Framework.UI.BunifuImageButton();
+            this.PictureAnimator = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.header.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.closeAppbtn)).BeginInit();
             this.dashboardMenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryPicture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.closeAppbtn)).BeginInit();
             this.SuspendLayout();
             // 
             // header
@@ -63,8 +63,25 @@
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(0, 0);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(870, 30);
+            this.header.Size = new System.Drawing.Size(1442, 30);
             this.header.TabIndex = 0;
+            // 
+            // closeAppbtn
+            // 
+            this.closeAppbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeAppbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.PictureAnimator.SetDecoration(this.closeAppbtn, BunifuAnimatorNS.DecorationType.None);
+            this.PanelAnimator.SetDecoration(this.closeAppbtn, BunifuAnimatorNS.DecorationType.None);
+            this.closeAppbtn.Image = ((System.Drawing.Image)(resources.GetObject("closeAppbtn.Image")));
+            this.closeAppbtn.ImageActive = null;
+            this.closeAppbtn.Location = new System.Drawing.Point(1408, 5);
+            this.closeAppbtn.Name = "closeAppbtn";
+            this.closeAppbtn.Size = new System.Drawing.Size(20, 20);
+            this.closeAppbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.closeAppbtn.TabIndex = 10;
+            this.closeAppbtn.TabStop = false;
+            this.closeAppbtn.Zoom = 20;
+            this.closeAppbtn.Click += new System.EventHandler(this.closeAppbtn_Click);
             // 
             // bunifuElipse1
             // 
@@ -85,50 +102,29 @@
             this.displayPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.displayPanel.Location = new System.Drawing.Point(200, 30);
             this.displayPanel.Name = "displayPanel";
-            this.displayPanel.Size = new System.Drawing.Size(670, 678);
+            this.displayPanel.Size = new System.Drawing.Size(1242, 780);
             this.displayPanel.TabIndex = 9;
             // 
             // PanelAnimator
             // 
             this.PanelAnimator.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.PanelAnimator.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 0;
-            animation4.Padding = new System.Windows.Forms.Padding(0);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 0F;
-            animation4.TransparencyCoeff = 0F;
-            this.PanelAnimator.DefaultAnimation = animation4;
-            // 
-            // PictureAnimator
-            // 
-            this.PictureAnimator.AnimationType = BunifuAnimatorNS.AnimationType.ScaleAndRotate;
-            this.PictureAnimator.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(30);
-            animation3.RotateCoeff = 0.5F;
-            animation3.RotateLimit = 0.2F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 0F;
-            this.PictureAnimator.DefaultAnimation = animation3;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.PanelAnimator.DefaultAnimation = animation2;
             // 
             // dashboardMenuPanel
             // 
@@ -152,7 +148,7 @@
             this.dashboardMenuPanel.Location = new System.Drawing.Point(0, 30);
             this.dashboardMenuPanel.Name = "dashboardMenuPanel";
             this.dashboardMenuPanel.Quality = 10;
-            this.dashboardMenuPanel.Size = new System.Drawing.Size(200, 678);
+            this.dashboardMenuPanel.Size = new System.Drawing.Size(200, 780);
             this.dashboardMenuPanel.TabIndex = 0;
             // 
             // menuBtn
@@ -374,27 +370,32 @@
             this.myProfileBtn.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myProfileBtn.Click += new System.EventHandler(this.myProfileBtn_Click);
             // 
-            // closeAppbtn
+            // PictureAnimator
             // 
-            this.closeAppbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.PictureAnimator.SetDecoration(this.closeAppbtn, BunifuAnimatorNS.DecorationType.None);
-            this.PanelAnimator.SetDecoration(this.closeAppbtn, BunifuAnimatorNS.DecorationType.None);
-            this.closeAppbtn.Image = ((System.Drawing.Image)(resources.GetObject("closeAppbtn.Image")));
-            this.closeAppbtn.ImageActive = null;
-            this.closeAppbtn.Location = new System.Drawing.Point(834, 5);
-            this.closeAppbtn.Name = "closeAppbtn";
-            this.closeAppbtn.Size = new System.Drawing.Size(20, 20);
-            this.closeAppbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.closeAppbtn.TabIndex = 10;
-            this.closeAppbtn.TabStop = false;
-            this.closeAppbtn.Zoom = 20;
-            this.closeAppbtn.Click += new System.EventHandler(this.closeAppbtn_Click);
+            this.PictureAnimator.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
+            this.PictureAnimator.Cursor = null;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.PictureAnimator.DefaultAnimation = animation1;
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(870, 708);
+            this.ClientSize = new System.Drawing.Size(1442, 810);
             this.Controls.Add(this.displayPanel);
             this.Controls.Add(this.dashboardMenuPanel);
             this.Controls.Add(this.header);
@@ -407,10 +408,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.header.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.closeAppbtn)).EndInit();
             this.dashboardMenuPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.menuBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryPicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.closeAppbtn)).EndInit();
             this.ResumeLayout(false);
 
         }

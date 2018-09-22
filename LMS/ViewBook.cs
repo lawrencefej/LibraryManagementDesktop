@@ -55,19 +55,22 @@ namespace LMS
         /// <param name="e"></param>
         public void ViewBook_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'libraryDBDataSet.Book' table. You can move, or remove it, as needed.
+            //this.bookTableAdapter.Fill(this.libraryDBDataSet.Book);
             DisplayData(searchtxt.text);
         }
         /// <summary>
         /// Accesses the database, returns a list of books and displays it on the datagrid.
         /// </summary>
         /// <param name="search"></param>
+        //private List<Book> data = new List<Book>();
         private void DisplayData(string search)
         {
             SqlConnections access = new SqlConnections();
             search = searchtxt.text;
             var data = access.SearchBooks(search);
             dataGridView1.DataSource = data;
-            dataGridView1.Columns[0].Visible = false;
+            //dataGridView1.Columns[0].Visible = false; 
         }
         /// <summary>
         /// Calls the DisplayData method to and passes the search string to it.
@@ -155,6 +158,28 @@ namespace LMS
         private void menuCloseBtn_Click(object sender, EventArgs e)
         {
             HidePanel();
+        }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            HidePanel();
+        }
+
+        private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            this.dataGridView1.Rows[e.RowIndex].Cells["No"].Value = (e.RowIndex + 1).ToString();
+        }
+
+        private void searchtxt_OnTextChange(object sender, EventArgs e)
+        {
+            DisplayData(searchtxt.text.Trim());
+            //// TODO fix the datagrid search
+            //BindingSource bs = new BindingSource();
+            //bs.DataSource = dataGridView1.DataSource;
+            //var filter = string.Format("(Title like '% {0}%')", searchtxt.text);
+            ////bs.Filter = "Title like '%" + searchtxt.text + "%'";
+            ////dataGridView1.DataSource = bs;
+            //bs.Filter = filter;
         }
     }
 }

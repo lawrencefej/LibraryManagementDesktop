@@ -103,11 +103,14 @@ namespace LMS
         private void textboxTextChange(object sender, EventArgs e)
         {
             // Todo validation errors for registration.
-            if (firstNametxt.Text.Length == 0)
-            {
-                var error = errorProvider1 = errorProvider2 = errorProvider3 = errorProvider4 = errorProvider5 = errorProvider6;
-                error.SetError(firstNametxt,  "Mandatory Field");
-            }
+            
+
+
+        }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

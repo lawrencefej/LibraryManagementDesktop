@@ -23,12 +23,6 @@ namespace LMS
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            Application.Exit();
-        }
-
         private void loginbtn_Click(object sender, EventArgs e)
         {
             try
@@ -66,6 +60,10 @@ namespace LMS
             }
         }
 
-
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            //this.Close();
+            Application.Exit();
+        }
     }
 }

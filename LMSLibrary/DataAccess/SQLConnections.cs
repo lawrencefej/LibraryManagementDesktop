@@ -97,5 +97,25 @@ namespace LMSLibrary.DataAccess
                 return book;
             }
         }
+
+        public List<User> SearchUsers(string search)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
+            {
+                var output = connection.Query<User>("spUsersViewSearch @Search", new { Search = search }).ToList();
+
+                return output;
+            }
+        }
+
+        public List<User> GetUsers()
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
+            {
+                var output = connection.Query<User>("spGetUsers").ToList();
+
+                return output;
+            }
+        }
     }
 }
