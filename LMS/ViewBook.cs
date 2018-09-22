@@ -70,7 +70,7 @@ namespace LMS
             search = searchtxt.text;
             var data = access.SearchBooks(search);
             dataGridView1.DataSource = data;
-            //dataGridView1.Columns[0].Visible = false; 
+            dataGridView1.Columns[1].Visible = false; 
         }
         /// <summary>
         /// Calls the DisplayData method to and passes the search string to it.

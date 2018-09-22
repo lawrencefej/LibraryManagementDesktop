@@ -108,6 +108,16 @@ namespace LMSLibrary.DataAccess
             }
         }
 
+        public List<Media> SearchMedia(string search)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
+            {
+                var output = connection.Query<Media>("spMediaViewSearch @Search", new { Search = search }).ToList();
+
+                return output;
+            }
+        }
+
         public List<User> GetUsers()
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))

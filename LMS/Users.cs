@@ -26,6 +26,7 @@ namespace LMS
             var data = access.SearchUsers(search);
             bunifuCustomDataGrid1.DataSource = data;
             bunifuCustomDataGrid1.Columns[0].Visible = false;
+
         }
 
         private void SearchUsers(object sender, EventArgs e)
@@ -39,11 +40,11 @@ namespace LMS
             //bs.Filter = filter;
         }
 
-        private void AddRowNumber(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            this.bunifuCustomDataGrid1.Rows[e.RowIndex].Cells["No"].Value = (e.RowIndex + 1).ToString();
-            //this.dataGridView1.Rows[e.RowIndex].Cells["No"].Value = (e.RowIndex + 1).ToString();
-        }
+        //private void AddRowNumber(object sender, DataGridViewRowPostPaintEventArgs e)
+        //{
+        //    this.bunifuCustomDataGrid1.Rows[e.RowIndex].Cells["No"].Value = (e.RowIndex + 1).ToString();
+        //    //this.dataGridView1.Rows[e.RowIndex].Cells["No"].Value = (e.RowIndex + 1).ToString();
+        //}
 
         private void Users_Load(object sender, EventArgs e)
         {
@@ -73,6 +74,11 @@ namespace LMS
                 inputPanel.Height = 39;
                 inputPanelTransition.ShowSync(inputPanel);
             }
+        }
+
+        private void bunifuCustomDataGrid1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            this.bunifuCustomDataGrid1.Rows[e.RowIndex].Cells["No"].Value = (e.RowIndex + 1).ToString();
         }
     }
 }

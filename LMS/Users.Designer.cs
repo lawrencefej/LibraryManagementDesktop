@@ -29,29 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Users));
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.libraryDBDataSet1 = new LMS.LibraryDBDataSet1();
-            this.userTableAdapter = new LMS.LibraryDBDataSet1TableAdapters.UserTableAdapter();
-            this.inputPanel = new System.Windows.Forms.Panel();
-            this.bunifuTextbox1 = new Bunifu.Framework.UI.BunifuTextbox();
-            this.slideUpBtn = new Bunifu.Framework.UI.BunifuImageButton();
-            this.inputPanelTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.bunifuTextbox2 = new Bunifu.Framework.UI.BunifuTextbox();
-            this.bunifuTextbox3 = new Bunifu.Framework.UI.BunifuTextbox();
-            this.bunifuTextbox4 = new Bunifu.Framework.UI.BunifuTextbox();
-            this.bunifuTextbox5 = new Bunifu.Framework.UI.BunifuTextbox();
-            this.bunifuTextbox6 = new Bunifu.Framework.UI.BunifuTextbox();
-            this.bunifuTextbox7 = new Bunifu.Framework.UI.BunifuTextbox();
-            this.bunifuTextbox8 = new Bunifu.Framework.UI.BunifuTextbox();
-            this.bunifuTextbox9 = new Bunifu.Framework.UI.BunifuTextbox();
-            this.bunifuTextbox10 = new Bunifu.Framework.UI.BunifuTextbox();
-            this.bunifuTextbox11 = new Bunifu.Framework.UI.BunifuTextbox();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,31 +44,38 @@
             this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Zipcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateRegisteredDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.libraryDBDataSet1 = new LMS.LibraryDBDataSet1();
+            this.userTableAdapter = new LMS.LibraryDBDataSet1TableAdapters.UserTableAdapter();
+            this.inputPanel = new System.Windows.Forms.Panel();
+            this.bunifuTextbox1 = new Bunifu.Framework.UI.BunifuTextbox();
+            this.slideUpBtn = new Bunifu.Framework.UI.BunifuImageButton();
+            this.inputPanelTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet1)).BeginInit();
             this.inputPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.slideUpBtn)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuCustomDataGrid1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.bunifuCustomDataGrid1.AutoGenerateColumns = false;
             this.bunifuCustomDataGrid1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bunifuCustomDataGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.No,
@@ -111,7 +100,66 @@
             this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(1002, 650);
             this.bunifuCustomDataGrid1.TabIndex = 0;
-            this.bunifuCustomDataGrid1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.AddRowNumber);
+            this.bunifuCustomDataGrid1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.bunifuCustomDataGrid1_RowPostPaint);
+            // 
+            // No
+            // 
+            this.No.HeaderText = "#";
+            this.No.Name = "No";
+            // 
+            // FirstName
+            // 
+            this.FirstName.DataPropertyName = "FirstName";
+            this.FirstName.HeaderText = "FirstName";
+            this.FirstName.Name = "FirstName";
+            // 
+            // LastName
+            // 
+            this.LastName.DataPropertyName = "LastName";
+            this.LastName.HeaderText = "LastName";
+            this.LastName.Name = "LastName";
+            // 
+            // EmailAddress
+            // 
+            this.EmailAddress.DataPropertyName = "EmailAddress";
+            this.EmailAddress.HeaderText = "EmailAddress";
+            this.EmailAddress.Name = "EmailAddress";
+            // 
+            // PhoneNumber
+            // 
+            this.PhoneNumber.DataPropertyName = "PhoneNumber";
+            this.PhoneNumber.HeaderText = "PhoneNumber";
+            this.PhoneNumber.Name = "PhoneNumber";
+            // 
+            // Address1
+            // 
+            this.Address1.DataPropertyName = "Address1";
+            this.Address1.HeaderText = "Address1";
+            this.Address1.Name = "Address1";
+            // 
+            // City
+            // 
+            this.City.DataPropertyName = "City";
+            this.City.HeaderText = "City";
+            this.City.Name = "City";
+            // 
+            // State
+            // 
+            this.State.DataPropertyName = "State";
+            this.State.HeaderText = "State";
+            this.State.Name = "State";
+            // 
+            // Zipcode
+            // 
+            this.Zipcode.DataPropertyName = "Zipcode";
+            this.Zipcode.HeaderText = "Zipcode";
+            this.Zipcode.Name = "Zipcode";
+            // 
+            // dateRegisteredDataGridViewTextBoxColumn
+            // 
+            this.dateRegisteredDataGridViewTextBoxColumn.DataPropertyName = "DateRegistered";
+            this.dateRegisteredDataGridViewTextBoxColumn.HeaderText = "DateRegistered";
+            this.dateRegisteredDataGridViewTextBoxColumn.Name = "dateRegisteredDataGridViewTextBoxColumn";
             // 
             // userBindingSource
             // 
@@ -176,36 +224,26 @@
             // 
             this.inputPanelTransition.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
             this.inputPanelTransition.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.inputPanelTransition.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.inputPanelTransition.DefaultAnimation = animation2;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(121)))), ((int)(((byte)(150)))));
-            this.panel1.Controls.Add(this.bunifuTextbox11);
-            this.panel1.Controls.Add(this.bunifuTextbox10);
-            this.panel1.Controls.Add(this.bunifuTextbox9);
-            this.panel1.Controls.Add(this.bunifuTextbox8);
-            this.panel1.Controls.Add(this.bunifuTextbox7);
-            this.panel1.Controls.Add(this.bunifuTextbox6);
-            this.panel1.Controls.Add(this.bunifuTextbox5);
-            this.panel1.Controls.Add(this.bunifuTextbox4);
-            this.panel1.Controls.Add(this.bunifuTextbox3);
-            this.panel1.Controls.Add(this.bunifuTextbox2);
             this.inputPanelTransition.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -214,205 +252,6 @@
             this.panel1.Size = new System.Drawing.Size(390, 650);
             this.panel1.TabIndex = 3;
             this.panel1.Visible = false;
-            // 
-            // bunifuTextbox2
-            // 
-            this.bunifuTextbox2.BackColor = System.Drawing.Color.Silver;
-            this.bunifuTextbox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox2.BackgroundImage")));
-            this.bunifuTextbox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.inputPanelTransition.SetDecoration(this.bunifuTextbox2, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTextbox2.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuTextbox2.Icon = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox2.Icon")));
-            this.bunifuTextbox2.Location = new System.Drawing.Point(191, 47);
-            this.bunifuTextbox2.Name = "bunifuTextbox2";
-            this.bunifuTextbox2.Size = new System.Drawing.Size(135, 26);
-            this.bunifuTextbox2.TabIndex = 4;
-            this.bunifuTextbox2.text = "Bunifu TextBox";
-            // 
-            // bunifuTextbox3
-            // 
-            this.bunifuTextbox3.BackColor = System.Drawing.Color.Silver;
-            this.bunifuTextbox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox3.BackgroundImage")));
-            this.bunifuTextbox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.inputPanelTransition.SetDecoration(this.bunifuTextbox3, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTextbox3.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuTextbox3.Icon = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox3.Icon")));
-            this.bunifuTextbox3.Location = new System.Drawing.Point(191, 79);
-            this.bunifuTextbox3.Name = "bunifuTextbox3";
-            this.bunifuTextbox3.Size = new System.Drawing.Size(135, 26);
-            this.bunifuTextbox3.TabIndex = 4;
-            this.bunifuTextbox3.text = "Bunifu TextBox";
-            // 
-            // bunifuTextbox4
-            // 
-            this.bunifuTextbox4.BackColor = System.Drawing.Color.Silver;
-            this.bunifuTextbox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox4.BackgroundImage")));
-            this.bunifuTextbox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.inputPanelTransition.SetDecoration(this.bunifuTextbox4, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTextbox4.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuTextbox4.Icon = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox4.Icon")));
-            this.bunifuTextbox4.Location = new System.Drawing.Point(191, 111);
-            this.bunifuTextbox4.Name = "bunifuTextbox4";
-            this.bunifuTextbox4.Size = new System.Drawing.Size(135, 26);
-            this.bunifuTextbox4.TabIndex = 4;
-            this.bunifuTextbox4.text = "Bunifu TextBox";
-            // 
-            // bunifuTextbox5
-            // 
-            this.bunifuTextbox5.BackColor = System.Drawing.Color.Silver;
-            this.bunifuTextbox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox5.BackgroundImage")));
-            this.bunifuTextbox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.inputPanelTransition.SetDecoration(this.bunifuTextbox5, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTextbox5.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuTextbox5.Icon = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox5.Icon")));
-            this.bunifuTextbox5.Location = new System.Drawing.Point(191, 143);
-            this.bunifuTextbox5.Name = "bunifuTextbox5";
-            this.bunifuTextbox5.Size = new System.Drawing.Size(135, 26);
-            this.bunifuTextbox5.TabIndex = 4;
-            this.bunifuTextbox5.text = "Bunifu TextBox";
-            // 
-            // bunifuTextbox6
-            // 
-            this.bunifuTextbox6.BackColor = System.Drawing.Color.Silver;
-            this.bunifuTextbox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox6.BackgroundImage")));
-            this.bunifuTextbox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.inputPanelTransition.SetDecoration(this.bunifuTextbox6, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTextbox6.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuTextbox6.Icon = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox6.Icon")));
-            this.bunifuTextbox6.Location = new System.Drawing.Point(191, 175);
-            this.bunifuTextbox6.Name = "bunifuTextbox6";
-            this.bunifuTextbox6.Size = new System.Drawing.Size(135, 26);
-            this.bunifuTextbox6.TabIndex = 4;
-            this.bunifuTextbox6.text = "Bunifu TextBox";
-            // 
-            // bunifuTextbox7
-            // 
-            this.bunifuTextbox7.BackColor = System.Drawing.Color.Silver;
-            this.bunifuTextbox7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox7.BackgroundImage")));
-            this.bunifuTextbox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.inputPanelTransition.SetDecoration(this.bunifuTextbox7, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTextbox7.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuTextbox7.Icon = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox7.Icon")));
-            this.bunifuTextbox7.Location = new System.Drawing.Point(191, 207);
-            this.bunifuTextbox7.Name = "bunifuTextbox7";
-            this.bunifuTextbox7.Size = new System.Drawing.Size(135, 26);
-            this.bunifuTextbox7.TabIndex = 4;
-            this.bunifuTextbox7.text = "Bunifu TextBox";
-            // 
-            // bunifuTextbox8
-            // 
-            this.bunifuTextbox8.BackColor = System.Drawing.Color.Silver;
-            this.bunifuTextbox8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox8.BackgroundImage")));
-            this.bunifuTextbox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.inputPanelTransition.SetDecoration(this.bunifuTextbox8, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTextbox8.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuTextbox8.Icon = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox8.Icon")));
-            this.bunifuTextbox8.Location = new System.Drawing.Point(191, 239);
-            this.bunifuTextbox8.Name = "bunifuTextbox8";
-            this.bunifuTextbox8.Size = new System.Drawing.Size(135, 26);
-            this.bunifuTextbox8.TabIndex = 4;
-            this.bunifuTextbox8.text = "Bunifu TextBox";
-            // 
-            // bunifuTextbox9
-            // 
-            this.bunifuTextbox9.BackColor = System.Drawing.Color.Silver;
-            this.bunifuTextbox9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox9.BackgroundImage")));
-            this.bunifuTextbox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.inputPanelTransition.SetDecoration(this.bunifuTextbox9, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTextbox9.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuTextbox9.Icon = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox9.Icon")));
-            this.bunifuTextbox9.Location = new System.Drawing.Point(191, 271);
-            this.bunifuTextbox9.Name = "bunifuTextbox9";
-            this.bunifuTextbox9.Size = new System.Drawing.Size(135, 26);
-            this.bunifuTextbox9.TabIndex = 4;
-            this.bunifuTextbox9.text = "Bunifu TextBox";
-            // 
-            // bunifuTextbox10
-            // 
-            this.bunifuTextbox10.BackColor = System.Drawing.Color.Silver;
-            this.bunifuTextbox10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox10.BackgroundImage")));
-            this.bunifuTextbox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.inputPanelTransition.SetDecoration(this.bunifuTextbox10, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTextbox10.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuTextbox10.Icon = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox10.Icon")));
-            this.bunifuTextbox10.Location = new System.Drawing.Point(191, 303);
-            this.bunifuTextbox10.Name = "bunifuTextbox10";
-            this.bunifuTextbox10.Size = new System.Drawing.Size(135, 26);
-            this.bunifuTextbox10.TabIndex = 4;
-            this.bunifuTextbox10.text = "Bunifu TextBox";
-            // 
-            // bunifuTextbox11
-            // 
-            this.bunifuTextbox11.BackColor = System.Drawing.Color.Silver;
-            this.bunifuTextbox11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox11.BackgroundImage")));
-            this.bunifuTextbox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.inputPanelTransition.SetDecoration(this.bunifuTextbox11, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTextbox11.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuTextbox11.Icon = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox11.Icon")));
-            this.bunifuTextbox11.Location = new System.Drawing.Point(191, 335);
-            this.bunifuTextbox11.Name = "bunifuTextbox11";
-            this.bunifuTextbox11.Size = new System.Drawing.Size(135, 26);
-            this.bunifuTextbox11.TabIndex = 4;
-            this.bunifuTextbox11.text = "Bunifu TextBox";
-            // 
-            // No
-            // 
-            this.No.HeaderText = "#";
-            this.No.Name = "No";
-            // 
-            // FirstName
-            // 
-            this.FirstName.DataPropertyName = "FirstName";
-            this.FirstName.HeaderText = "FirstName";
-            this.FirstName.Name = "FirstName";
-            // 
-            // LastName
-            // 
-            this.LastName.DataPropertyName = "LastName";
-            this.LastName.HeaderText = "LastName";
-            this.LastName.Name = "LastName";
-            // 
-            // EmailAddress
-            // 
-            this.EmailAddress.DataPropertyName = "EmailAddress";
-            this.EmailAddress.HeaderText = "EmailAddress";
-            this.EmailAddress.Name = "EmailAddress";
-            // 
-            // PhoneNumber
-            // 
-            this.PhoneNumber.DataPropertyName = "PhoneNumber";
-            this.PhoneNumber.HeaderText = "PhoneNumber";
-            this.PhoneNumber.Name = "PhoneNumber";
-            // 
-            // Address1
-            // 
-            this.Address1.DataPropertyName = "Address1";
-            this.Address1.HeaderText = "Address1";
-            this.Address1.Name = "Address1";
-            // 
-            // City
-            // 
-            this.City.DataPropertyName = "City";
-            this.City.HeaderText = "City";
-            this.City.Name = "City";
-            // 
-            // State
-            // 
-            this.State.DataPropertyName = "State";
-            this.State.HeaderText = "State";
-            this.State.Name = "State";
-            // 
-            // Zipcode
-            // 
-            this.Zipcode.DataPropertyName = "Zipcode";
-            this.Zipcode.HeaderText = "Zipcode";
-            this.Zipcode.Name = "Zipcode";
-            // 
-            // dateRegisteredDataGridViewTextBoxColumn
-            // 
-            this.dateRegisteredDataGridViewTextBoxColumn.DataPropertyName = "DateRegistered";
-            this.dateRegisteredDataGridViewTextBoxColumn.HeaderText = "DateRegistered";
-            this.dateRegisteredDataGridViewTextBoxColumn.Name = "dateRegisteredDataGridViewTextBoxColumn";
             // 
             // Users
             // 
@@ -433,7 +272,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet1)).EndInit();
             this.inputPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.slideUpBtn)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -449,16 +287,6 @@
         private BunifuAnimatorNS.BunifuTransition inputPanelTransition;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuTextbox bunifuTextbox1;
-        private Bunifu.Framework.UI.BunifuTextbox bunifuTextbox11;
-        private Bunifu.Framework.UI.BunifuTextbox bunifuTextbox10;
-        private Bunifu.Framework.UI.BunifuTextbox bunifuTextbox9;
-        private Bunifu.Framework.UI.BunifuTextbox bunifuTextbox8;
-        private Bunifu.Framework.UI.BunifuTextbox bunifuTextbox7;
-        private Bunifu.Framework.UI.BunifuTextbox bunifuTextbox6;
-        private Bunifu.Framework.UI.BunifuTextbox bunifuTextbox5;
-        private Bunifu.Framework.UI.BunifuTextbox bunifuTextbox4;
-        private Bunifu.Framework.UI.BunifuTextbox bunifuTextbox3;
-        private Bunifu.Framework.UI.BunifuTextbox bunifuTextbox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn No;
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
