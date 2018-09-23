@@ -127,5 +127,26 @@ namespace LMSLibrary.DataAccess
                 return output;
             }
         }
+
+        public Media AddMedia(Media media)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@Title", media.Title);
+                p.Add("@Director", media.Director);
+                p.Add("@Description", media.Description);
+                p.Add("@Year", media.Year);
+                p.Add("@Quantity", media.Quantity);
+                p.Add("@Location", media.Location);
+                p.Add("@BookID", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                connection.Execute("spAddMedia", p, commandType: CommandType.StoredProcedure);
+
+                media.MediaID = p.Get<int>("@BookID");
+
+                return media;
+            }
+        }
     }
 }

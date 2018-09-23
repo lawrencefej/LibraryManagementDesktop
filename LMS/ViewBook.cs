@@ -143,7 +143,7 @@ namespace LMS
             catch (System.Data.SqlClient.SqlException)
             {
 
-                MessageBox.Show($"This ISBN {book.ISBN.ToString()} has already been added");
+                MessageBox.Show($"This ISBN {book.ISBN} has already been added");
             }
             catch (Exception ex)
             {

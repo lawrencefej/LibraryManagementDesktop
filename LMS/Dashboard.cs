@@ -143,7 +143,7 @@ namespace LMS
         private void mediaBtn_Click(object sender, EventArgs e)
         {
             displayPanel.Controls.Clear();
-            Media media = new Media();
+            ViewMedia media = new ViewMedia();
             media.TopLevel = false;
             displayPanel.Controls.Add(media);
             media.Show();

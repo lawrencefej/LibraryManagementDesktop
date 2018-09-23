@@ -11,7 +11,7 @@ namespace LMSLibrary.Models
         /// <summary>
         /// Represents the id of this media.
         /// </summary>
-        public int MediaID { get; }
+        public int MediaID { get; set; }
         /// <summary>
         /// Represents the title of this media.
         /// </summary>
@@ -40,6 +40,5 @@ namespace LMSLibrary.Models
         /// Represents the date this media was added.
         /// </summary>
         public string DateAdded { get; }
-
     }
 }
