@@ -32,14 +32,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.editBtn = new System.Windows.Forms.Button();
             this.yearTxt = new System.Windows.Forms.TextBox();
-            this.addBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.searchTxt = new Bunifu.Framework.UI.BunifuTextbox();
             this.locationComboBox = new System.Windows.Forms.ComboBox();
             this.quantityComboBox = new System.Windows.Forms.ComboBox();
             this.locationlbl = new System.Windows.Forms.Label();
-            this.yearDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,8 +46,11 @@
             this.directionTxt = new System.Windows.Forms.TextBox();
             this.titleTxt = new System.Windows.Forms.TextBox();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridPanel = new System.Windows.Forms.Panel();
+            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.addBtn = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.editBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             this.dataGridPanel.SuspendLayout();
@@ -60,13 +60,13 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(121)))), ((int)(((byte)(150)))));
             this.panel1.Controls.Add(this.editBtn);
-            this.panel1.Controls.Add(this.yearTxt);
             this.panel1.Controls.Add(this.addBtn);
+            this.panel1.Controls.Add(this.bunifuFlatButton1);
+            this.panel1.Controls.Add(this.yearTxt);
             this.panel1.Controls.Add(this.searchTxt);
             this.panel1.Controls.Add(this.locationComboBox);
             this.panel1.Controls.Add(this.quantityComboBox);
             this.panel1.Controls.Add(this.locationlbl);
-            this.panel1.Controls.Add(this.yearDateTimePicker);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -81,61 +81,12 @@
             this.panel1.Size = new System.Drawing.Size(1392, 227);
             this.panel1.TabIndex = 0;
             // 
-            // editBtn
-            // 
-            this.editBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(105)))), ((int)(((byte)(217)))));
-            this.editBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.editBtn.Location = new System.Drawing.Point(735, 187);
-            this.editBtn.Name = "editBtn";
-            this.editBtn.Size = new System.Drawing.Size(103, 34);
-            this.editBtn.TabIndex = 6;
-            this.editBtn.Text = "Edit";
-            this.editBtn.UseVisualStyleBackColor = false;
-            this.editBtn.Visible = false;
-            // 
             // yearTxt
             // 
-            this.yearTxt.Location = new System.Drawing.Point(628, 27);
+            this.yearTxt.Location = new System.Drawing.Point(555, 24);
             this.yearTxt.Name = "yearTxt";
             this.yearTxt.Size = new System.Drawing.Size(100, 20);
             this.yearTxt.TabIndex = 4;
-            // 
-            // addBtn
-            // 
-            this.addBtn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.addBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(105)))), ((int)(((byte)(217)))));
-            this.addBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.addBtn.BorderRadius = 0;
-            this.addBtn.ButtonText = "     Add";
-            this.addBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addBtn.DisabledColor = System.Drawing.Color.Gray;
-            this.addBtn.Iconcolor = System.Drawing.Color.Transparent;
-            this.addBtn.Iconimage = ((System.Drawing.Image)(resources.GetObject("addBtn.Iconimage")));
-            this.addBtn.Iconimage_right = null;
-            this.addBtn.Iconimage_right_Selected = null;
-            this.addBtn.Iconimage_Selected = null;
-            this.addBtn.IconMarginLeft = 0;
-            this.addBtn.IconMarginRight = 0;
-            this.addBtn.IconRightVisible = true;
-            this.addBtn.IconRightZoom = 0D;
-            this.addBtn.IconVisible = true;
-            this.addBtn.IconZoom = 70D;
-            this.addBtn.IsTab = false;
-            this.addBtn.Location = new System.Drawing.Point(745, 187);
-            this.addBtn.Name = "addBtn";
-            this.addBtn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(105)))), ((int)(((byte)(217)))));
-            this.addBtn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.addBtn.OnHoverTextColor = System.Drawing.Color.White;
-            this.addBtn.selected = false;
-            this.addBtn.Size = new System.Drawing.Size(103, 34);
-            this.addBtn.TabIndex = 6;
-            this.addBtn.Text = "     Add";
-            this.addBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addBtn.Textcolor = System.Drawing.Color.White;
-            this.addBtn.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addBtn.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
             // 
             // searchTxt
             // 
@@ -201,16 +152,6 @@
             this.locationlbl.Size = new System.Drawing.Size(61, 17);
             this.locationlbl.TabIndex = 1;
             this.locationlbl.Text = "Location";
-            // 
-            // yearDateTimePicker
-            // 
-            this.yearDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.yearDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.yearDateTimePicker.Location = new System.Drawing.Point(555, 27);
-            this.yearDateTimePicker.Name = "yearDateTimePicker";
-            this.yearDateTimePicker.Size = new System.Drawing.Size(66, 22);
-            this.yearDateTimePicker.TabIndex = 2;
-            this.yearDateTimePicker.Value = new System.DateTime(2018, 9, 21, 21, 48, 11, 0);
             // 
             // label5
             // 
@@ -320,12 +261,6 @@
             this.bunifuCustomDataGrid1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.bunifuCustomDataGrid1_RowHeaderMouseDoubleClick);
             this.bunifuCustomDataGrid1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.bunifuCustomDataGrid1_RowPostPaint);
             // 
-            // No
-            // 
-            this.No.HeaderText = "#";
-            this.No.Name = "No";
-            this.No.ReadOnly = true;
-            // 
             // dataGridPanel
             // 
             this.dataGridPanel.Controls.Add(this.bunifuCustomDataGrid1);
@@ -334,6 +269,119 @@
             this.dataGridPanel.Name = "dataGridPanel";
             this.dataGridPanel.Size = new System.Drawing.Size(1392, 553);
             this.dataGridPanel.TabIndex = 1;
+            // 
+            // No
+            // 
+            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.No.HeaderText = "#";
+            this.No.Name = "No";
+            this.No.ReadOnly = true;
+            this.No.Width = 21;
+            // 
+            // bunifuFlatButton1
+            // 
+            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(35)))), ((int)(((byte)(51)))));
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(35)))), ((int)(((byte)(51)))));
+            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton1.BorderRadius = 0;
+            this.bunifuFlatButton1.ButtonText = "Delete";
+            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton1.Iconimage = null;
+            this.bunifuFlatButton1.Iconimage_right = null;
+            this.bunifuFlatButton1.Iconimage_right_Selected = null;
+            this.bunifuFlatButton1.Iconimage_Selected = null;
+            this.bunifuFlatButton1.IconMarginLeft = 0;
+            this.bunifuFlatButton1.IconMarginRight = 0;
+            this.bunifuFlatButton1.IconRightVisible = true;
+            this.bunifuFlatButton1.IconRightZoom = 0D;
+            this.bunifuFlatButton1.IconVisible = true;
+            this.bunifuFlatButton1.IconZoom = 90D;
+            this.bunifuFlatButton1.IsTab = false;
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(768, 193);
+            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(35)))), ((int)(((byte)(51)))));
+            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(23)))), ((int)(((byte)(34)))));
+            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.selected = false;
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(80, 34);
+            this.bunifuFlatButton1.TabIndex = 8;
+            this.bunifuFlatButton1.Text = "Delete";
+            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton1.Visible = false;
+            // 
+            // addBtn
+            // 
+            this.addBtn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(105)))), ((int)(((byte)(217)))));
+            this.addBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(105)))), ((int)(((byte)(217)))));
+            this.addBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.addBtn.BorderRadius = 0;
+            this.addBtn.ButtonText = "Add";
+            this.addBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addBtn.DisabledColor = System.Drawing.Color.Gray;
+            this.addBtn.Iconcolor = System.Drawing.Color.Transparent;
+            this.addBtn.Iconimage = null;
+            this.addBtn.Iconimage_right = null;
+            this.addBtn.Iconimage_right_Selected = null;
+            this.addBtn.Iconimage_Selected = null;
+            this.addBtn.IconMarginLeft = 0;
+            this.addBtn.IconMarginRight = 0;
+            this.addBtn.IconRightVisible = true;
+            this.addBtn.IconRightZoom = 0D;
+            this.addBtn.IconVisible = true;
+            this.addBtn.IconZoom = 90D;
+            this.addBtn.IsTab = false;
+            this.addBtn.Location = new System.Drawing.Point(673, 193);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(105)))), ((int)(((byte)(217)))));
+            this.addBtn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(170)))));
+            this.addBtn.OnHoverTextColor = System.Drawing.Color.White;
+            this.addBtn.selected = false;
+            this.addBtn.Size = new System.Drawing.Size(80, 34);
+            this.addBtn.TabIndex = 9;
+            this.addBtn.Text = "Add";
+            this.addBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.addBtn.Textcolor = System.Drawing.Color.White;
+            this.addBtn.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBtn.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
+            // 
+            // editBtn
+            // 
+            this.editBtn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(105)))), ((int)(((byte)(217)))));
+            this.editBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(105)))), ((int)(((byte)(217)))));
+            this.editBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.editBtn.BorderRadius = 0;
+            this.editBtn.ButtonText = "Edit";
+            this.editBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.editBtn.DisabledColor = System.Drawing.Color.Gray;
+            this.editBtn.Iconcolor = System.Drawing.Color.Transparent;
+            this.editBtn.Iconimage = null;
+            this.editBtn.Iconimage_right = null;
+            this.editBtn.Iconimage_right_Selected = null;
+            this.editBtn.Iconimage_Selected = null;
+            this.editBtn.IconMarginLeft = 0;
+            this.editBtn.IconMarginRight = 0;
+            this.editBtn.IconRightVisible = true;
+            this.editBtn.IconRightZoom = 0D;
+            this.editBtn.IconVisible = true;
+            this.editBtn.IconZoom = 90D;
+            this.editBtn.IsTab = false;
+            this.editBtn.Location = new System.Drawing.Point(567, 193);
+            this.editBtn.Name = "editBtn";
+            this.editBtn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(105)))), ((int)(((byte)(217)))));
+            this.editBtn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(170)))));
+            this.editBtn.OnHoverTextColor = System.Drawing.Color.White;
+            this.editBtn.selected = false;
+            this.editBtn.Size = new System.Drawing.Size(80, 34);
+            this.editBtn.TabIndex = 9;
+            this.editBtn.Text = "Edit";
+            this.editBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.editBtn.Textcolor = System.Drawing.Color.White;
+            this.editBtn.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editBtn.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
             // 
             // ViewMedia
             // 
@@ -360,7 +408,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox quantityComboBox;
-        private System.Windows.Forms.DateTimePicker yearDateTimePicker;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -372,11 +419,12 @@
         private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
         private System.Windows.Forms.Panel dataGridPanel;
         private Bunifu.Framework.UI.BunifuTextbox searchTxt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn No;
         private System.Windows.Forms.ComboBox locationComboBox;
         private System.Windows.Forms.Label locationlbl;
-        private Bunifu.Framework.UI.BunifuFlatButton addBtn;
         private System.Windows.Forms.TextBox yearTxt;
-        private System.Windows.Forms.Button editBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn No;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private Bunifu.Framework.UI.BunifuFlatButton addBtn;
+        private Bunifu.Framework.UI.BunifuFlatButton editBtn;
     }
 }

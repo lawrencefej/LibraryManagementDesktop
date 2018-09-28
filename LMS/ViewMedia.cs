@@ -94,6 +94,7 @@ namespace LMS
 
         private void EditMedia()
         {
+            //TODO wire up the edit button
             titleTxt.Text = bunifuCustomDataGrid1.CurrentRow.Cells[2].Value.ToString();
             yearTxt.Text = bunifuCustomDataGrid1.CurrentRow.Cells[3].Value.ToString();
             directionTxt.Text = bunifuCustomDataGrid1.CurrentRow.Cells[4].Value.ToString();
