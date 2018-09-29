@@ -95,6 +95,18 @@ namespace LMS
 
         }
 
+        private void DeleteMedia()
+        {
+            // TODO make location databound
+            Media media = new Media();
+            SqlConnections access = new SqlConnections();
+            media.MediaID = id;
+            media = access.DeleteMedia(media);
+            DisplayData(searchTxt.text);
+            this.Refresh();
+
+        }
+
         private void bunifuCustomDataGrid1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             // TODO change this to see who currently has the media and potential return date.
@@ -139,16 +151,6 @@ namespace LMS
 
         private void dataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //titleTxt.Text = dataGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
-            //yearTxt.Text = dataGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
-            //directorTxt.Text = dataGrid.Rows[e.RowIndex].Cells[3].Value.ToString();
-            //descriptionTxt.Text = dataGrid.Rows[e.RowIndex].Cells[4].Value.ToString();
-            //quantityComboBox.Text = dataGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
-            //locationComboBox.Text = dataGrid.Rows[e.RowIndex].Cells[6].Value.ToString();
-            //addBtn.Visible = false;
-            //editBtn.Visible = true;
-            //deleteBtn.Visible = true;
-
             BindMedia();
         }
 
@@ -171,6 +173,18 @@ namespace LMS
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             // TODO wire up the delete button
+            try
+            {
+                DeleteMedia();
+                MessageBox.Show("Deleted Successfuly");
+                Clear();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void resetBtn_Click(object sender, EventArgs e)

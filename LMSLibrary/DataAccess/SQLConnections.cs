@@ -161,9 +161,24 @@ namespace LMSLibrary.DataAccess
                 p.Add("@Year", media.Year);
                 p.Add("@Quantity", media.Quantity);
                 p.Add("@Location", media.Location);
-                //p.Add("@BookID", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
 
                 connection.Execute("spEditMedia", p, commandType: CommandType.StoredProcedure);
+
+                //media.MediaID = p.Get<int>("@BookID");
+
+                return media;
+            }
+        }
+
+        public Media DeleteMedia(Media media)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@MediaID", media.MediaID);
+                //p.Add("@BookID", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                connection.Execute("spDeleteMedia", p, commandType: CommandType.StoredProcedure);
 
                 //media.MediaID = p.Get<int>("@BookID");
 
