@@ -22,8 +22,6 @@ namespace LMS
 
         private void Media_Load(object sender, EventArgs e)
         {
-            yearDateTimePicker.CustomFormat = "yyyy";
-            //dateTimePicker1.ShowUpDown = true;
             DisplayData(searchTxt.text);
         }
 
@@ -32,8 +30,9 @@ namespace LMS
             SqlConnections access = new SqlConnections();
             search = searchTxt.text;
             var data = access.SearchMedia(search);
-            bunifuCustomDataGrid1.DataSource = data;
-            bunifuCustomDataGrid1.Columns[1].Visible = false;
+            dataGrid.DataSource = data;
+            //dataGrid.Columns[1].Visible = false;
+            yearTxt.Text = DateTime.Now.Year.ToString();
         }
 
         private void searchTxt_OnTextChange(object sender, EventArgs e)
@@ -43,17 +42,18 @@ namespace LMS
 
         private void bunifuCustomDataGrid1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            this.bunifuCustomDataGrid1.Rows[e.RowIndex].Cells["No"].Value = (e.RowIndex + 1).ToString();
+            this.dataGrid.Rows[e.RowIndex].Cells["No"].Value = (e.RowIndex + 1).ToString();
+            this.dataGrid.Rows[e.RowIndex].Cells["Edit"].Value = "Edit";
         }
 
         private void AddMedia()
         {
+            // TODO make location databound
             Media media = new Media();
             SqlConnections access = new SqlConnections();
             media.Title = titleTxt.Text;
-            media.Director = directionTxt.Text;
+            media.Director = directorTxt.Text;
             media.Description = descriptionTxt.Text;
-            //media.Year = yearDateTimePicker.Text;
             media.Quantity = Convert.ToInt32(quantityComboBox.Text);
             media.Location = locationComboBox.Text;
             media.Year = yearTxt.Text;
@@ -62,7 +62,42 @@ namespace LMS
             this.Refresh();
         }
 
-        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        private void Clear()
+        {
+            titleTxt.Text = directorTxt.Text = descriptionTxt.Text = "";
+            locationComboBox.Text = null;
+            quantityComboBox.Text = "1";
+            yearTxt.Text = DateTime.Now.Year.ToString();
+            addBtn.Visible = true;
+            editBtn.Visible = false;
+            resetBtn.Visible = false;
+            deleteBtn.Visible = false;
+
+        }
+
+        private void bunifuCustomDataGrid1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            // TODO change this to see who currently has the bmedia and potential return date.
+            EditMedia();
+            MessageBox.Show("Edit Row");
+        }
+
+        private void EditMedia()
+        {
+            //TODO wire up the edit button
+            titleTxt.Text = dataGrid.CurrentRow.Cells[1].Value.ToString();
+            yearTxt.Text = dataGrid.CurrentRow.Cells[2].Value.ToString();
+            directorTxt.Text = dataGrid.CurrentRow.Cells[3].Value.ToString();
+            descriptionTxt.Text = dataGrid.CurrentRow.Cells[4].Value.ToString();
+            quantityComboBox.Text = dataGrid.CurrentRow.Cells[5].Value.ToString();
+            locationComboBox.Text = dataGrid.CurrentRow.Cells[6].Value.ToString();
+            addBtn.Visible = false;
+            editBtn.Visible = true;
+            deleteBtn.Visible = true;
+            resetBtn.Visible = true;
+        }
+
+        private void addBtn_Click(object sender, EventArgs e)
         {
             Media media = new Media();
 
@@ -79,30 +114,35 @@ namespace LMS
             }
         }
 
-        private void Clear()
+        private void dataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            titleTxt.Text = directionTxt.Text = descriptionTxt.Text = locationlbl.Text = "";
-            quantityComboBox.Text = "1";
-            //yearDateTimePicker.Text = "2018";
-        }
+            //titleTxt.Text = dataGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+            //yearTxt.Text = dataGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
+            //directorTxt.Text = dataGrid.Rows[e.RowIndex].Cells[3].Value.ToString();
+            //descriptionTxt.Text = dataGrid.Rows[e.RowIndex].Cells[4].Value.ToString();
+            //quantityComboBox.Text = dataGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
+            //locationComboBox.Text = dataGrid.Rows[e.RowIndex].Cells[6].Value.ToString();
+            //addBtn.Visible = false;
+            //editBtn.Visible = true;
+            //deleteBtn.Visible = true;
 
-        private void bunifuCustomDataGrid1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
             EditMedia();
-            MessageBox.Show("Edit Row");
         }
 
-        private void EditMedia()
+        private void editBtn_Click(object sender, EventArgs e)
         {
-            //TODO wire up the edit button
-            titleTxt.Text = bunifuCustomDataGrid1.CurrentRow.Cells[2].Value.ToString();
-            yearTxt.Text = bunifuCustomDataGrid1.CurrentRow.Cells[3].Value.ToString();
-            directionTxt.Text = bunifuCustomDataGrid1.CurrentRow.Cells[4].Value.ToString();
-            descriptionTxt.Text = bunifuCustomDataGrid1.CurrentRow.Cells[5].Value.ToString();
-            quantityComboBox.Text = bunifuCustomDataGrid1.CurrentRow.Cells[6].Value.ToString();
-            locationComboBox.Text = bunifuCustomDataGrid1.CurrentRow.Cells[7].Value.ToString();
-            addBtn.Visible = false;
-            editBtn.Visible = true;
+            // TODO wire up the edit button
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            // TODO wire up the delete button
+        }
+
+        private void resetBtn_Click(object sender, EventArgs e)
+        {
+            // TODO wire up the reset button
+            Clear();
         }
     }
 }
