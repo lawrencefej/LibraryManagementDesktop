@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewMedia));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.editBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.addBtn = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -52,6 +52,8 @@
             this.dataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.mediaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridPanel = new System.Windows.Forms.Panel();
+            this.resetBtn = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.mediaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,11 +63,12 @@
             this.locationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateAddedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.resetBtn = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.MediaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mediaBindingSource)).BeginInit();
             this.dataGridPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mediaBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -350,21 +353,21 @@
             // 
             // dataGrid
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGrid.AutoGenerateColumns = false;
             this.dataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGrid.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.No,
@@ -375,8 +378,9 @@
             this.quantityDataGridViewTextBoxColumn,
             this.locationDataGridViewTextBoxColumn,
             this.dateAddedDataGridViewTextBoxColumn,
-            this.Edit});
-            this.dataGrid.DataSource = this.mediaBindingSource;
+            this.Edit,
+            this.MediaID});
+            this.dataGrid.DataSource = this.mediaBindingSource1;
             this.dataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGrid.DoubleBuffered = true;
             this.dataGrid.EnableHeadersVisualStyles = false;
@@ -404,6 +408,46 @@
             this.dataGridPanel.Name = "dataGridPanel";
             this.dataGridPanel.Size = new System.Drawing.Size(1392, 553);
             this.dataGridPanel.TabIndex = 1;
+            // 
+            // resetBtn
+            // 
+            this.resetBtn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.resetBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.resetBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.resetBtn.BorderRadius = 0;
+            this.resetBtn.ButtonText = "Reset";
+            this.resetBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.resetBtn.DisabledColor = System.Drawing.Color.Gray;
+            this.resetBtn.Iconcolor = System.Drawing.Color.Transparent;
+            this.resetBtn.Iconimage = null;
+            this.resetBtn.Iconimage_right = null;
+            this.resetBtn.Iconimage_right_Selected = null;
+            this.resetBtn.Iconimage_Selected = null;
+            this.resetBtn.IconMarginLeft = 0;
+            this.resetBtn.IconMarginRight = 0;
+            this.resetBtn.IconRightVisible = true;
+            this.resetBtn.IconRightZoom = 0D;
+            this.resetBtn.IconVisible = true;
+            this.resetBtn.IconZoom = 90D;
+            this.resetBtn.IsTab = false;
+            this.resetBtn.Location = new System.Drawing.Point(673, 193);
+            this.resetBtn.Name = "resetBtn";
+            this.resetBtn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
+            this.resetBtn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(69)))));
+            this.resetBtn.OnHoverTextColor = System.Drawing.Color.White;
+            this.resetBtn.selected = false;
+            this.resetBtn.Size = new System.Drawing.Size(80, 34);
+            this.resetBtn.TabIndex = 9;
+            this.resetBtn.Text = "Reset";
+            this.resetBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.resetBtn.Textcolor = System.Drawing.Color.White;
+            this.resetBtn.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetBtn.Visible = false;
+            this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
+            // 
+            // mediaBindingSource1
+            // 
+            this.mediaBindingSource1.DataSource = typeof(LMSLibrary.Models.Media);
             // 
             // No
             // 
@@ -481,41 +525,12 @@
             this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Edit.Width = 32;
             // 
-            // resetBtn
+            // MediaID
             // 
-            this.resetBtn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.resetBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.resetBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.resetBtn.BorderRadius = 0;
-            this.resetBtn.ButtonText = "Reset";
-            this.resetBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.resetBtn.DisabledColor = System.Drawing.Color.Gray;
-            this.resetBtn.Iconcolor = System.Drawing.Color.Transparent;
-            this.resetBtn.Iconimage = null;
-            this.resetBtn.Iconimage_right = null;
-            this.resetBtn.Iconimage_right_Selected = null;
-            this.resetBtn.Iconimage_Selected = null;
-            this.resetBtn.IconMarginLeft = 0;
-            this.resetBtn.IconMarginRight = 0;
-            this.resetBtn.IconRightVisible = true;
-            this.resetBtn.IconRightZoom = 0D;
-            this.resetBtn.IconVisible = true;
-            this.resetBtn.IconZoom = 90D;
-            this.resetBtn.IsTab = false;
-            this.resetBtn.Location = new System.Drawing.Point(673, 193);
-            this.resetBtn.Name = "resetBtn";
-            this.resetBtn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(98)))), ((int)(((byte)(104)))));
-            this.resetBtn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(69)))));
-            this.resetBtn.OnHoverTextColor = System.Drawing.Color.White;
-            this.resetBtn.selected = false;
-            this.resetBtn.Size = new System.Drawing.Size(80, 34);
-            this.resetBtn.TabIndex = 9;
-            this.resetBtn.Text = "Reset";
-            this.resetBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.resetBtn.Textcolor = System.Drawing.Color.White;
-            this.resetBtn.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetBtn.Visible = false;
-            this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
+            this.MediaID.DataPropertyName = "MediaID";
+            this.MediaID.HeaderText = "MediaID";
+            this.MediaID.Name = "MediaID";
+            this.MediaID.ReadOnly = true;
             // 
             // ViewMedia
             // 
@@ -535,6 +550,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mediaBindingSource)).EndInit();
             this.dataGridPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.mediaBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -561,6 +577,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton addBtn;
         private Bunifu.Framework.UI.BunifuFlatButton editBtn;
         private System.Windows.Forms.BindingSource mediaBindingSource;
+        private Bunifu.Framework.UI.BunifuFlatButton resetBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn No;
         private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn yearDataGridViewTextBoxColumn;
@@ -570,6 +587,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn locationDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateAddedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
-        private Bunifu.Framework.UI.BunifuFlatButton resetBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MediaID;
+        private System.Windows.Forms.BindingSource mediaBindingSource1;
     }
 }

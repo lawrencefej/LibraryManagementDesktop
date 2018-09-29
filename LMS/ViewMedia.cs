@@ -15,6 +15,8 @@ namespace LMS
 {
     public partial class ViewMedia : Form
     {
+        private int id;
+
         public ViewMedia()
         {
             InitializeComponent();
@@ -31,7 +33,7 @@ namespace LMS
             search = searchTxt.text;
             var data = access.SearchMedia(search);
             dataGrid.DataSource = data;
-            //dataGrid.Columns[1].Visible = false;
+            dataGrid.Columns[9].Visible = false;
             yearTxt.Text = DateTime.Now.Year.ToString();
         }
 
@@ -75,14 +77,32 @@ namespace LMS
 
         }
 
+        private void EditMedia()
+        {
+            // TODO make location databound
+            Media media = new Media();
+            SqlConnections access = new SqlConnections();
+            media.MediaID = id;
+            media.Title = titleTxt.Text;
+            media.Director = directorTxt.Text;
+            media.Description = descriptionTxt.Text;
+            media.Quantity = Convert.ToInt32(quantityComboBox.Text);
+            media.Location = locationComboBox.Text;
+            media.Year = yearTxt.Text;
+            media = access.EditMedia(media);
+            DisplayData(searchTxt.text);
+            this.Refresh();
+
+        }
+
         private void bunifuCustomDataGrid1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            // TODO change this to see who currently has the bmedia and potential return date.
-            EditMedia();
+            // TODO change this to see who currently has the media and potential return date.
+            BindMedia();
             MessageBox.Show("Edit Row");
         }
 
-        private void EditMedia()
+        private void BindMedia()
         {
             //TODO wire up the edit button
             titleTxt.Text = dataGrid.CurrentRow.Cells[1].Value.ToString();
@@ -91,6 +111,9 @@ namespace LMS
             descriptionTxt.Text = dataGrid.CurrentRow.Cells[4].Value.ToString();
             quantityComboBox.Text = dataGrid.CurrentRow.Cells[5].Value.ToString();
             locationComboBox.Text = dataGrid.CurrentRow.Cells[6].Value.ToString();
+            id = Convert.ToInt32(dataGrid.CurrentRow.Cells[9].Value);
+            var a = id.ToString();
+            MessageBox.Show(a);
             addBtn.Visible = false;
             editBtn.Visible = true;
             deleteBtn.Visible = true;
@@ -126,12 +149,23 @@ namespace LMS
             //editBtn.Visible = true;
             //deleteBtn.Visible = true;
 
-            EditMedia();
+            BindMedia();
         }
 
         private void editBtn_Click(object sender, EventArgs e)
         {
             // TODO wire up the edit button
+            try
+            {
+                EditMedia();
+                MessageBox.Show("Update Successful");
+                Clear();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
