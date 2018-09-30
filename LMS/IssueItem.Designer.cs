@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IssueItem));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -42,7 +42,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.memberLbl = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.memPhoneNumberLbl = new System.Windows.Forms.Label();
             this.memEmailLbl = new System.Windows.Forms.Label();
             this.memNameLbl = new System.Windows.Forms.Label();
@@ -97,7 +96,6 @@
             this.panel1.Controls.Add(this.memEmailLbl);
             this.panel1.Controls.Add(this.memPhoneNumberLbl);
             this.panel1.Controls.Add(this.memNameLbl);
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.memberLbl);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -112,7 +110,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 8);
+            this.label1.Location = new System.Drawing.Point(5, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 17);
             this.label1.TabIndex = 3;
@@ -122,7 +120,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 32);
+            this.label2.Location = new System.Drawing.Point(5, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 17);
             this.label2.TabIndex = 3;
@@ -132,7 +130,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 55);
+            this.label3.Location = new System.Drawing.Point(5, 55);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 17);
             this.label3.TabIndex = 3;
@@ -142,7 +140,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 81);
+            this.label4.Location = new System.Drawing.Point(5, 81);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 17);
             this.label4.TabIndex = 3;
@@ -151,25 +149,16 @@
             // memberLbl
             // 
             this.memberLbl.AutoSize = true;
-            this.memberLbl.Location = new System.Drawing.Point(130, 12);
+            this.memberLbl.Location = new System.Drawing.Point(123, 12);
             this.memberLbl.Name = "memberLbl";
             this.memberLbl.Size = new System.Drawing.Size(13, 13);
             this.memberLbl.TabIndex = 4;
             this.memberLbl.Text = "1";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(171, 36);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(13, 13);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "3";
-            // 
             // memPhoneNumberLbl
             // 
             this.memPhoneNumberLbl.AutoSize = true;
-            this.memPhoneNumberLbl.Location = new System.Drawing.Point(130, 84);
+            this.memPhoneNumberLbl.Location = new System.Drawing.Point(123, 84);
             this.memPhoneNumberLbl.Name = "memPhoneNumberLbl";
             this.memPhoneNumberLbl.Size = new System.Drawing.Size(73, 13);
             this.memPhoneNumberLbl.TabIndex = 4;
@@ -178,7 +167,7 @@
             // memEmailLbl
             // 
             this.memEmailLbl.AutoSize = true;
-            this.memEmailLbl.Location = new System.Drawing.Point(130, 59);
+            this.memEmailLbl.Location = new System.Drawing.Point(123, 59);
             this.memEmailLbl.Name = "memEmailLbl";
             this.memEmailLbl.Size = new System.Drawing.Size(119, 13);
             this.memEmailLbl.TabIndex = 4;
@@ -187,7 +176,7 @@
             // memNameLbl
             // 
             this.memNameLbl.AutoSize = true;
-            this.memNameLbl.Location = new System.Drawing.Point(130, 36);
+            this.memNameLbl.Location = new System.Drawing.Point(123, 36);
             this.memNameLbl.Name = "memNameLbl";
             this.memNameLbl.Size = new System.Drawing.Size(97, 13);
             this.memNameLbl.TabIndex = 4;
@@ -223,19 +212,19 @@
             // 
             // itemDataGrid
             // 
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.itemDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.itemDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.itemDataGrid.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.itemDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.itemDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.itemDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.itemDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.itemDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.itemDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.itemDataGrid.DoubleBuffered = true;
@@ -250,21 +239,21 @@
             // 
             // userDataGrid
             // 
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.userDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.userDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.userDataGrid.AutoGenerateColumns = false;
             this.userDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.userDataGrid.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.userDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.userDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.userDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.userDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.userDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.userDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.userIDDataGridViewTextBoxColumn,
@@ -283,6 +272,7 @@
             this.userDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.userDataGrid.Size = new System.Drawing.Size(604, 131);
             this.userDataGrid.TabIndex = 0;
+            this.userDataGrid.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.userDataGrid_RowHeaderMouseDoubleClick);
             // 
             // cartListBox
             // 
@@ -408,7 +398,6 @@
         private System.Windows.Forms.Label memEmailLbl;
         private System.Windows.Forms.Label memPhoneNumberLbl;
         private System.Windows.Forms.Label memNameLbl;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label memberLbl;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Panel panel3;
