@@ -110,8 +110,8 @@ namespace LMS
         private void bunifuCustomDataGrid1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             // TODO change this to see who currently has the media and potential return date.
-            BindMedia();
-            MessageBox.Show("Edit Row");
+            //BindMedia();
+            //MessageBox.Show("Edit Row");
         }
 
         private void BindMedia()
@@ -124,8 +124,8 @@ namespace LMS
             quantityComboBox.Text = dataGrid.CurrentRow.Cells[5].Value.ToString();
             locationComboBox.Text = dataGrid.CurrentRow.Cells[6].Value.ToString();
             id = Convert.ToInt32(dataGrid.CurrentRow.Cells[9].Value);
-            var a = id.ToString();
-            MessageBox.Show(a);
+            //var a = id.ToString();
+            //MessageBox.Show(a);
             addBtn.Visible = false;
             editBtn.Visible = true;
             deleteBtn.Visible = true;
@@ -159,6 +159,7 @@ namespace LMS
             // TODO wire up the edit button
             try
             {
+                // TODO add a dialog box
                 EditMedia();
                 MessageBox.Show("Update Successful");
                 Clear();
@@ -175,6 +176,7 @@ namespace LMS
             // TODO wire up the delete button
             try
             {
+                // TODO add a dialog box
                 DeleteMedia();
                 MessageBox.Show("Deleted Successfuly");
                 Clear();

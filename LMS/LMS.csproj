@@ -68,6 +68,12 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="IssueItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IssueItem.Designer.cs">
+      <DependentUpon>IssueItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="LibraryDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -112,6 +118,9 @@
     </Compile>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IssueItem.resx">
+      <DependentUpon>IssueItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -162,6 +171,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\LMSLibrary.Models.Media.datasource" />
+    <None Include="Properties\DataSources\LMSLibrary.Models.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

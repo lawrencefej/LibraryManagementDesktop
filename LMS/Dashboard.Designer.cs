@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
+            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
             this.header = new System.Windows.Forms.Panel();
             this.closeAppbtn = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -47,6 +47,7 @@
             this.userBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.myProfileBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.PictureAnimator = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.issueItemsBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeAppbtn)).BeginInit();
             this.dashboardMenuPanel.SuspendLayout();
@@ -109,22 +110,22 @@
             // 
             this.PanelAnimator.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.PanelAnimator.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.PanelAnimator.DefaultAnimation = animation2;
+            animation4.AnimateOnlyDifferences = true;
+            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
+            animation4.LeafCoeff = 0F;
+            animation4.MaxTime = 1F;
+            animation4.MinTime = 0F;
+            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
+            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
+            animation4.MosaicSize = 0;
+            animation4.Padding = new System.Windows.Forms.Padding(0);
+            animation4.RotateCoeff = 0F;
+            animation4.RotateLimit = 0F;
+            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
+            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
+            animation4.TimeCoeff = 0F;
+            animation4.TransparencyCoeff = 0F;
+            this.PanelAnimator.DefaultAnimation = animation4;
             // 
             // dashboardMenuPanel
             // 
@@ -133,6 +134,7 @@
             this.dashboardMenuPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.dashboardMenuPanel.Controls.Add(this.menuBtn);
             this.dashboardMenuPanel.Controls.Add(this.libraryPicture);
+            this.dashboardMenuPanel.Controls.Add(this.issueItemsBtn);
             this.dashboardMenuPanel.Controls.Add(this.dashboardBtn);
             this.dashboardMenuPanel.Controls.Add(this.mediaBtn);
             this.dashboardMenuPanel.Controls.Add(this.booksBtn);
@@ -374,22 +376,60 @@
             // 
             this.PictureAnimator.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.PictureAnimator.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.PictureAnimator.DefaultAnimation = animation1;
+            animation3.AnimateOnlyDifferences = true;
+            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
+            animation3.LeafCoeff = 0F;
+            animation3.MaxTime = 1F;
+            animation3.MinTime = 0F;
+            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
+            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
+            animation3.MosaicSize = 0;
+            animation3.Padding = new System.Windows.Forms.Padding(0);
+            animation3.RotateCoeff = 0F;
+            animation3.RotateLimit = 0F;
+            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
+            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
+            animation3.TimeCoeff = 0F;
+            animation3.TransparencyCoeff = 0F;
+            this.PictureAnimator.DefaultAnimation = animation3;
+            // 
+            // issueItemsBtn
+            // 
+            this.issueItemsBtn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.issueItemsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
+            this.issueItemsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.issueItemsBtn.BorderRadius = 0;
+            this.issueItemsBtn.ButtonText = "Issue Items";
+            this.issueItemsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureAnimator.SetDecoration(this.issueItemsBtn, BunifuAnimatorNS.DecorationType.None);
+            this.PanelAnimator.SetDecoration(this.issueItemsBtn, BunifuAnimatorNS.DecorationType.None);
+            this.issueItemsBtn.DisabledColor = System.Drawing.Color.Gray;
+            this.issueItemsBtn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.issueItemsBtn.Iconcolor = System.Drawing.Color.Transparent;
+            this.issueItemsBtn.Iconimage = ((System.Drawing.Image)(resources.GetObject("issueItemsBtn.Iconimage")));
+            this.issueItemsBtn.Iconimage_right = null;
+            this.issueItemsBtn.Iconimage_right_Selected = null;
+            this.issueItemsBtn.Iconimage_Selected = null;
+            this.issueItemsBtn.IconMarginLeft = 0;
+            this.issueItemsBtn.IconMarginRight = 0;
+            this.issueItemsBtn.IconRightVisible = true;
+            this.issueItemsBtn.IconRightZoom = 0D;
+            this.issueItemsBtn.IconVisible = true;
+            this.issueItemsBtn.IconZoom = 40D;
+            this.issueItemsBtn.IsTab = true;
+            this.issueItemsBtn.Location = new System.Drawing.Point(0, 393);
+            this.issueItemsBtn.Name = "issueItemsBtn";
+            this.issueItemsBtn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
+            this.issueItemsBtn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(78)))), ((int)(((byte)(112)))));
+            this.issueItemsBtn.OnHoverTextColor = System.Drawing.Color.White;
+            this.issueItemsBtn.selected = false;
+            this.issueItemsBtn.Size = new System.Drawing.Size(200, 48);
+            this.issueItemsBtn.TabIndex = 4;
+            this.issueItemsBtn.Text = "Issue Items";
+            this.issueItemsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.issueItemsBtn.Textcolor = System.Drawing.Color.Silver;
+            this.issueItemsBtn.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.issueItemsBtn.Click += new System.EventHandler(this.issueItemsBtn_Click);
             // 
             // Dashboard
             // 
@@ -431,6 +471,7 @@
         private System.Windows.Forms.Panel displayPanel;
         private BunifuAnimatorNS.BunifuTransition PictureAnimator;
         private BunifuAnimatorNS.BunifuTransition PanelAnimator;
+        private Bunifu.Framework.UI.BunifuFlatButton issueItemsBtn;
     }
 }
 

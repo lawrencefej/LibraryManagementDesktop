@@ -50,11 +50,11 @@
             this.directorTxt = new System.Windows.Forms.TextBox();
             this.titleTxt = new System.Windows.Forms.TextBox();
             this.dataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.mediaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridPanel = new System.Windows.Forms.Panel();
             this.resetBtn = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.mediaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.MediaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.directorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,13 +62,14 @@
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.locationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateAddedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.MediaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mediaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.mediaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mediaBindingSource)).BeginInit();
             this.dataGridPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mediaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mediaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -396,10 +397,6 @@
             this.dataGrid.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.bunifuCustomDataGrid1_RowHeaderMouseDoubleClick);
             this.dataGrid.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.bunifuCustomDataGrid1_RowPostPaint);
             // 
-            // mediaBindingSource
-            // 
-            this.mediaBindingSource.DataSource = typeof(LMSLibrary.Models.Media);
-            // 
             // dataGridPanel
             // 
             this.dataGridPanel.Controls.Add(this.dataGrid);
@@ -445,10 +442,6 @@
             this.resetBtn.Visible = false;
             this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
             // 
-            // mediaBindingSource1
-            // 
-            this.mediaBindingSource1.DataSource = typeof(LMSLibrary.Models.Media);
-            // 
             // No
             // 
             this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
@@ -456,6 +449,22 @@
             this.No.Name = "No";
             this.No.ReadOnly = true;
             this.No.Width = 21;
+            // 
+            // Edit
+            // 
+            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Edit.Width = 32;
+            // 
+            // MediaID
+            // 
+            this.MediaID.DataPropertyName = "MediaID";
+            this.MediaID.HeaderText = "MediaID";
+            this.MediaID.Name = "MediaID";
+            this.MediaID.ReadOnly = true;
             // 
             // titleDataGridViewTextBoxColumn
             // 
@@ -516,21 +525,13 @@
             this.dateAddedDataGridViewTextBoxColumn.ReadOnly = true;
             this.dateAddedDataGridViewTextBoxColumn.Width = 91;
             // 
-            // Edit
+            // mediaBindingSource1
             // 
-            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Edit.Width = 32;
+            this.mediaBindingSource1.DataSource = typeof(LMSLibrary.Models.Media);
             // 
-            // MediaID
+            // mediaBindingSource
             // 
-            this.MediaID.DataPropertyName = "MediaID";
-            this.MediaID.HeaderText = "MediaID";
-            this.MediaID.Name = "MediaID";
-            this.MediaID.ReadOnly = true;
+            this.mediaBindingSource.DataSource = typeof(LMSLibrary.Models.Media);
             // 
             // ViewMedia
             // 
@@ -548,9 +549,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mediaBindingSource)).EndInit();
             this.dataGridPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mediaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mediaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -589,5 +590,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.DataGridViewTextBoxColumn MediaID;
         private System.Windows.Forms.BindingSource mediaBindingSource1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

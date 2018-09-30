@@ -18,32 +18,6 @@ namespace LMS
             InitializeComponent();
         }
 
-        //private void viewToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    ViewBook viewBook = new ViewBook();
-        //    viewBook.MdiParent = this;
-        //    if (viewBook.Visible )
-        //    {
-        //        viewBook.Close();
-        //        viewBook.ShowDialog();
-        //    }
-        //}
-
-        //private void bunifuFlatButton3_Click(object sender, EventArgs e)
-        //{
-        //    ViewBook form = ViewBook.GetInstance();
-        //    form.MdiParent = this;
-        //    if (!form.Visible)
-        //    {
-               
-        //        form.Show();
-        //    }
-        //    else
-        //    {
-        //        form.BringToFront();
-        //    }
-        //}
-
         private void closeAppbtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -163,6 +137,16 @@ namespace LMS
             users.TopLevel = false;
             displayPanel.Controls.Add(users);
             users.Show();
+            MinimizePanel();
+        }
+
+        private void issueItemsBtn_Click(object sender, EventArgs e)
+        {
+            displayPanel.Controls.Clear();
+            IssueItem issueItem = new IssueItem();
+            issueItem.TopLevel = false;
+            displayPanel.Controls.Add(issueItem);
+            issueItem.Show();
             MinimizePanel();
         }
     }
