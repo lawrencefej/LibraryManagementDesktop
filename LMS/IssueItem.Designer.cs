@@ -29,32 +29,32 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IssueItem));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.memberLbl = new System.Windows.Forms.Label();
-            this.memPhoneNumberLbl = new System.Windows.Forms.Label();
-            this.memEmailLbl = new System.Windows.Forms.Label();
-            this.memNameLbl = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.itemDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.userDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.cartListBox = new System.Windows.Forms.ListBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.userSearchTxt = new Bunifu.Framework.UI.BunifuTextbox();
-            this.itemSearchTxt = new Bunifu.Framework.UI.BunifuTextbox();
-            this.itemFilterCb = new MetroFramework.Controls.MetroComboBox();
+            this.userDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.memEmailLbl = new System.Windows.Forms.Label();
+            this.memPhoneNumberLbl = new System.Windows.Forms.Label();
+            this.memNameLbl = new System.Windows.Forms.Label();
+            this.memberLbl = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.itemFilterCb = new MetroFramework.Controls.MetroComboBox();
+            this.itemSearchTxt = new Bunifu.Framework.UI.BunifuTextbox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.itemDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,12 +62,12 @@
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemDataGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userDataGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -80,6 +80,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cart";
             // 
+            // cartListBox
+            // 
+            this.cartListBox.FormattingEnabled = true;
+            this.cartListBox.Location = new System.Drawing.Point(16, 32);
+            this.cartListBox.Name = "cartListBox";
+            this.cartListBox.Size = new System.Drawing.Size(314, 95);
+            this.cartListBox.TabIndex = 0;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.userSearchTxt);
@@ -91,169 +99,36 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Select Users";
             // 
-            // panel1
+            // userSearchTxt
             // 
-            this.panel1.Controls.Add(this.memEmailLbl);
-            this.panel1.Controls.Add(this.memPhoneNumberLbl);
-            this.panel1.Controls.Add(this.memNameLbl);
-            this.panel1.Controls.Add(this.memberLbl);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(258, 156);
-            this.panel1.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "MemberID:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(5, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Name:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(5, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 17);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Email: ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(5, 81);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Phone Number:";
-            // 
-            // memberLbl
-            // 
-            this.memberLbl.AutoSize = true;
-            this.memberLbl.Location = new System.Drawing.Point(123, 12);
-            this.memberLbl.Name = "memberLbl";
-            this.memberLbl.Size = new System.Drawing.Size(13, 13);
-            this.memberLbl.TabIndex = 4;
-            this.memberLbl.Text = "1";
-            // 
-            // memPhoneNumberLbl
-            // 
-            this.memPhoneNumberLbl.AutoSize = true;
-            this.memPhoneNumberLbl.Location = new System.Drawing.Point(123, 84);
-            this.memPhoneNumberLbl.Name = "memPhoneNumberLbl";
-            this.memPhoneNumberLbl.Size = new System.Drawing.Size(73, 13);
-            this.memPhoneNumberLbl.TabIndex = 4;
-            this.memPhoneNumberLbl.Text = "316-871-0406";
-            // 
-            // memEmailLbl
-            // 
-            this.memEmailLbl.AutoSize = true;
-            this.memEmailLbl.Location = new System.Drawing.Point(123, 59);
-            this.memEmailLbl.Name = "memEmailLbl";
-            this.memEmailLbl.Size = new System.Drawing.Size(119, 13);
-            this.memEmailLbl.TabIndex = 4;
-            this.memEmailLbl.Text = "lawrencefej@gmail.com";
-            // 
-            // memNameLbl
-            // 
-            this.memNameLbl.AutoSize = true;
-            this.memNameLbl.Location = new System.Drawing.Point(123, 36);
-            this.memNameLbl.Name = "memNameLbl";
-            this.memNameLbl.Size = new System.Drawing.Size(97, 13);
-            this.memNameLbl.TabIndex = 4;
-            this.memNameLbl.Text = "Lawrence Fejokwu";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.itemFilterCb);
-            this.groupBox3.Controls.Add(this.itemSearchTxt);
-            this.groupBox3.Controls.Add(this.panel3);
-            this.groupBox3.Controls.Add(this.panel2);
-            this.groupBox3.Location = new System.Drawing.Point(12, 219);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1368, 536);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Select Items";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.itemDataGrid);
-            this.panel2.Location = new System.Drawing.Point(285, 56);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1077, 474);
-            this.panel2.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(15, 19);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(243, 511);
-            this.panel3.TabIndex = 1;
-            // 
-            // itemDataGrid
-            // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.itemDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.itemDataGrid.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.itemDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.itemDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.itemDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.itemDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.itemDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.itemDataGrid.DoubleBuffered = true;
-            this.itemDataGrid.EnableHeadersVisualStyles = false;
-            this.itemDataGrid.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.itemDataGrid.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.itemDataGrid.Location = new System.Drawing.Point(0, 0);
-            this.itemDataGrid.Name = "itemDataGrid";
-            this.itemDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.itemDataGrid.Size = new System.Drawing.Size(1077, 474);
-            this.itemDataGrid.TabIndex = 0;
+            this.userSearchTxt.BackColor = System.Drawing.Color.Silver;
+            this.userSearchTxt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userSearchTxt.BackgroundImage")));
+            this.userSearchTxt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.userSearchTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
+            this.userSearchTxt.Icon = ((System.Drawing.Image)(resources.GetObject("userSearchTxt.Icon")));
+            this.userSearchTxt.Location = new System.Drawing.Point(6, 24);
+            this.userSearchTxt.Name = "userSearchTxt";
+            this.userSearchTxt.Size = new System.Drawing.Size(108, 25);
+            this.userSearchTxt.TabIndex = 1;
+            this.userSearchTxt.text = "";
             // 
             // userDataGrid
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.userDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.userDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.userDataGrid.AutoGenerateColumns = false;
             this.userDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.userDataGrid.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.userDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.userDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.userDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.userDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.userDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.userDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.userIDDataGridViewTextBoxColumn,
@@ -274,26 +149,123 @@
             this.userDataGrid.TabIndex = 0;
             this.userDataGrid.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.userDataGrid_RowHeaderMouseDoubleClick);
             // 
-            // cartListBox
+            // userBindingSource
             // 
-            this.cartListBox.FormattingEnabled = true;
-            this.cartListBox.Location = new System.Drawing.Point(16, 32);
-            this.cartListBox.Name = "cartListBox";
-            this.cartListBox.Size = new System.Drawing.Size(314, 95);
-            this.cartListBox.TabIndex = 0;
+            this.userBindingSource.DataSource = typeof(LMSLibrary.Models.User);
             // 
-            // userSearchTxt
+            // panel1
             // 
-            this.userSearchTxt.BackColor = System.Drawing.Color.Silver;
-            this.userSearchTxt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userSearchTxt.BackgroundImage")));
-            this.userSearchTxt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userSearchTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
-            this.userSearchTxt.Icon = ((System.Drawing.Image)(resources.GetObject("userSearchTxt.Icon")));
-            this.userSearchTxt.Location = new System.Drawing.Point(6, 24);
-            this.userSearchTxt.Name = "userSearchTxt";
-            this.userSearchTxt.Size = new System.Drawing.Size(108, 25);
-            this.userSearchTxt.TabIndex = 1;
-            this.userSearchTxt.text = "";
+            this.panel1.Controls.Add(this.memEmailLbl);
+            this.panel1.Controls.Add(this.memPhoneNumberLbl);
+            this.panel1.Controls.Add(this.memNameLbl);
+            this.panel1.Controls.Add(this.memberLbl);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(258, 156);
+            this.panel1.TabIndex = 2;
+            // 
+            // memEmailLbl
+            // 
+            this.memEmailLbl.AutoSize = true;
+            this.memEmailLbl.Location = new System.Drawing.Point(123, 59);
+            this.memEmailLbl.Name = "memEmailLbl";
+            this.memEmailLbl.Size = new System.Drawing.Size(0, 13);
+            this.memEmailLbl.TabIndex = 4;
+            // 
+            // memPhoneNumberLbl
+            // 
+            this.memPhoneNumberLbl.AutoSize = true;
+            this.memPhoneNumberLbl.Location = new System.Drawing.Point(123, 84);
+            this.memPhoneNumberLbl.Name = "memPhoneNumberLbl";
+            this.memPhoneNumberLbl.Size = new System.Drawing.Size(0, 13);
+            this.memPhoneNumberLbl.TabIndex = 4;
+            // 
+            // memNameLbl
+            // 
+            this.memNameLbl.AutoSize = true;
+            this.memNameLbl.Location = new System.Drawing.Point(123, 36);
+            this.memNameLbl.Name = "memNameLbl";
+            this.memNameLbl.Size = new System.Drawing.Size(0, 13);
+            this.memNameLbl.TabIndex = 4;
+            // 
+            // memberLbl
+            // 
+            this.memberLbl.AutoSize = true;
+            this.memberLbl.Location = new System.Drawing.Point(123, 12);
+            this.memberLbl.Name = "memberLbl";
+            this.memberLbl.Size = new System.Drawing.Size(0, 13);
+            this.memberLbl.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(5, 81);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(105, 17);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Phone Number:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(5, 55);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 17);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Email: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(5, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 17);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Name:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(5, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 17);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "MemberID:";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.itemFilterCb);
+            this.groupBox3.Controls.Add(this.itemSearchTxt);
+            this.groupBox3.Controls.Add(this.panel3);
+            this.groupBox3.Controls.Add(this.panel2);
+            this.groupBox3.Location = new System.Drawing.Point(12, 219);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1368, 536);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Select Items";
+            // 
+            // itemFilterCb
+            // 
+            this.itemFilterCb.FormattingEnabled = true;
+            this.itemFilterCb.ItemHeight = 23;
+            this.itemFilterCb.Items.AddRange(new object[] {
+            "Books",
+            "Media"});
+            this.itemFilterCb.Location = new System.Drawing.Point(462, 23);
+            this.itemFilterCb.Name = "itemFilterCb";
+            this.itemFilterCb.Size = new System.Drawing.Size(121, 29);
+            this.itemFilterCb.TabIndex = 1;
+            this.itemFilterCb.UseSelectable = true;
+            this.itemFilterCb.SelectedIndexChanged += new System.EventHandler(this.itemFilterCb_SelectedIndexChanged);
             // 
             // itemSearchTxt
             // 
@@ -308,29 +280,57 @@
             this.itemSearchTxt.TabIndex = 1;
             this.itemSearchTxt.text = "";
             // 
-            // itemFilterCb
+            // panel3
             // 
-            this.itemFilterCb.FormattingEnabled = true;
-            this.itemFilterCb.ItemHeight = 23;
-            this.itemFilterCb.Items.AddRange(new object[] {
-            "Books",
-            "Media"});
-            this.itemFilterCb.Location = new System.Drawing.Point(462, 23);
-            this.itemFilterCb.Name = "itemFilterCb";
-            this.itemFilterCb.Size = new System.Drawing.Size(121, 29);
-            this.itemFilterCb.TabIndex = 1;
-            this.itemFilterCb.UseSelectable = true;
+            this.panel3.Location = new System.Drawing.Point(15, 19);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(243, 511);
+            this.panel3.TabIndex = 1;
             // 
-            // userBindingSource
+            // panel2
             // 
-            this.userBindingSource.DataSource = typeof(LMSLibrary.Models.User);
+            this.panel2.Controls.Add(this.itemDataGrid);
+            this.panel2.Location = new System.Drawing.Point(285, 56);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1077, 474);
+            this.panel2.TabIndex = 0;
+            // 
+            // itemDataGrid
+            // 
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.itemDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.itemDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.itemDataGrid.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.itemDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.itemDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.itemDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.itemDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.itemDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.itemDataGrid.DoubleBuffered = true;
+            this.itemDataGrid.EnableHeadersVisualStyles = false;
+            this.itemDataGrid.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
+            this.itemDataGrid.HeaderForeColor = System.Drawing.Color.White;
+            this.itemDataGrid.Location = new System.Drawing.Point(0, 0);
+            this.itemDataGrid.Name = "itemDataGrid";
+            this.itemDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.itemDataGrid.Size = new System.Drawing.Size(1077, 474);
+            this.itemDataGrid.TabIndex = 0;
             // 
             // userIDDataGridViewTextBoxColumn
             // 
+            this.userIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.userIDDataGridViewTextBoxColumn.DataPropertyName = "UserID";
             this.userIDDataGridViewTextBoxColumn.HeaderText = "UserID";
             this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
             this.userIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.userIDDataGridViewTextBoxColumn.Width = 68;
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
@@ -375,13 +375,13 @@
             this.Load += new System.EventHandler(this.IssueItem_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.userDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.itemDataGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userDataGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

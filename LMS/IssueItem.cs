@@ -15,6 +15,8 @@ namespace LMS
     public partial class IssueItem : Form
     {
         private int memberID;
+        private int ItemID;
+
         public IssueItem()
         {
             InitializeComponent();
@@ -23,18 +25,35 @@ namespace LMS
         private void IssueItem_Load(object sender, EventArgs e)
         {
             DisplayUser(userSearchTxt.text);
+            DisplayBooks(itemSearchTxt.text);
+            itemFilterCb.SelectedIndex = 0;
         }
 
         private void DisplayUser(string search)
         {
             SqlConnections access = new SqlConnections();
-            User user = new User();
+            //User user = new User();
             search = userSearchTxt.text;
             var data = access.GetUsers();
             userDataGrid.DataSource = data;
-            memberID = user.UserID;
-            
-            
+            //memberID = user.UserID;
+        }
+
+        private void DisplayBooks(string search)
+        {
+            SqlConnections access = new SqlConnections();
+            search = itemSearchTxt.text;
+            var data = access.GetBooks();
+            itemDataGrid.DataSource = data;
+
+        }
+
+        private void DisplayMedia(string search)
+        {
+            SqlConnections access = new SqlConnections();
+            search = itemSearchTxt.text;
+            var data = access.SearchMedia(search);
+            itemDataGrid.DataSource = data;
         }
 
         private void userDataGrid_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -47,6 +66,22 @@ namespace LMS
             memNameLbl.Text = firstName + " " + lastName;
             memEmailLbl.Text = userDataGrid.CurrentRow.Cells[3].Value.ToString();
             memPhoneNumberLbl.Text = userDataGrid.CurrentRow.Cells[4].Value.ToString();
+        }
+
+        private void itemFilterCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (itemFilterCb.SelectedIndex)
+            {
+                case 0:
+                    DisplayBooks(itemSearchTxt.text);
+                    break;
+                case 1:
+                    DisplayMedia(itemSearchTxt.text);
+                    break;
+                default:
+                    MessageBox.Show("Please select an item");
+                    break;
+            }
         }
     }
 }
