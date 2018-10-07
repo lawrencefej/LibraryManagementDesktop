@@ -7,9 +7,9 @@ namespace LMSLibrary.DataAccess
     {
         void AddItem(IItemModel item);
 
-        void DeleteItem(ItemModel item);
+        void DeleteItem(IItemModel item);
 
-        void EditItem(ItemModel item);
+        void EditItem(IItemModel item);
 
         List<ItemModel> GetItems(string search);
 

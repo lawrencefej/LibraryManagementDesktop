@@ -16,8 +16,9 @@ namespace LMS
     public partial class ViewItems : Form
     {
         IItemModel item = GlobalConfig.itemModel();
+        private int id;
 
-        //IItemSQLConnections = 
+
         public ViewItems()
         {
             InitializeComponent();
@@ -57,14 +58,18 @@ namespace LMS
             item.Quantity = Convert.ToInt32(quantityCb.Text);
             item.CategoryID = int.Parse(categoryCb.SelectedValue.ToString());
             item.ItemTypeID = int.Parse(categoryCb.SelectedValue.ToString());
-            GlobalConfig.Connection.AddItem(item);
-            DisplayItems(searchTxt.text);
-            this.Refresh();
+        }
+
+        private void EditItem()
+        {
+            item.ItemID = id;
+            AddItem();
         }
 
         private void BindItem()
         {
             //TODO wire up the edit button
+            id = Convert.ToInt32(itemDataGrid.CurrentRow.Cells[1].Value);
             titleTxt.Text = itemDataGrid.CurrentRow.Cells[2].Value.ToString();
             yearTxt.Text = itemDataGrid.CurrentRow.Cells[3].Value.ToString();
             authorTxt.Text = itemDataGrid.CurrentRow.Cells[4].Value.ToString();
@@ -113,10 +118,20 @@ namespace LMS
 
         private void editBtn_Click(object sender, EventArgs e)
         {
-            string message = categoryCb.Text;
-            message += Environment.NewLine;
-            message += categoryCb.SelectedValue;
-            MessageBox.Show(message);
+            try
+            {
+                // TODO add a dialog box
+                EditItem();
+                GlobalConfig.Connection.EditItem(item);
+                DisplayItems(searchTxt.text);
+                MessageBox.Show($"{item.Title} Updated Successful");
+                Clear();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -124,9 +139,10 @@ namespace LMS
             try
             {
                 AddItem();
+                GlobalConfig.Connection.AddItem(item);
+                DisplayItems(searchTxt.text);
                 MessageBox.Show($"{item.Title} has been added");
                 Clear();
-                DisplayItems(searchTxt.text);
             }
             catch (Exception ex)
             {

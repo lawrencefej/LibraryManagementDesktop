@@ -91,7 +91,6 @@ namespace LMS
             media = access.EditMedia(media);
             DisplayData(searchTxt.text);
             this.Refresh();
-
         }
 
         private void DeleteMedia()

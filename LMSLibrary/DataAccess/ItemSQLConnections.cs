@@ -45,7 +45,7 @@ namespace LMSLibrary.DataAccess
             }
         }
 
-        public void EditItem(ItemModel item)
+        public void EditItem(IItemModel item)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnVal("LibraryDB")))
             {
@@ -55,20 +55,20 @@ namespace LMSLibrary.DataAccess
                 p.Add("@Author", item.Author);
                 p.Add("@Description", item.Description);
                 p.Add("@Year", item.Year);
-                p.Add("@CategoryID", item.CategoryName);
+                p.Add("@CategoryID", item.CategoryID);
                 p.Add("@Quantity", item.Quantity);
                 p.Add("@Location", item.Location);
                 p.Add("@ISBN", item.ISBN);
-                p.Add("@ItemTypeID", item.ItemTypeName);
+                p.Add("@ItemTypeID", item.ItemTypeID);
                 //p.Add("@ItemID", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
 
                 connection.Execute("spEditItem", p, commandType: CommandType.StoredProcedure);
 
-                item.ItemID = p.Get<int>("@itemID");
+                //item.ItemID = p.Get<int>("@itemID");
             }
         }
 
-        public void DeleteItem(ItemModel item)
+        public void DeleteItem(IItemModel item)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnVal("LibraryDB")))
             {
