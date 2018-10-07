@@ -25,7 +25,7 @@ namespace LMS
         {
             // Todo Add registration validation.    
             SqlConnections access = new SqlConnections();
-            User p = new User();
+            UserModel p = new UserModel();
 
             p.FirstName = firstNametxt.Text;
             p.LastName = lastNametxt.Text;
@@ -111,6 +111,11 @@ namespace LMS
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void loginlink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // TODO wire up and make sure you use app.Exit on the closing event
         }
     }
 }

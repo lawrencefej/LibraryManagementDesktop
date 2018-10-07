@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace LMSLibrary.Models
 {
-    public class Checkout
+    public class CheckoutModel
     {
+        /// <summary>
+        /// Represents the id of the item that is checked out.
+        /// </summary>
+        public int ItemID { get; set; }
         /// <summary>
         /// Represents The list of books in the cart.
         /// </summary>
@@ -15,7 +19,7 @@ namespace LMSLibrary.Models
         /// <summary>
         /// Represents the list of media in the cart.
         /// </summary>
-        public List<Media> Medias { get; set; } = new List<Media>();
+        public List<MediaModel> Medias { get; set; } = new List<MediaModel>();
         /// <summary>
         /// Represents the checkout date of the session.
         /// </summary>

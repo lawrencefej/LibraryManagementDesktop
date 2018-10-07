@@ -90,6 +90,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewItems.Designer.cs">
+      <DependentUpon>ViewItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewMedia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewItems.resx">
+      <DependentUpon>ViewItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewMedia.resx">
       <DependentUpon>ViewMedia.cs</DependentUpon>
@@ -170,8 +179,7 @@
       <DependentUpon>LibraryDBDataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\LMSLibrary.Models.Media.datasource" />
-    <None Include="Properties\DataSources\LMSLibrary.Models.User.datasource" />
+    <None Include="Properties\DataSources\LMSLibrary.Models.IItemModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -188,5 +196,6 @@
   <ItemGroup>
     <None Include="Images\profilepicture.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

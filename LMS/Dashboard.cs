@@ -101,10 +101,11 @@ namespace LMS
         private void booksBtn_Click(object sender, EventArgs e)
         {
             displayPanel.Controls.Clear();
-            ViewBook form = ViewBook.GetInstance();
-            form.TopLevel = false;
-            displayPanel.Controls.Add(form);
-            form.Show();
+            ViewItems viewItems = new ViewItems();
+            //ViewBook form = ViewBook.GetInstance();
+            viewItems.TopLevel = false;
+            displayPanel.Controls.Add(viewItems);
+            viewItems.Show();
             MinimizePanel();
         }
 

@@ -17,11 +17,11 @@ namespace LMSLibrary.DataAccess
         /// <param name="emailAddress"></param>
         /// <param name="password"></param>
         /// <returns> Returns a list that contains the email and password. </returns>
-        public List<User> Login2(string emailAddress, string password)
+        public List<UserModel> Login2(string emailAddress, string password)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
             {
-                var output = connection.Query<User>("spUserLogin2 @EmailAddress, @Password", new { EmailAddress = emailAddress, Password = password }).ToList();
+                var output = connection.Query<UserModel>("spUserLogin2 @EmailAddress, @Password", new { EmailAddress = emailAddress, Password = password }).ToList();
                 return output;
             }
         }
@@ -30,7 +30,7 @@ namespace LMSLibrary.DataAccess
         /// </summary>
         /// <param name="user"></param>
         /// <returns>returns a list of type User</returns>
-        public User UserRegistration(User user)
+        public UserModel UserRegistration(UserModel user)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
             {
@@ -98,37 +98,37 @@ namespace LMSLibrary.DataAccess
             }
         }
 
-        public List<User> SearchUsers(string search)
+        public List<UserModel> SearchUsers(string search)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
             {
-                var output = connection.Query<User>("spUsersViewSearch @Search", new { Search = search }).ToList();
+                var output = connection.Query<UserModel>("spUsersViewSearch @Search", new { Search = search }).ToList();
 
                 return output;
             }
         }
 
-        public List<Media> SearchMedia(string search)
+        public List<MediaModel> SearchMedia(string search)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
             {
-                var output = connection.Query<Media>("spMediaViewSearch @Search", new { Search = search }).ToList();
+                var output = connection.Query<MediaModel>("spMediaViewSearch @Search", new { Search = search }).ToList();
 
                 return output;
             }
         }
 
-        public List<User> GetUsers()
+        public List<UserModel> GetUsers()
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
             {
-                var output = connection.Query<User>("spGetUsers").ToList();
+                var output = connection.Query<UserModel>("spGetUsers").ToList();
 
                 return output;
             }
         }
 
-        public Media AddMedia(Media media)
+        public MediaModel AddMedia(MediaModel media)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
             {
@@ -149,7 +149,7 @@ namespace LMSLibrary.DataAccess
             }
         }
 
-        public Media EditMedia(Media media)
+        public MediaModel EditMedia(MediaModel media)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
             {
@@ -170,7 +170,7 @@ namespace LMSLibrary.DataAccess
             }
         }
 
-        public Media DeleteMedia(Media media)
+        public MediaModel DeleteMedia(MediaModel media)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
             {
@@ -183,6 +183,32 @@ namespace LMSLibrary.DataAccess
                 //media.MediaID = p.Get<int>("@BookID");
 
                 return media;
+            }
+        }
+
+        public CheckoutModel Checkout(CheckoutModel checkout, UserModel user)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
+            {
+                UserModel userID = new UserModel();
+                var p = new DynamicParameters();
+                //p.Add("@Title", media.Title);
+                //p.Add("@Director", media.Director);
+                //p.Add("@Description", media.Description);
+                //p.Add("@Year", media.Year);
+                //p.Add("@Quantity", media.Quantity);
+                //p.Add("@Location", media.Location);
+                //p.Add("@BookID", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                //connection.Execute("spAddMedia", p, commandType: CommandType.StoredProcedure);
+
+                //media.MediaID = p.Get<int>("@BookID");
+
+                p.Add("@UserID", user.UserID);
+                p.Add("@ItemID", checkout.ItemID);
+
+                connection.Execute("spIssueItem", p, commandType: CommandType.StoredProcedure);
+                return checkout;
             }
         }
     }

@@ -51,7 +51,7 @@ namespace LMS
         private void AddMedia()
         {
             // TODO make location databound
-            Media media = new Media();
+            MediaModel media = new MediaModel();
             SqlConnections access = new SqlConnections();
             media.Title = titleTxt.Text;
             media.Director = directorTxt.Text;
@@ -74,13 +74,12 @@ namespace LMS
             editBtn.Visible = false;
             resetBtn.Visible = false;
             deleteBtn.Visible = false;
-
         }
 
         private void EditMedia()
         {
             // TODO make location databound
-            Media media = new Media();
+            MediaModel media = new MediaModel();
             SqlConnections access = new SqlConnections();
             media.MediaID = id;
             media.Title = titleTxt.Text;
@@ -98,7 +97,7 @@ namespace LMS
         private void DeleteMedia()
         {
             // TODO make location databound
-            Media media = new Media();
+            MediaModel media = new MediaModel();
             SqlConnections access = new SqlConnections();
             media.MediaID = id;
             media = access.DeleteMedia(media);
@@ -134,7 +133,7 @@ namespace LMS
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            Media media = new Media();
+            MediaModel media = new MediaModel();
 
             try
             {

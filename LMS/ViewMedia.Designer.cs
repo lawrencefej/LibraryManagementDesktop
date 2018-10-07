@@ -527,11 +527,11 @@
             // 
             // mediaBindingSource1
             // 
-            this.mediaBindingSource1.DataSource = typeof(LMSLibrary.Models.Media);
+            this.mediaBindingSource1.DataSource = typeof(LMSLibrary.Models.MediaModel);
             // 
             // mediaBindingSource
             // 
-            this.mediaBindingSource.DataSource = typeof(LMSLibrary.Models.Media);
+            this.mediaBindingSource.DataSource = typeof(LMSLibrary.Models.MediaModel);
             // 
             // ViewMedia
             // 

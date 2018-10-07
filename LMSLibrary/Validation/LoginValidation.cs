@@ -12,7 +12,7 @@ namespace LMSLibrary.Validation
     {
         SqlConnections access = new SqlConnections();
 
-        public List<User> InputValidation(string emailAddress, string password)
+        public List<UserModel> InputValidation(string emailAddress, string password)
         {
             //SqlConnections access = new SqlConnections();
             var login = access.Login2(emailAddress, password);
@@ -21,7 +21,7 @@ namespace LMSLibrary.Validation
             
         }
 
-        public void Validation2(List<User> users)
+        public void Validation2(List<UserModel> users)
         {
             if (users.Count != 1)
             {
@@ -29,7 +29,7 @@ namespace LMSLibrary.Validation
             }
         }
 
-        public bool GetRole(List<User> user)
+        public bool GetRole(List<UserModel> user)
         {
             bool role = false;
                      

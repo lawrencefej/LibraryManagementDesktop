@@ -65,5 +65,10 @@ namespace LMS
             //this.Close();
             Application.Exit();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // TODO wire up and make sure you use app.Exit on the closing event
+        }
     }
 }

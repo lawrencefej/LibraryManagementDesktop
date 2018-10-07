@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LMSLibrary.Models
 {
-    public class User
+    public class UserModel : IUserModel
     {
         /// <summary>
         /// Represents the id of one user.
