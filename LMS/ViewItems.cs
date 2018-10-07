@@ -27,7 +27,6 @@ namespace LMS
         {
             search = searchTxt.text;
             var data = GlobalConfig.Connection.GetItems(search);
-            
             itemDataGrid.DataSource = data;
             //dataGrid.Columns[9].Visible = false;
             yearTxt.Text = DateTime.Now.Year.ToString();
@@ -38,11 +37,9 @@ namespace LMS
         {
             var cb1 = GlobalConfig.Connection.GetCategory();
             var cb2 = GlobalConfig.Connection.GetItemType();
-            
             categoryCb.DisplayMember = "CategoryName";
             categoryCb.ValueMember = "CategoryID";
             categoryCb.DataSource = cb1;
-            
             itemTypeCb.DisplayMember = "ItemTypeName";
             itemTypeCb.ValueMember = "ItemTypeID";
             itemTypeCb.DataSource = cb2;
@@ -58,13 +55,8 @@ namespace LMS
             item.Location = locationCb.Text;
             item.ISBN = isbnTxt.Text;
             item.Quantity = Convert.ToInt32(quantityCb.Text);
-            //item.CategoryID = Convert.ToInt32( categoryCb.Items[categoryCb.SelectedIndex + 1].ToString());
-            //item.ItemTypeID = Convert.ToInt32( itemTypeCb.Items[itemTypeCb.SelectedIndex + 1].ToString());
-            //item.CategoryID = CbToInt(categoryCb.Text);
             item.CategoryID = int.Parse(categoryCb.SelectedValue.ToString());
-            item.ItemTypeID = Int32.Parse(categoryCb.SelectedValue.ToString());
-
-            //item = 
+            item.ItemTypeID = int.Parse(categoryCb.SelectedValue.ToString());
             GlobalConfig.Connection.AddItem(item);
             DisplayItems(searchTxt.text);
             this.Refresh();
@@ -112,7 +104,6 @@ namespace LMS
         {
             this.itemDataGrid.Rows[e.RowIndex].Cells["No"].Value = (e.RowIndex + 1).ToString();
             this.itemDataGrid.Rows[e.RowIndex].Cells["Edit"].Value = "Edit";
-      
         }
 
         private void resetBtn_Click(object sender, EventArgs e)
@@ -156,19 +147,5 @@ namespace LMS
                 BindItem();
             }
         }
-
-        //private int CbToInt(string text)
-        //{
-        //    int num = 0;
-        //    if ((text == "book") || (text == "Computers & Techinology"))
-        //    {
-        //        num = 1;
-        //    }
-        //    else if ((text == "Media") || (text == "Science & Math"))
-        //    {
-        //        num = 2;
-        //    }
-        //    return num;
-        //}
     }
 }
