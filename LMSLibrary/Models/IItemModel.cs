@@ -16,5 +16,7 @@
         int Stock { get; set; }
         string Title { get; set; }
         string Year { get; set; }
+        string Cart { get; }
+        string Items { get; }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LMSLibrary.Models
 {
-    class MemberModel : IMemberModel
+    public class MemberModel : IMemberModel
     {
         /// <summary>
         /// Represents the id of this member.
@@ -56,5 +56,13 @@ namespace LMSLibrary.Models
         /// Represents the status of this user.
         /// </summary>
         public String StatusName { get; set; }
+
+        public string FullName
+        {
+            get
+            {
+                return $"{FirstName} {LastName}";
+            }
+        }
     }
 }

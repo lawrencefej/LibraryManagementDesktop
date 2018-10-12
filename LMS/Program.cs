@@ -20,7 +20,7 @@ namespace LMS
 
             // Initialiaze the database connection
             GlobalConfig.InitialiazeConnections(DatabaseType.SqlServer);
-            //Application.Run(new Registration());
+            //Application.Run(new Registration()); 
             //Application.Run(new Login());
             Application.Run(new Dashboard());
             //Application.Run(new IssueItem());

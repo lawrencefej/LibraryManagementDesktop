@@ -16,5 +16,11 @@ namespace LMSLibrary.DataAccess
         List<ItemModel> GetItemType();
 
         List<ItemModel> GetCategory();
+
+        List<MemberModel> GetMembers(string search);
+
+        void IssueItem(CheckoutModel checkoutModel, IMemberModel memberModel);
+
+        List<ItemModel> GetItem();
     }
 }

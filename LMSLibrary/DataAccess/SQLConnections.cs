@@ -205,7 +205,7 @@ namespace LMSLibrary.DataAccess
                 //media.MediaID = p.Get<int>("@BookID");
 
                 p.Add("@UserID", user.UserID);
-                p.Add("@ItemID", checkout.ItemID);
+                //p.Add("@ItemID", checkout.ItemID);
 
                 connection.Execute("spIssueItem", p, commandType: CommandType.StoredProcedure);
                 return checkout;

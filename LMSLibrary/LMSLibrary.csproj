@@ -51,6 +51,8 @@
     <Compile Include="Enums.cs" />
     <Compile Include="GlobalConfig.cs" />
     <Compile Include="Models\CheckoutDetailsModel.cs" />
+    <Compile Include="Models\ICheckoutDetailsModel.cs" />
+    <Compile Include="Models\ICheckoutModel.cs" />
     <Compile Include="Models\IItemModel.cs" />
     <Compile Include="Models\IMemberModel.cs" />
     <Compile Include="Models\ItemModel.cs" />

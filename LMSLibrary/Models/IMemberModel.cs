@@ -14,5 +14,6 @@
         string State { get; set; }
         string StatusName { get; set; }
         string Zipcode { get; set; }
+        string FullName { get; }
     }
 }

@@ -59,6 +59,22 @@ namespace LMSLibrary.Models
         public int CategoryID { get; set; }
         //public int CategoryID { set; }
         public int ItemTypeID { get; set; }
-        //public int ItemTypeID { set; }
+
+        public string Cart
+        {
+            get
+            {
+                return $"{Title}     {Year}";
+            }
+        }
+
+        public string Items
+        {
+            get
+            {
+                return $"{Title}     {Year}    {Author}";
+            }
+        }
+
     }
 }

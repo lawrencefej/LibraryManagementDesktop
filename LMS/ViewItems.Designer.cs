@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewItems));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.inpuPanel = new System.Windows.Forms.Panel();
             this.deleteBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.addBtn = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -59,9 +59,6 @@
             this.dataGridPanel = new System.Windows.Forms.Panel();
             this.itemDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemTypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.itemIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +68,9 @@
             this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemTypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.itemBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.itemBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -278,6 +278,7 @@
             // 
             // itemTypeCb
             // 
+            this.itemTypeCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.itemTypeCb.FormattingEnabled = true;
             this.itemTypeCb.Location = new System.Drawing.Point(918, 116);
             this.itemTypeCb.Name = "itemTypeCb";
@@ -286,6 +287,7 @@
             // 
             // locationCb
             // 
+            this.locationCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.locationCb.FormattingEnabled = true;
             this.locationCb.Items.AddRange(new object[] {
             "1A",
@@ -304,9 +306,11 @@
             // 
             // quantityCb
             // 
+            this.quantityCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.quantityCb.FormattingEnabled = true;
             this.quantityCb.Items.AddRange(new object[] {
             "1",
+            "10",
             "2",
             "3",
             "4",
@@ -314,8 +318,7 @@
             "6",
             "7",
             "8",
-            "9",
-            "10"});
+            "9"});
             this.quantityCb.Location = new System.Drawing.Point(916, 57);
             this.quantityCb.Name = "quantityCb";
             this.quantityCb.Size = new System.Drawing.Size(40, 21);
@@ -323,6 +326,7 @@
             // 
             // categoryCb
             // 
+            this.categoryCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.categoryCb.FormattingEnabled = true;
             this.categoryCb.Location = new System.Drawing.Point(916, 25);
             this.categoryCb.Name = "categoryCb";
@@ -466,21 +470,21 @@
             // 
             // itemDataGrid
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.itemDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.itemDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.itemDataGrid.AutoGenerateColumns = false;
             this.itemDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.itemDataGrid.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.itemDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.itemDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.itemDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.itemDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.itemDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.itemDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.No,
@@ -519,32 +523,6 @@
             this.No.Name = "No";
             this.No.ReadOnly = true;
             this.No.Width = 21;
-            // 
-            // ItemTypeName
-            // 
-            this.ItemTypeName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ItemTypeName.DataPropertyName = "ItemTypeName";
-            this.ItemTypeName.HeaderText = "ItemName";
-            this.ItemTypeName.Name = "ItemTypeName";
-            this.ItemTypeName.ReadOnly = true;
-            this.ItemTypeName.Width = 88;
-            // 
-            // CategoryName
-            // 
-            this.CategoryName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.CategoryName.DataPropertyName = "CategoryName";
-            this.CategoryName.HeaderText = "Category";
-            this.CategoryName.Name = "CategoryName";
-            this.CategoryName.ReadOnly = true;
-            this.CategoryName.Width = 78;
-            // 
-            // Edit
-            // 
-            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Width = 32;
             // 
             // itemIDDataGridViewTextBoxColumn
             // 
@@ -622,6 +600,32 @@
             this.stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
             this.stockDataGridViewTextBoxColumn.ReadOnly = true;
             this.stockDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // ItemTypeName
+            // 
+            this.ItemTypeName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ItemTypeName.DataPropertyName = "ItemTypeName";
+            this.ItemTypeName.HeaderText = "ItemName";
+            this.ItemTypeName.Name = "ItemTypeName";
+            this.ItemTypeName.ReadOnly = true;
+            this.ItemTypeName.Width = 88;
+            // 
+            // CategoryName
+            // 
+            this.CategoryName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.CategoryName.DataPropertyName = "CategoryName";
+            this.CategoryName.HeaderText = "Category";
+            this.CategoryName.Name = "CategoryName";
+            this.CategoryName.ReadOnly = true;
+            this.CategoryName.Width = 78;
+            // 
+            // Edit
+            // 
+            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Width = 32;
             // 
             // itemBindingSource2
             // 

@@ -16,6 +16,8 @@ namespace LMS
     public partial class ViewItems : Form
     {
         IItemModel item = GlobalConfig.itemModel();
+        //private IItemModel _item;
+
         private int id;
 
 
@@ -23,6 +25,11 @@ namespace LMS
         {
             InitializeComponent();
         }
+
+        //public ViewItems(IItemModel item)
+        //{
+        //    _item = item;
+        //}
 
         private void DisplayItems(string search)
         {
@@ -49,6 +56,7 @@ namespace LMS
         private void AddItem()
         {
             // TODO make location databound
+            
             item.Title = titleTxt.Text;
             item.Author = authorTxt.Text;
             item.Description = descriptionTxt.Text;
@@ -56,6 +64,7 @@ namespace LMS
             item.Location = locationCb.Text;
             item.ISBN = isbnTxt.Text;
             item.Quantity = Convert.ToInt32(quantityCb.Text);
+            item.Stock = Convert.ToInt32(quantityCb.Text);
             item.CategoryID = int.Parse(categoryCb.SelectedValue.ToString());
             item.ItemTypeID = int.Parse(categoryCb.SelectedValue.ToString());
         }
