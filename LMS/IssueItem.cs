@@ -199,6 +199,8 @@ namespace LMS
 
         private void itemSearchTxt_OnTextChange(object sender, EventArgs e)
         {
+            itemListBox.DataSource = items.Where(x => x.Title.ToLower().Contains(itemSearchTxt.text)).ToList();
+            
             //switch (itemFilterCb.SelectedIndex)
             //{
             //    case 0:
