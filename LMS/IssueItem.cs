@@ -17,37 +17,39 @@ namespace LMS
     {
         private List<ItemModel> items = GlobalConfig.Connection.GetItem();
         private List<ItemModel> cartItems = new List<ItemModel>();
-        private int ID;
-
-        
-
-        //IItemModel items = GlobalConfig.Connection.GetItems();
-        ItemModel itemModel = new ItemModel();
+        //private int ID;
+        //ItemModel itemModel = new ItemModel();
 
         IMemberModel member = GlobalConfig.Member();
-        // private List<IItemModel> items = GlobalConfig.Connection.GetItems(hello);
-        //private List<ItemModel> CartItems = new List<ItemModel>();
-        
-
-        //private List<IItemModel> CartItems = new List<IItemModel>();
-        //private int memberID;
-        //private int ItemID;
-        //private string cartTitle;
 
         public IssueItem()
         {
             InitializeComponent();
 
-            //CreateSampleData();
+            WireupItemListBox();
 
-            WireupBoxes();
+            WireupCart();
+        }
+
+        private void WireupItemListBox()
+        {
+            itemListBox.DataSource = items;
+            itemListBox.DisplayMember = "Items";
+        }
+
+        private void WireupCart()
+        {
+            cartListBox.DataSource = null;
+
+            cartListBox.DataSource = cartItems;
+            cartListBox.DisplayMember = "Cart";
         }
 
         
 
         private void IssueItem_Load(object sender, EventArgs e)
         {
-            items = GlobalConfig.Connection.GetItems(itemSearchTxt.text);
+            //items = GlobalConfig.Connection.GetItems(itemSearchTxt.text);
             DisplayMember(userSearchTxt.text);
             //DisplayItems(itemSearchTxt.text);
             //itemFilterCb.SelectedIndex = 0;
@@ -55,57 +57,57 @@ namespace LMS
 
         private void WireupBoxes()
         {
-            itemListBox.DataSource = items;
-            itemListBox.DisplayMember = "Items";
+            ////itemListBox.DataSource = null;
+            //itemListBox.DataSource = items;
+            //itemListBox.DisplayMember = "Items";
+            ////itemListBox.SelectedItem = null;
 
-            cartListBox.DataSource = null;
+            //cartListBox.DataSource = null;
 
-            cartListBox.DataSource = cartItems;
-            cartListBox.DisplayMember = "Cart";
+            //cartListBox.DataSource = cartItems;
+            //cartListBox.DisplayMember = "Cart";
         }
-
-        //private void DisplayItems(string search)
-        //{
-        //    search = itemSearchTxt.text;
-        //    var data = GlobalConfig.Connection.GetItems(search);
-        //    itemListBox.DataSource = data;
-        //    itemListBox.DisplayMember = "FullName";
-        //}
 
         private void DisplayMember(string search)
         {
-            search = userSearchTxt.text;
-            var data = GlobalConfig.Connection.GetMembers(search);
-            userDataGrid.DataSource = data;
+            //search = userSearchTxt.text;
+            //var data = GlobalConfig.Connection.GetMembers(search);
+            //userDataGrid.DataSource = data;
         }
 
         private void AddToCart()
         {
-            
+            // Fix =1 duplicate error
             ItemModel i = (ItemModel)itemListBox.SelectedItem;
             titleoutputLbl.Text = i.Title;
-            if (cartListBox.Items.Contains(itemListBox.SelectedItem))
-            {
-                MessageBox.Show("Duplicare");
-            }
-            else
-            {
-                cartItems.Add(i);
-            }
-
-            WireupBoxes();
-            cartListBox.Refresh();
+                if (cartListBox.Items.Contains(itemListBox.SelectedItem))
+                {
+                    MessageBox.Show($" {i.Title} has already been added to the cart");
+                }
+                else
+                {
+                    cartItems.Add(i);
+                    WireupCart();
+                } 
+           // cartListBox.Refresh();
         }
-
-        
 
         private void CreateSampleData()
         {
-            //CartItems.Add(new ItemModel { Title = "TestTiltle", Year = "2018"});
-            //CartItems.Add(new ItemModel { Title = "TestTiltle2", Year = "2019" });
+            //cartItems.Add(new ItemModel { Title = "TestTiltle", Year = "2018" });
+            //cartItems.Add(new ItemModel { Title = "TestTiltle2", Year = "2019" });
             //itemModel.Title = "Crackin the coding interview";
             //itemModel.Year = "2019";
-            //CartItems.Add(itemModel);
+            //cartItems.Add(itemModel);
+        }
+
+        private void CheckoutItems()
+        {
+            CheckoutModel c = new CheckoutModel();
+            c.Items = cartItems;
+            c.CheckoutDate = DateTime.Now.ToString();
+            member.MemberID = member.MemberID;
+            GlobalConfig.Connection.IssueItem(c, member);
         }
 
         //private void WireUpCart()
@@ -119,26 +121,8 @@ namespace LMS
 
         private void addToCartBtn_Click(object sender, EventArgs e)
         {
-            
             AddToCart();
-
         }
-
-        //private void DisplayBooks(string search)
-        //{
-        //    SqlConnections access = new SqlConnections();
-        //    search = itemSearchTxt.text;
-        //    var data = access.SearchBooks(search);
-        //    itemDataGrid.DataSource = data;
-        //}
-
-        //private void DisplayMedia(string search)
-        //{
-        //    SqlConnections access = new SqlConnections();
-        //    search = itemSearchTxt.text;
-        //    var data = access.SearchMedia(search);
-        //    itemDataGrid.DataSource = data;
-        //}
 
         private void userDataGrid_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -175,21 +159,32 @@ namespace LMS
 
         private void itemFilterCb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //switch (itemFilterCb.SelectedIndex)
-            //{
-            //    case 0:
-            //        DisplayBooks(itemSearchTxt.text);
-            //        directorLbl.Text = "Author";
-            //        break;
-            //    case 1:
-            //        DisplayMedia(itemSearchTxt.text);
-            //        directorLbl.Text = "Director";
-            //        isbnOutputLbl.Text = "N/A";
-            //        break;
-            //    default:
-            //        MessageBox.Show("Please select an item");
-            //        break;
-            //}
+            switch (itemFilterCb.SelectedIndex)
+            {
+                case 0:
+                    
+                    WireupItemListBox();
+                    directorLbl.Text = "Author";
+                    break;
+                case 1:
+                    //var items = items.Where(x => x.ItemTypeID == 1).ToList();
+                    itemListBox.DataSource = items.Where(x => x.ItemTypeID == 1).ToList();
+                    //WireupItemListBox();
+                    //DisplayBooks(itemSearchTxt.text);
+                    directorLbl.Text = "Author";
+                    break;
+                case 2:
+                    itemListBox.DataSource = items.Where(x => x.ItemTypeID == 2).ToList();
+                    //items = items.Where(x => x.ItemTypeID == 2).ToList();
+                    //WireupItemListBox();
+                    //DisplayMedia(itemSearchTxt.text);
+                    directorLbl.Text = "Director";
+                    isbnOutputLbl.Text = "N/A";
+                    break;
+                default:
+                    MessageBox.Show("Please select an item");
+                    break;
+            }
         }
 
         private void itemDataGrid_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -215,15 +210,15 @@ namespace LMS
             //}
         }
 
-        
-
-        private void bunifuFlatButton3_Click(object sender, EventArgs e)
+        private void RemoveSelectedItem()
         {
-            ItemModel i = (ItemModel)itemListBox.SelectedItem;
-            
-            cartItems.Remove(i);
-            WireupBoxes();
-            //cartItems.Items.Remove(cartListBox.SelectedItem);
+            ItemModel i = (ItemModel)cartListBox.SelectedItem;
+
+            if (i != null)
+            {
+                cartItems.Remove(i);
+                WireupCart();
+            }
         }
 
         private void Issuebook()
@@ -250,18 +245,30 @@ namespace LMS
 
         private void CheckoutBtn_Click(object sender, EventArgs e)
         {
+            //cartListBox.cou
+            try
+            {
+                CheckoutItems();
+                MessageBox.Show($"All {cartListBox.Items.Count} items have been checked out successfully");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
             //ItemModel i = (ItemModel)itemListBox.SelectedItem;
             CheckoutModel c = new CheckoutModel();
-
-
             //c.itemModel.ItemID = i.ItemID;
-
-
             c.Items = cartItems;
             c.CheckoutDate = DateTime.Now.ToString();
             member.MemberID = member.MemberID;
 
             GlobalConfig.Connection.IssueItem(c, member);
+        }
+
+        private void removeBtn_Click(object sender, EventArgs e)
+        {
+            RemoveSelectedItem();
         }
     }
 }

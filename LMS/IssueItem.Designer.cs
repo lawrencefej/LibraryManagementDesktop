@@ -144,7 +144,7 @@
             this.removeBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.removeBtn.Textcolor = System.Drawing.Color.White;
             this.removeBtn.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.removeBtn.Click += new System.EventHandler(this.bunifuFlatButton3_Click);
+            this.removeBtn.Click += new System.EventHandler(this.removeBtn_Click);
             // 
             // CheckoutBtn
             // 
@@ -429,6 +429,7 @@
             this.itemFilterCb.FormattingEnabled = true;
             this.itemFilterCb.ItemHeight = 23;
             this.itemFilterCb.Items.AddRange(new object[] {
+            "All",
             "Books",
             "Media"});
             this.itemFilterCb.Location = new System.Drawing.Point(462, 23);
