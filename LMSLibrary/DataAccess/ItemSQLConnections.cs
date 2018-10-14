@@ -144,7 +144,8 @@ namespace LMSLibrary.DataAccess
 
                 p.Add("@MemberID", memberModel.MemberID);
                 p.Add("@CheckoutDate", checkoutModel.CheckoutDate);
-                
+                p.Add("@ExpReturnDate", checkoutModel.ExpReturnDate);
+
                 p.Add("@CheckoutID", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
 
                 connection.Execute("spInsertCheckout", p, commandType: CommandType.StoredProcedure);
@@ -159,6 +160,16 @@ namespace LMSLibrary.DataAccess
 
                     connection.Execute("spInsertCheckoutDetails", i, commandType: CommandType.StoredProcedure);
                 }
+            }
+        }
+
+        public List<MemberModel> GetMembers()
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
+            {
+                var output = connection.Query<MemberModel>("spGetMembers2").ToList();
+
+                return output;
             }
         }
     }

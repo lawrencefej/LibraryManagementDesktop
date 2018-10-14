@@ -16,7 +16,9 @@ namespace LMS
     public partial class IssueItem : Form
     {
         private List<ItemModel> items = GlobalConfig.Connection.GetItem();
+        private List<MemberModel> members = GlobalConfig.Connection.GetMembers();
         private List<ItemModel> cartItems = new List<ItemModel>();
+        private bool memberSelected = false;
         //private int ID;
         //ItemModel itemModel = new ItemModel();
 
@@ -25,6 +27,8 @@ namespace LMS
         public IssueItem()
         {
             InitializeComponent();
+
+            WireupMembers();
 
             WireupItemListBox();
 
@@ -45,35 +49,38 @@ namespace LMS
             cartListBox.DisplayMember = "Cart";
         }
 
-        
+        private void WireupMembers()
+        {
+            userDataGrid.DataSource = members;
+        }
 
         private void IssueItem_Load(object sender, EventArgs e)
         {
-            //items = GlobalConfig.Connection.GetItems(itemSearchTxt.text);
-            DisplayMember(userSearchTxt.text);
-            //DisplayItems(itemSearchTxt.text);
-            //itemFilterCb.SelectedIndex = 0;
+            dateTimePicker1.MinDate = DateTime.Now;
+            dateTimePicker1.MaxDate = DateTime.Now.AddDays(60);
         }
 
-        private void WireupBoxes()
+        private void BindMember()
         {
-            ////itemListBox.DataSource = null;
-            //itemListBox.DataSource = items;
-            //itemListBox.DisplayMember = "Items";
-            ////itemListBox.SelectedItem = null;
-
-            //cartListBox.DataSource = null;
-
-            //cartListBox.DataSource = cartItems;
-            //cartListBox.DisplayMember = "Cart";
+            //MemberModel i = (MemberModel)userDataGrid.CurrentRow.Cells[0].
+            //members. .MemberID = Convert.ToInt32(userDataGrid.CurrentRow.Cells[0].Value);
+            //memberLbl.Text = userDataGrid.CurrentRow.Cells[0].Value.ToString();
+            //var firstName = userDataGrid.CurrentRow.Cells[1].Value.ToString();
+            //var lastName = userDataGrid.CurrentRow.Cells[2].Value.ToString();
+            ////member.FullName =  firstName + " " + lastName;
+            //// TODO try to use string concatenation below
+            ////memNameLbl.Text = firstName + " " + lastName;
+            //memberLbl.Text = member.FullName;
+            //memEmailLbl.Text = userDataGrid.CurrentRow.Cells[3].Value.ToString();
+            //memPhoneNumberLbl.Text = userDataGrid.CurrentRow.Cells[4].Value.ToString();
         }
 
-        private void DisplayMember(string search)
-        {
-            //search = userSearchTxt.text;
-            //var data = GlobalConfig.Connection.GetMembers(search);
-            //userDataGrid.DataSource = data;
-        }
+        //private void DisplayMember(string search)
+        //{
+        //    search = userSearchTxt.text;
+        //    var data = GlobalConfig.Connection.GetMembers(search);
+        //    userDataGrid.DataSource = data;
+        //}
 
         private void AddToCart()
         {
@@ -89,11 +96,11 @@ namespace LMS
                     cartItems.Add(i);
                     WireupCart();
                 } 
-           // cartListBox.Refresh();
         }
 
         private void CreateSampleData()
         {
+            //userDataGrid.sel
             //cartItems.Add(new ItemModel { Title = "TestTiltle", Year = "2018" });
             //cartItems.Add(new ItemModel { Title = "TestTiltle2", Year = "2019" });
             //itemModel.Title = "Crackin the coding interview";
@@ -104,9 +111,13 @@ namespace LMS
         private void CheckoutItems()
         {
             CheckoutModel c = new CheckoutModel();
+            c.ExpReturnDate = dateTimePicker1.Value.ToString();
             c.Items = cartItems;
+            var date = DateTime.Now;
             c.CheckoutDate = DateTime.Now.ToString();
             member.MemberID = member.MemberID;
+            //date.AddDays(Convert.ToDouble( ReturnDatePicker.Value));
+            //c.ExpReturnDate = date.ToString();
             GlobalConfig.Connection.IssueItem(c, member);
         }
 
@@ -194,22 +205,12 @@ namespace LMS
 
         private void userSearchTxt_OnTextChange(object sender, EventArgs e)
         {
-            DisplayMember(userSearchTxt.text);
+            //DisplayMember(userSearchTxt.text);
         }
 
         private void itemSearchTxt_OnTextChange(object sender, EventArgs e)
         {
             itemListBox.DataSource = items.Where(x => x.Title.ToLower().Contains(itemSearchTxt.text)).ToList();
-            
-            //switch (itemFilterCb.SelectedIndex)
-            //{
-            //    case 0:
-            //        DisplayBooks(itemSearchTxt.text);
-            //        break;
-            //    case 1:
-            //        DisplayMedia(itemSearchTxt.text);
-            //        break;
-            //}
         }
 
         private void RemoveSelectedItem()
@@ -242,7 +243,8 @@ namespace LMS
             amountOutputLbl.Text = i.Stock.ToString();
             itemidOutputLbl.Text = i.ItemID.ToString();
             isbnOutputLbl.Text = i.ISBN;
-            itemTypeLbl.Text = i.ItemTypeName;
+            itemTypeOutputLbl.Text = i.ItemTypeName;
+            // TODO fix the item time label
         }
 
         private void CheckoutBtn_Click(object sender, EventArgs e)
@@ -271,6 +273,11 @@ namespace LMS
         private void removeBtn_Click(object sender, EventArgs e)
         {
             RemoveSelectedItem();
+        }
+
+        private void memberSearchTxt_OnTextChange(object sender, EventArgs e)
+        {
+            userDataGrid.DataSource = members.Where(x => x.EmailAddress.ToLower().Contains(memberSearchTxt.text)).ToList();
         }
     }
 }

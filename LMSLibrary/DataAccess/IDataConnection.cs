@@ -22,5 +22,7 @@ namespace LMSLibrary.DataAccess
         void IssueItem(CheckoutModel checkoutModel, IMemberModel memberModel);
 
         List<ItemModel> GetItem();
+
+        List<MemberModel> GetMembers();
     }
 }

@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IssueItem));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.removeBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.CheckoutBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.cartListBox = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.userSearchTxt = new Bunifu.Framework.UI.BunifuTextbox();
+            this.memberSearchTxt = new Bunifu.Framework.UI.BunifuTextbox();
             this.userDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.memberIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,9 +61,9 @@
             this.itemFilterCb = new MetroFramework.Controls.MetroComboBox();
             this.itemSearchTxt = new Bunifu.Framework.UI.BunifuTextbox();
             this.selectedItemsPanel = new System.Windows.Forms.Panel();
-            this.itemTypeLbl = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.itemTypeOutputLbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.bunifuDatepicker1 = new Bunifu.Framework.UI.BunifuDatepicker();
             this.returnDateLbl = new System.Windows.Forms.Label();
             this.addToCartBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.amountOutputLbl = new System.Windows.Forms.Label();
@@ -84,12 +84,15 @@
             this.iMemberModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iMemberModelBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.iItemModelBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.metroLink1 = new MetroFramework.Controls.MetroLink();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberModelBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.selectedItemsPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iItemModelBindingSource)).BeginInit();
@@ -191,7 +194,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.userSearchTxt);
+            this.groupBox2.Controls.Add(this.memberSearchTxt);
             this.groupBox2.Controls.Add(this.userDataGrid);
             this.groupBox2.Location = new System.Drawing.Point(297, 12);
             this.groupBox2.Name = "groupBox2";
@@ -200,37 +203,37 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Select Member";
             // 
-            // userSearchTxt
+            // memberSearchTxt
             // 
-            this.userSearchTxt.BackColor = System.Drawing.Color.Silver;
-            this.userSearchTxt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userSearchTxt.BackgroundImage")));
-            this.userSearchTxt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userSearchTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
-            this.userSearchTxt.Icon = ((System.Drawing.Image)(resources.GetObject("userSearchTxt.Icon")));
-            this.userSearchTxt.Location = new System.Drawing.Point(6, 24);
-            this.userSearchTxt.Name = "userSearchTxt";
-            this.userSearchTxt.Size = new System.Drawing.Size(108, 25);
-            this.userSearchTxt.TabIndex = 1;
-            this.userSearchTxt.text = "";
-            this.userSearchTxt.OnTextChange += new System.EventHandler(this.userSearchTxt_OnTextChange);
+            this.memberSearchTxt.BackColor = System.Drawing.Color.Silver;
+            this.memberSearchTxt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("memberSearchTxt.BackgroundImage")));
+            this.memberSearchTxt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.memberSearchTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
+            this.memberSearchTxt.Icon = ((System.Drawing.Image)(resources.GetObject("memberSearchTxt.Icon")));
+            this.memberSearchTxt.Location = new System.Drawing.Point(6, 24);
+            this.memberSearchTxt.Name = "memberSearchTxt";
+            this.memberSearchTxt.Size = new System.Drawing.Size(108, 25);
+            this.memberSearchTxt.TabIndex = 1;
+            this.memberSearchTxt.text = "";
+            this.memberSearchTxt.OnTextChange += new System.EventHandler(this.memberSearchTxt_OnTextChange);
             // 
             // userDataGrid
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.userDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.userDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.userDataGrid.AutoGenerateColumns = false;
             this.userDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.userDataGrid.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.userDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.userDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.userDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.userDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.userDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.userDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.memberIDDataGridViewTextBoxColumn,
@@ -419,6 +422,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.listView1);
             this.panel3.Location = new System.Drawing.Point(984, 56);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(393, 474);
@@ -455,9 +459,9 @@
             // 
             // selectedItemsPanel
             // 
-            this.selectedItemsPanel.Controls.Add(this.itemTypeLbl);
+            this.selectedItemsPanel.Controls.Add(this.dateTimePicker1);
+            this.selectedItemsPanel.Controls.Add(this.itemTypeOutputLbl);
             this.selectedItemsPanel.Controls.Add(this.label3);
-            this.selectedItemsPanel.Controls.Add(this.bunifuDatepicker1);
             this.selectedItemsPanel.Controls.Add(this.returnDateLbl);
             this.selectedItemsPanel.Controls.Add(this.addToCartBtn);
             this.selectedItemsPanel.Controls.Add(this.amountOutputLbl);
@@ -477,15 +481,23 @@
             this.selectedItemsPanel.Size = new System.Drawing.Size(258, 511);
             this.selectedItemsPanel.TabIndex = 1;
             // 
-            // itemTypeLbl
+            // dateTimePicker1
             // 
-            this.itemTypeLbl.AutoSize = true;
-            this.itemTypeLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.itemTypeLbl.Location = new System.Drawing.Point(127, 203);
-            this.itemTypeLbl.Name = "itemTypeLbl";
-            this.itemTypeLbl.Size = new System.Drawing.Size(20, 17);
-            this.itemTypeLbl.TabIndex = 6;
-            this.itemTypeLbl.Text = "10";
+            this.dateTimePicker1.Location = new System.Drawing.Point(86, 260);
+            this.dateTimePicker1.MinDate = new System.DateTime(2018, 10, 13, 0, 0, 0, 0);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(157, 20);
+            this.dateTimePicker1.TabIndex = 8;
+            // 
+            // itemTypeOutputLbl
+            // 
+            this.itemTypeOutputLbl.AutoSize = true;
+            this.itemTypeOutputLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.itemTypeOutputLbl.Location = new System.Drawing.Point(127, 203);
+            this.itemTypeOutputLbl.Name = "itemTypeOutputLbl";
+            this.itemTypeOutputLbl.Size = new System.Drawing.Size(20, 17);
+            this.itemTypeOutputLbl.TabIndex = 6;
+            this.itemTypeOutputLbl.Text = "10";
             // 
             // label3
             // 
@@ -496,19 +508,6 @@
             this.label3.Size = new System.Drawing.Size(71, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Item Type:";
-            // 
-            // bunifuDatepicker1
-            // 
-            this.bunifuDatepicker1.BackColor = System.Drawing.Color.SeaGreen;
-            this.bunifuDatepicker1.BorderRadius = 0;
-            this.bunifuDatepicker1.ForeColor = System.Drawing.Color.White;
-            this.bunifuDatepicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.bunifuDatepicker1.FormatCustom = null;
-            this.bunifuDatepicker1.Location = new System.Drawing.Point(96, 260);
-            this.bunifuDatepicker1.Name = "bunifuDatepicker1";
-            this.bunifuDatepicker1.Size = new System.Drawing.Size(137, 17);
-            this.bunifuDatepicker1.TabIndex = 1;
-            this.bunifuDatepicker1.Value = new System.DateTime(2018, 9, 30, 16, 30, 9, 819);
             // 
             // returnDateLbl
             // 
@@ -703,11 +702,30 @@
             // 
             this.iItemModelBindingSource1.DataSource = typeof(LMSLibrary.Models.IItemModel);
             // 
+            // metroLink1
+            // 
+            this.metroLink1.Location = new System.Drawing.Point(376, 199);
+            this.metroLink1.Name = "metroLink1";
+            this.metroLink1.Size = new System.Drawing.Size(75, 23);
+            this.metroLink1.TabIndex = 4;
+            this.metroLink1.Text = "metroLink1";
+            this.metroLink1.UseSelectable = true;
+            // 
+            // listView1
+            // 
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.Location = new System.Drawing.Point(0, 0);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(393, 474);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // IssueItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1392, 780);
+            this.Controls.Add(this.metroLink1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
@@ -724,6 +742,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.selectedItemsPanel.ResumeLayout(false);
             this.selectedItemsPanel.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -754,7 +773,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ListBox cartListBox;
         private Bunifu.Framework.UI.BunifuCustomDataGrid userDataGrid;
-        private Bunifu.Framework.UI.BunifuTextbox userSearchTxt;
+        private Bunifu.Framework.UI.BunifuTextbox memberSearchTxt;
         private Bunifu.Framework.UI.BunifuTextbox itemSearchTxt;
         private MetroFramework.Controls.MetroComboBox itemFilterCb;
         private System.Windows.Forms.BindingSource userBindingSource;
@@ -773,7 +792,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton addToCartBtn;
         private Bunifu.Framework.UI.BunifuFlatButton removeBtn;
         private Bunifu.Framework.UI.BunifuFlatButton CheckoutBtn;
-        private Bunifu.Framework.UI.BunifuDatepicker bunifuDatepicker1;
         private System.Windows.Forms.Label returnDateLbl;
         private System.Windows.Forms.BindingSource iItemModelBindingSource;
         private System.Windows.Forms.BindingSource iMemberModelBindingSource;
@@ -788,7 +806,10 @@
         private System.Windows.Forms.BindingSource iItemModelBindingSource1;
         private System.Windows.Forms.ListBox itemListBox;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label itemTypeLbl;
+        private System.Windows.Forms.Label itemTypeOutputLbl;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private MetroFramework.Controls.MetroLink metroLink1;
+        private System.Windows.Forms.ListView listView1;
     }
 }
