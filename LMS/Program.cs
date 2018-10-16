@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LMSLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,27 +17,14 @@ namespace LMS
          {
              Application.EnableVisualStyles();
              Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Registration());
+
+            // Initialiaze the database connection
+            GlobalConfig.InitialiazeConnections(DatabaseType.SqlServer);
+            //Application.Run(new Registration()); 
             //Application.Run(new Login());
-             //Application.Run(new Dashboard());
-         } 
-
-        //[STAThread]
-        //static void Main()
-        //{
-        //    Application.EnableVisualStyles();
-        //    Application.SetCompatibleTextRenderingDefault(false);
-        //    var main = new Login();
-        //    main.FormClosed += new FormClosedEventHandler(FormClosed);
-        //    main.Show();
-        //    Application.Run();
-        //}
-
-        //static void FormClosed(object sender, FormClosedEventArgs e)
-        //{
-        //    ((Form)sender).FormClosed -= FormClosed;
-        //    if (Application.OpenForms.Count == 0) Application.ExitThread();
-        //    else Application.OpenForms[0].FormClosed += FormClosed;
-        //}
+            Application.Run(new Dashboard());
+            //Application.Run(new IssueItem());
+            //Application.Run(new ViewItems());
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LMSLibrary.Models
 {
-    public class User
+    public class UserModel : IUserModel
     {
         /// <summary>
         /// Represents the id of one user.
@@ -27,7 +27,6 @@ namespace LMSLibrary.Models
         /// <summary>
         /// Represents the password of this user.
         /// </summary>
-        /// 
         public string Password { get; set; }
         /// <summary>
         /// Represents phone number of this user.
@@ -54,9 +53,17 @@ namespace LMSLibrary.Models
         /// </summary>
         public string Zipcode { get; set; }
         /// <summary>
+        /// Represents the date registered of this user.
+        /// </summary>
+        public string DateRegistered { get; set; }
+        /// <summary>
         /// Represents the status of this user.
         /// </summary>
-        public int Status { get; set; }
+        public int StatusID { get; set; }
+        /// <summary>
+        /// Represents the role of this user.
+        /// </summary>
+        public int RoleID { get; set; }
 
     }
 }

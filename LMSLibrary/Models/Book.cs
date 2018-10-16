@@ -8,12 +8,18 @@ namespace LMSLibrary.Models
 {
     public class Book
     {
-        public int BookID { get; }
+        /// <summary>
+        /// Reperesents the ID of one book.
+        /// </summary>
+        public int BookID { get; set; }
         /// <summary>
         /// Reperesents the title of one book.
         /// </summary>
-        
         public string Title { get; set; }
+        /// <summary>
+        /// Reperesents the Author of one book.
+        /// </summary>
+        public string Author { get; set; }
         /// <summary>
         /// Reperesents the year this book was published.
         /// </summary>
@@ -25,7 +31,7 @@ namespace LMSLibrary.Models
         /// <summary>
         /// Represents the description of this book.
         /// </summary>
-        public string Description { get; set; }
+        //public string Description { get; set; }
         /// <summary>
         /// Represents the date this book was added.
         /// </summary>
@@ -33,7 +39,7 @@ namespace LMSLibrary.Models
         /// <summary>
         /// Represents the location of this book.
         /// </summary>
-        public string Location { get; set; }
+        //public string Location { get; set; }
         /// <summary>
         /// Represents the quantity of this book.
         /// </summary>

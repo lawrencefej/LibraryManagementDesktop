@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace LMSLibrary.Models
 {
-    public class Media
+    public class MediaModel
     {
         /// <summary>
         /// Represents the id of this media.
         /// </summary>
-        public int MediaID { get; }
+        public int MediaID { get; set; }
         /// <summary>
         /// Represents the title of this media.
         /// </summary>
@@ -31,15 +31,18 @@ namespace LMSLibrary.Models
         /// <summary>
         /// Represents the quantity available of this of one media.
         /// </summary>
-        public int Quantity { get; set; }
-        /// <summary>
-        /// Represents the location of this media.
-        /// </summary>
         public string Location { get; set; }
         /// <summary>
         /// Represents the date this media was added.
         /// </summary>
+        public int Quantity { get; set; }
+        /// <summary>
+        /// Represents the available amount of this media.
+        /// </summary>
+        public int Stock { get; set; }
+        /// <summary>
+        /// Represents the date this media was added.
+        /// </summary>
         public string DateAdded { get; }
-
     }
 }

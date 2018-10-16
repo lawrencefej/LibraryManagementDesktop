@@ -6,17 +6,21 @@ using System.Threading.Tasks;
 
 namespace LMSLibrary.Models
 {
-    public class Checkout
+    public class CheckoutModel : ICheckoutModel
     {
+        /// <summary>
+        /// Represents the id of the item that is checked out.
+        /// </summary>
+        public int CheckoutID { get; set; }
         /// <summary>
         /// Represents The list of books in the cart.
         /// </summary>
-        public List<Book> Books { get; set; } = new List<Book>();
-        /// <summary>
-        /// Represents the list of media in the cart.
-        /// </summary>
-        public List<Media> Medias { get; set; } = new List<Media>();
-        /// <summary>
+        public List<ItemModel> Items { get; set; } = new List<ItemModel>();
+        ///// <summary>
+        ///// Represents the list of media in the cart.
+        ///// </summary>
+        //public List<MediaModel> Medias { get; set; } = new List<MediaModel>();
+        ///// <summary>
         /// Represents the checkout date of the session.
         /// </summary>
         public string CheckoutDate { get; set; }
@@ -28,5 +32,9 @@ namespace LMSLibrary.Models
         /// Represents the actual datye the books were returned.
         /// </summary>
         public string ActReturnDate { get; set; }
+
+        public ItemModel itemModel { get; set; }
+
+        public virtual MemberModel memberModel { get; set; }
     }
 }

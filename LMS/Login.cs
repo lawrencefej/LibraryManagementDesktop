@@ -23,22 +23,24 @@ namespace LMS
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            Application.Exit();
-        }
-
         private void loginbtn_Click(object sender, EventArgs e)
         {
             try
             {
                 InputValidation();
                 LoginValidation access = new LoginValidation();
-                access.InputValidation(emailaddressltxt.Text, Passwordtxt.Text);
+                var data = access.InputValidation(emailaddressltxt.Text, Passwordtxt.Text);
                 Dashboard dashboard = new Dashboard();
                 this.Hide();
-                dashboard.Show();
+                if (access.GetRole(data))
+                {
+                    dashboard.Show();
+                }
+                else
+                {
+                    // Todo add login page for users.
+                    MessageBox.Show("you are not an admin");
+                }
             }
             catch (Exception ex)
             {
@@ -58,6 +60,15 @@ namespace LMS
             }
         }
 
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            //this.Close();
+            Application.Exit();
+        }
 
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // TODO wire up and make sure you use app.Exit on the closing event
+        }
     }
 }
