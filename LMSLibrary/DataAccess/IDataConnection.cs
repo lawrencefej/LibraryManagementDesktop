@@ -24,5 +24,7 @@ namespace LMSLibrary.DataAccess
         List<ItemModel> GetItem();
 
         List<MemberModel> GetMembers();
+
+        List<ICheckoutModel> GetMemberCheckoutHistory(IMemberModel member);
     }
 }

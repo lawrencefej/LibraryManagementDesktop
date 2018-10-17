@@ -172,5 +172,17 @@ namespace LMSLibrary.DataAccess
                 return output;
             }
         }
+
+        public List<ICheckoutModel> GetMemberCheckoutHistory(IMemberModel member)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnVal(db)))
+            {
+                p.Add("@MemberID", member.MemberID);
+                //var output = connection.Query<ICheckoutModel>("spGetItems @MemberID", new { MemberID = member.MemberID }).ToList();
+                var output = connection.Query<ICheckoutModel>("spGetItems", p, commandType: CommandType.StoredProcedure).ToList();
+
+                return output;
+            }
+        }
     }
 }
