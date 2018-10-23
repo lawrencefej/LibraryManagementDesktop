@@ -28,14 +28,14 @@ namespace LMSLibrary
             }
         }
 
-        public static IItemModel itemModel()
-        {
-            return new ItemModel();
-        }
-
         public static string CnnVal(string name)
         {
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;
+        }
+
+        public static IItemModel CreateItemModel()
+        {
+            return new ItemModel();
         }
 
         //public static IDataConnection SQLConnection()
@@ -43,9 +43,21 @@ namespace LMSLibrary
         //    return new ItemSQLConnections();
         //}
 
-        public static IMemberModel Member()
+        public static IMemberModel CreateMemberModel()
         {
             return new MemberModel();
         }
+
+        public static ICheckoutModel CreateCheckoutModel()
+        {
+            return new CheckoutModel();
+        }
+
+        public static ICheckoutDetailsModel CreateCheckoutDetailsModel()
+        {
+            return new CheckoutDetailsModel();
+        }
+
+
     }
 }

@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IssueItem));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.removeBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.CheckoutBtn = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -57,11 +57,15 @@
             this.memid = new System.Windows.Forms.Label();
             this.idLbl = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.itemFilterCb = new MetroFramework.Controls.MetroComboBox();
             this.itemSearchTxt = new Bunifu.Framework.UI.BunifuTextbox();
+            this.itemListBox = new System.Windows.Forms.ListBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.CheckoutHistoryCB = new MetroFramework.Controls.MetroComboBox();
+            this.CheckoutHistoryListbox = new System.Windows.Forms.ListBox();
             this.selectedItemsPanel = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.ReturnDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.itemTypeOutputLbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.returnDateLbl = new System.Windows.Forms.Label();
@@ -77,24 +81,27 @@
             this.directorLbl = new System.Windows.Forms.Label();
             this.yearLbl = new System.Windows.Forms.Label();
             this.titleLbl = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.itemListBox = new System.Windows.Forms.ListBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.iItemModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iMemberModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iMemberModelBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.iItemModelBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.metroLink1 = new MetroFramework.Controls.MetroLink();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberModelBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.selectedItemsPanel.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iItemModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iMemberModelBindingSource)).BeginInit();
@@ -109,7 +116,7 @@
             this.groupBox1.Controls.Add(this.cartListBox);
             this.groupBox1.Location = new System.Drawing.Point(1044, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(336, 156);
+            this.groupBox1.Size = new System.Drawing.Size(336, 185);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cart";
@@ -135,7 +142,7 @@
             this.removeBtn.IconVisible = true;
             this.removeBtn.IconZoom = 90D;
             this.removeBtn.IsTab = false;
-            this.removeBtn.Location = new System.Drawing.Point(160, 120);
+            this.removeBtn.Location = new System.Drawing.Point(160, 147);
             this.removeBtn.Name = "removeBtn";
             this.removeBtn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.removeBtn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -170,7 +177,7 @@
             this.CheckoutBtn.IconVisible = true;
             this.CheckoutBtn.IconZoom = 90D;
             this.CheckoutBtn.IsTab = false;
-            this.CheckoutBtn.Location = new System.Drawing.Point(248, 120);
+            this.CheckoutBtn.Location = new System.Drawing.Point(248, 147);
             this.CheckoutBtn.Name = "CheckoutBtn";
             this.CheckoutBtn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.CheckoutBtn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -186,54 +193,59 @@
             // 
             // cartListBox
             // 
+            this.cartListBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cartListBox.FormattingEnabled = true;
+            this.cartListBox.ItemHeight = 17;
             this.cartListBox.Location = new System.Drawing.Point(16, 19);
             this.cartListBox.Name = "cartListBox";
-            this.cartListBox.Size = new System.Drawing.Size(314, 95);
+            this.cartListBox.Size = new System.Drawing.Size(314, 106);
             this.cartListBox.TabIndex = 0;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.memberSearchTxt);
             this.groupBox2.Controls.Add(this.userDataGrid);
-            this.groupBox2.Location = new System.Drawing.Point(297, 12);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(338, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(731, 156);
+            this.groupBox2.Size = new System.Drawing.Size(690, 188);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Select Member";
+            this.groupBox2.Text = "Search Members";
             // 
             // memberSearchTxt
             // 
             this.memberSearchTxt.BackColor = System.Drawing.Color.Silver;
             this.memberSearchTxt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("memberSearchTxt.BackgroundImage")));
             this.memberSearchTxt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.memberSearchTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.memberSearchTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
             this.memberSearchTxt.Icon = ((System.Drawing.Image)(resources.GetObject("memberSearchTxt.Icon")));
-            this.memberSearchTxt.Location = new System.Drawing.Point(6, 24);
+            this.memberSearchTxt.Location = new System.Drawing.Point(6, 25);
+            this.memberSearchTxt.Margin = new System.Windows.Forms.Padding(4);
             this.memberSearchTxt.Name = "memberSearchTxt";
-            this.memberSearchTxt.Size = new System.Drawing.Size(108, 25);
+            this.memberSearchTxt.Size = new System.Drawing.Size(163, 31);
             this.memberSearchTxt.TabIndex = 1;
             this.memberSearchTxt.text = "";
             this.memberSearchTxt.OnTextChange += new System.EventHandler(this.memberSearchTxt_OnTextChange);
             // 
             // userDataGrid
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.userDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.userDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.userDataGrid.AutoGenerateColumns = false;
             this.userDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.userDataGrid.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.userDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.userDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.userDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.userDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.userDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.userDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.memberIDDataGridViewTextBoxColumn,
@@ -243,15 +255,16 @@
             this.phoneNumberDataGridViewTextBoxColumn,
             this.statusNameDataGridViewTextBoxColumn});
             this.userDataGrid.DataSource = this.memberModelBindingSource;
+            this.userDataGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.userDataGrid.DoubleBuffered = true;
             this.userDataGrid.EnableHeadersVisualStyles = false;
             this.userDataGrid.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
             this.userDataGrid.HeaderForeColor = System.Drawing.Color.White;
-            this.userDataGrid.Location = new System.Drawing.Point(121, 17);
+            this.userDataGrid.Location = new System.Drawing.Point(3, 61);
             this.userDataGrid.Name = "userDataGrid";
             this.userDataGrid.ReadOnly = true;
             this.userDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.userDataGrid.Size = new System.Drawing.Size(604, 131);
+            this.userDataGrid.Size = new System.Drawing.Size(684, 124);
             this.userDataGrid.TabIndex = 0;
             this.userDataGrid.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.userDataGrid_RowHeaderMouseDoubleClick);
             // 
@@ -262,7 +275,7 @@
             this.memberIDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.memberIDDataGridViewTextBoxColumn.Name = "memberIDDataGridViewTextBoxColumn";
             this.memberIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.memberIDDataGridViewTextBoxColumn.Width = 42;
+            this.memberIDDataGridViewTextBoxColumn.Width = 47;
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
@@ -285,7 +298,7 @@
             this.emailAddressDataGridViewTextBoxColumn.HeaderText = "EmailAddress";
             this.emailAddressDataGridViewTextBoxColumn.Name = "emailAddressDataGridViewTextBoxColumn";
             this.emailAddressDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailAddressDataGridViewTextBoxColumn.Width = 106;
+            this.emailAddressDataGridViewTextBoxColumn.Width = 123;
             // 
             // phoneNumberDataGridViewTextBoxColumn
             // 
@@ -294,7 +307,7 @@
             this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
             this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
             this.phoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            this.phoneNumberDataGridViewTextBoxColumn.Width = 111;
+            this.phoneNumberDataGridViewTextBoxColumn.Width = 133;
             // 
             // statusNameDataGridViewTextBoxColumn
             // 
@@ -303,7 +316,7 @@
             this.statusNameDataGridViewTextBoxColumn.HeaderText = "StatusName";
             this.statusNameDataGridViewTextBoxColumn.Name = "statusNameDataGridViewTextBoxColumn";
             this.statusNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.statusNameDataGridViewTextBoxColumn.Width = 98;
+            this.statusNameDataGridViewTextBoxColumn.Width = 114;
             // 
             // memberModelBindingSource
             // 
@@ -319,9 +332,10 @@
             this.panel1.Controls.Add(this.emailLbl);
             this.panel1.Controls.Add(this.nameLbl);
             this.panel1.Controls.Add(this.memid);
-            this.panel1.Location = new System.Drawing.Point(3, 12);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 23);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(267, 156);
+            this.panel1.Size = new System.Drawing.Size(308, 164);
             this.panel1.TabIndex = 2;
             // 
             // memEmailLbl
@@ -329,7 +343,7 @@
             this.memEmailLbl.AutoSize = true;
             this.memEmailLbl.Location = new System.Drawing.Point(123, 59);
             this.memEmailLbl.Name = "memEmailLbl";
-            this.memEmailLbl.Size = new System.Drawing.Size(0, 13);
+            this.memEmailLbl.Size = new System.Drawing.Size(0, 20);
             this.memEmailLbl.TabIndex = 4;
             // 
             // memPhoneNumberLbl
@@ -337,7 +351,7 @@
             this.memPhoneNumberLbl.AutoSize = true;
             this.memPhoneNumberLbl.Location = new System.Drawing.Point(123, 84);
             this.memPhoneNumberLbl.Name = "memPhoneNumberLbl";
-            this.memPhoneNumberLbl.Size = new System.Drawing.Size(0, 13);
+            this.memPhoneNumberLbl.Size = new System.Drawing.Size(0, 20);
             this.memPhoneNumberLbl.TabIndex = 4;
             // 
             // memNameLbl
@@ -345,7 +359,7 @@
             this.memNameLbl.AutoSize = true;
             this.memNameLbl.Location = new System.Drawing.Point(123, 36);
             this.memNameLbl.Name = "memNameLbl";
-            this.memNameLbl.Size = new System.Drawing.Size(0, 13);
+            this.memNameLbl.Size = new System.Drawing.Size(0, 20);
             this.memNameLbl.TabIndex = 4;
             // 
             // memberLbl
@@ -353,7 +367,7 @@
             this.memberLbl.AutoSize = true;
             this.memberLbl.Location = new System.Drawing.Point(123, 12);
             this.memberLbl.Name = "memberLbl";
-            this.memberLbl.Size = new System.Drawing.Size(0, 13);
+            this.memberLbl.Size = new System.Drawing.Size(0, 20);
             this.memberLbl.TabIndex = 4;
             // 
             // label4
@@ -408,25 +422,24 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.panel3);
-            this.groupBox3.Controls.Add(this.itemFilterCb);
-            this.groupBox3.Controls.Add(this.itemSearchTxt);
-            this.groupBox3.Controls.Add(this.selectedItemsPanel);
             this.groupBox3.Controls.Add(this.panel2);
-            this.groupBox3.Location = new System.Drawing.Point(3, 219);
+            this.groupBox3.Location = new System.Drawing.Point(344, 241);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1377, 536);
+            this.groupBox3.Size = new System.Drawing.Size(684, 518);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Select Items";
+            this.groupBox3.Text = "Search Items";
             // 
-            // panel3
+            // panel2
             // 
-            this.panel3.Controls.Add(this.listView1);
-            this.panel3.Location = new System.Drawing.Point(984, 56);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(393, 474);
-            this.panel3.TabIndex = 2;
+            this.panel2.Controls.Add(this.itemFilterCb);
+            this.panel2.Controls.Add(this.itemSearchTxt);
+            this.panel2.Controls.Add(this.itemListBox);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 16);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(678, 499);
+            this.panel2.TabIndex = 0;
             // 
             // itemFilterCb
             // 
@@ -436,7 +449,7 @@
             "All",
             "Books",
             "Media"});
-            this.itemFilterCb.Location = new System.Drawing.Point(462, 23);
+            this.itemFilterCb.Location = new System.Drawing.Point(180, 8);
             this.itemFilterCb.Name = "itemFilterCb";
             this.itemFilterCb.Size = new System.Drawing.Size(121, 29);
             this.itemFilterCb.TabIndex = 1;
@@ -450,16 +463,58 @@
             this.itemSearchTxt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.itemSearchTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
             this.itemSearchTxt.Icon = ((System.Drawing.Image)(resources.GetObject("itemSearchTxt.Icon")));
-            this.itemSearchTxt.Location = new System.Drawing.Point(291, 23);
+            this.itemSearchTxt.Location = new System.Drawing.Point(3, 10);
             this.itemSearchTxt.Name = "itemSearchTxt";
             this.itemSearchTxt.Size = new System.Drawing.Size(147, 27);
             this.itemSearchTxt.TabIndex = 1;
             this.itemSearchTxt.text = "";
             this.itemSearchTxt.OnTextChange += new System.EventHandler(this.itemSearchTxt_OnTextChange);
             // 
+            // itemListBox
+            // 
+            this.itemListBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.itemListBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.itemListBox.FormattingEnabled = true;
+            this.itemListBox.ItemHeight = 20;
+            this.itemListBox.Location = new System.Drawing.Point(0, 55);
+            this.itemListBox.Name = "itemListBox";
+            this.itemListBox.Size = new System.Drawing.Size(678, 444);
+            this.itemListBox.TabIndex = 0;
+            this.itemListBox.SelectedIndexChanged += new System.EventHandler(this.itemListBox_SelectedIndexChanged);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.CheckoutHistoryCB);
+            this.panel3.Controls.Add(this.CheckoutHistoryListbox);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(3, 16);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(314, 496);
+            this.panel3.TabIndex = 2;
+            // 
+            // CheckoutHistoryCB
+            // 
+            this.CheckoutHistoryCB.FormattingEnabled = true;
+            this.CheckoutHistoryCB.ItemHeight = 23;
+            this.CheckoutHistoryCB.Location = new System.Drawing.Point(14, 7);
+            this.CheckoutHistoryCB.Name = "CheckoutHistoryCB";
+            this.CheckoutHistoryCB.Size = new System.Drawing.Size(190, 29);
+            this.CheckoutHistoryCB.TabIndex = 1;
+            this.CheckoutHistoryCB.UseSelectable = true;
+            this.CheckoutHistoryCB.SelectedIndexChanged += new System.EventHandler(this.CheckoutHistoryCB_SelectedIndexChanged);
+            // 
+            // CheckoutHistoryListbox
+            // 
+            this.CheckoutHistoryListbox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.CheckoutHistoryListbox.FormattingEnabled = true;
+            this.CheckoutHistoryListbox.Location = new System.Drawing.Point(0, 297);
+            this.CheckoutHistoryListbox.Name = "CheckoutHistoryListbox";
+            this.CheckoutHistoryListbox.Size = new System.Drawing.Size(314, 199);
+            this.CheckoutHistoryListbox.TabIndex = 0;
+            // 
             // selectedItemsPanel
             // 
-            this.selectedItemsPanel.Controls.Add(this.dateTimePicker1);
+            this.selectedItemsPanel.Controls.Add(this.ReturnDateTimePicker);
             this.selectedItemsPanel.Controls.Add(this.itemTypeOutputLbl);
             this.selectedItemsPanel.Controls.Add(this.label3);
             this.selectedItemsPanel.Controls.Add(this.returnDateLbl);
@@ -476,24 +531,26 @@
             this.selectedItemsPanel.Controls.Add(this.yearLbl);
             this.selectedItemsPanel.Controls.Add(this.titleLbl);
             this.selectedItemsPanel.Controls.Add(this.idLbl);
-            this.selectedItemsPanel.Location = new System.Drawing.Point(0, 19);
+            this.selectedItemsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.selectedItemsPanel.Location = new System.Drawing.Point(3, 23);
             this.selectedItemsPanel.Name = "selectedItemsPanel";
-            this.selectedItemsPanel.Size = new System.Drawing.Size(258, 511);
+            this.selectedItemsPanel.Size = new System.Drawing.Size(308, 495);
             this.selectedItemsPanel.TabIndex = 1;
             // 
-            // dateTimePicker1
+            // ReturnDateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(86, 260);
-            this.dateTimePicker1.MinDate = new System.DateTime(2018, 10, 13, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(157, 20);
-            this.dateTimePicker1.TabIndex = 8;
+            this.ReturnDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReturnDateTimePicker.Location = new System.Drawing.Point(94, 260);
+            this.ReturnDateTimePicker.MinDate = new System.DateTime(2018, 10, 13, 0, 0, 0, 0);
+            this.ReturnDateTimePicker.Name = "ReturnDateTimePicker";
+            this.ReturnDateTimePicker.Size = new System.Drawing.Size(183, 20);
+            this.ReturnDateTimePicker.TabIndex = 8;
             // 
             // itemTypeOutputLbl
             // 
             this.itemTypeOutputLbl.AutoSize = true;
             this.itemTypeOutputLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.itemTypeOutputLbl.Location = new System.Drawing.Point(127, 203);
+            this.itemTypeOutputLbl.Location = new System.Drawing.Point(82, 203);
             this.itemTypeOutputLbl.Name = "itemTypeOutputLbl";
             this.itemTypeOutputLbl.Size = new System.Drawing.Size(20, 17);
             this.itemTypeOutputLbl.TabIndex = 6;
@@ -528,6 +585,7 @@
             this.addToCartBtn.ButtonText = "Add to Cart";
             this.addToCartBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addToCartBtn.DisabledColor = System.Drawing.Color.Gray;
+            this.addToCartBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addToCartBtn.Iconcolor = System.Drawing.Color.Transparent;
             this.addToCartBtn.Iconimage = null;
             this.addToCartBtn.Iconimage_right = null;
@@ -538,9 +596,10 @@
             this.addToCartBtn.IconRightVisible = true;
             this.addToCartBtn.IconRightZoom = 0D;
             this.addToCartBtn.IconVisible = true;
-            this.addToCartBtn.IconZoom = 90D;
+            this.addToCartBtn.IconZoom = 50D;
             this.addToCartBtn.IsTab = false;
             this.addToCartBtn.Location = new System.Drawing.Point(126, 353);
+            this.addToCartBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addToCartBtn.Name = "addToCartBtn";
             this.addToCartBtn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(105)))), ((int)(((byte)(217)))));
             this.addToCartBtn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(170)))));
@@ -551,7 +610,7 @@
             this.addToCartBtn.Text = "Add to Cart";
             this.addToCartBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.addToCartBtn.Textcolor = System.Drawing.Color.White;
-            this.addToCartBtn.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addToCartBtn.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addToCartBtn.Click += new System.EventHandler(this.addToCartBtn_Click);
             // 
             // amountOutputLbl
@@ -664,23 +723,37 @@
             this.titleLbl.TabIndex = 3;
             this.titleLbl.Text = "Title:";
             // 
-            // panel2
+            // groupBox4
             // 
-            this.panel2.Controls.Add(this.itemListBox);
-            this.panel2.Location = new System.Drawing.Point(285, 56);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(544, 474);
-            this.panel2.TabIndex = 0;
+            this.groupBox4.Controls.Add(this.panel1);
+            this.groupBox4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(5, 13);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(314, 190);
+            this.groupBox4.TabIndex = 5;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Selected Member Details";
             // 
-            // itemListBox
+            // groupBox5
             // 
-            this.itemListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.itemListBox.FormattingEnabled = true;
-            this.itemListBox.Location = new System.Drawing.Point(0, 0);
-            this.itemListBox.Name = "itemListBox";
-            this.itemListBox.Size = new System.Drawing.Size(544, 474);
-            this.itemListBox.TabIndex = 0;
-            this.itemListBox.SelectedIndexChanged += new System.EventHandler(this.itemListBox_SelectedIndexChanged);
+            this.groupBox5.Controls.Add(this.selectedItemsPanel);
+            this.groupBox5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.Location = new System.Drawing.Point(8, 241);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(314, 521);
+            this.groupBox5.TabIndex = 6;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Selected Item Details";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.panel3);
+            this.groupBox6.Location = new System.Drawing.Point(1060, 241);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(320, 515);
+            this.groupBox6.TabIndex = 7;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Member Checkout History";
             // 
             // iItemModelBindingSource
             // 
@@ -702,32 +775,22 @@
             // 
             this.iItemModelBindingSource1.DataSource = typeof(LMSLibrary.Models.IItemModel);
             // 
-            // metroLink1
+            // bunifuDragControl1
             // 
-            this.metroLink1.Location = new System.Drawing.Point(376, 199);
-            this.metroLink1.Name = "metroLink1";
-            this.metroLink1.Size = new System.Drawing.Size(75, 23);
-            this.metroLink1.TabIndex = 4;
-            this.metroLink1.Text = "metroLink1";
-            this.metroLink1.UseSelectable = true;
-            // 
-            // listView1
-            // 
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.Location = new System.Drawing.Point(0, 0);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(393, 474);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = null;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // IssueItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1392, 780);
-            this.Controls.Add(this.metroLink1);
+            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -742,10 +805,13 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.selectedItemsPanel.ResumeLayout(false);
             this.selectedItemsPanel.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iItemModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iMemberModelBindingSource)).EndInit();
@@ -808,8 +874,12 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label itemTypeOutputLbl;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private MetroFramework.Controls.MetroLink metroLink1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.DateTimePicker ReturnDateTimePicker;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.ListBox CheckoutHistoryListbox;
+        private MetroFramework.Controls.MetroComboBox CheckoutHistoryCB;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }

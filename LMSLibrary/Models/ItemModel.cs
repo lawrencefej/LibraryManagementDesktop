@@ -72,7 +72,7 @@ namespace LMSLibrary.Models
         {
             get
             {
-                return $"{Title}     {Year}    {Author}";
+                return $"{Title}, {Author}({Year})";
             }
         }
 
