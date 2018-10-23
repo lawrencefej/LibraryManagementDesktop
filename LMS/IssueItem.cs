@@ -15,14 +15,19 @@ namespace LMS
 {
     public partial class IssueItem : Form
     {
+        private int MemberID;
         private List<ItemModel> items = GlobalConfig.Connection.GetItem();
         private List<MemberModel> members = GlobalConfig.Connection.GetMembers();
+        private List<CheckoutModel> CheckoutHistory;
+        //private List<ItemModel> checkoutDetails;
+        //private List<>
         private List<ItemModel> cartItems = new List<ItemModel>();
-        private bool memberSelected = false;
+        
+        //private bool memberSelected = false;
         //private int ID;
         //ItemModel itemModel = new ItemModel();
 
-        IMemberModel member = GlobalConfig.Member();
+        IMemberModel member = GlobalConfig.CreateMemberModel();
 
         public IssueItem()
         {
@@ -54,6 +59,23 @@ namespace LMS
             userDataGrid.DataSource = members;
         }
 
+        private void WireupCheckoutHistory(int a)
+        {
+            CheckoutHistory = GlobalConfig.Connection.GetMemberCheckoutHistory(a);
+            CheckoutHistoryCB.DataSource = CheckoutHistory;
+            CheckoutHistoryCB.DisplayMember = "CheckoutID";
+
+            WireupCheckoutDetailsListBox();
+        }
+
+        private void WireupCheckoutDetailsListBox()
+        {
+            CheckoutModel i = (CheckoutModel)CheckoutHistoryCB.SelectedItem;
+            CheckoutHistoryListbox.DataSource = i.Items;
+            CheckoutHistoryListbox.DisplayMember = "Title";
+        }
+
+
         private void IssueItem_Load(object sender, EventArgs e)
         {
             ReturnDateTimePicker.MinDate = DateTime.Now;
@@ -61,21 +83,7 @@ namespace LMS
             ReturnDateTimePicker.Value = DateTime.Now.AddDays(14);
         }
 
-        private void BindMember()
-        {
-            //MemberModel i = (MemberModel)userDataGrid.CurrentRow.Cells[0].
-            //members. .MemberID = Convert.ToInt32(userDataGrid.CurrentRow.Cells[0].Value);
-            //memberLbl.Text = userDataGrid.CurrentRow.Cells[0].Value.ToString();
-            //var firstName = userDataGrid.CurrentRow.Cells[1].Value.ToString();
-            //var lastName = userDataGrid.CurrentRow.Cells[2].Value.ToString();
-            ////member.FullName =  firstName + " " + lastName;
-            //// TODO try to use string concatenation below
-            ////memNameLbl.Text = firstName + " " + lastName;
-            //memberLbl.Text = member.FullName;
-            //memEmailLbl.Text = userDataGrid.CurrentRow.Cells[3].Value.ToString();
-            //memPhoneNumberLbl.Text = userDataGrid.CurrentRow.Cells[4].Value.ToString();
-        }
-
+        
         private void AddToCart()
         {
             // Fix =1 duplicate error
@@ -105,9 +113,46 @@ namespace LMS
             GlobalConfig.Connection.IssueItem(c, member);
         }
 
+        private bool ItemAvailability()
+        {
+            bool available = true;
+            ItemModel i = (ItemModel)itemListBox.SelectedItem;
+
+            if (i.Stock < 1)
+            {
+                available = false;
+            }
+
+            return available;
+        }
+
+        private bool MemberSelected()
+        {
+            bool memberSelected = true;
+
+            if (member.MemberID ==0)
+            {
+                memberSelected = false;
+            }
+
+            return memberSelected;
+        }
+
         private void addToCartBtn_Click(object sender, EventArgs e)
         {
-            AddToCart();
+            if (!MemberSelected())
+            {
+                MessageBox.Show("Please Select a member");
+            }
+            else if(!ItemAvailability())
+            {
+                MessageBox.Show("This item is unavailable, Please check the next scheduled return date");
+            }
+            else
+            {
+                AddToCart();
+            }
+            
         }
 
         private void userDataGrid_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -122,7 +167,11 @@ namespace LMS
             memberLbl.Text = member.FullName;
             memEmailLbl.Text = userDataGrid.CurrentRow.Cells[3].Value.ToString();
             memPhoneNumberLbl.Text = userDataGrid.CurrentRow.Cells[4].Value.ToString();
+            MemberID = member.MemberID;
+            WireupCheckoutHistory(MemberID);
         }
+
+        
 
         private void itemFilterCb_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -152,16 +201,6 @@ namespace LMS
                     MessageBox.Show("Please select an item");
                     break;
             }
-        }
-
-        //private void itemDataGrid_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        //{
-        //    BindItemLabels();
-        //}
-
-        private void userSearchTxt_OnTextChange(object sender, EventArgs e)
-        {
-            //DisplayMember(userSearchTxt.text);
         }
 
         private void itemSearchTxt_OnTextChange(object sender, EventArgs e)
@@ -196,10 +235,6 @@ namespace LMS
         private bool CheckoutValidation()
         {
             bool validate = true;
-            if (member.MemberID == 0)
-            {
-                validate = false;
-            }
 
             if (cartItems.Count == 0)
             {
@@ -212,7 +247,7 @@ namespace LMS
         {
             if (!CheckoutValidation())
             {
-                MessageBox.Show("Please select a member & at least one item");
+                MessageBox.Show("Please select at least one item");
             }
             else
             {
@@ -222,8 +257,6 @@ namespace LMS
                     MessageBox.Show($"All {cartListBox.Items.Count} items have been checked out successfully");
                     cartItems.Clear();
                     WireupCart();
-                    //cartListBox.Items.Clear();
-                    //cartListBox.Refresh();
                     member.MemberID = 0;
                 }
                 catch (Exception ex)
@@ -242,6 +275,11 @@ namespace LMS
         private void memberSearchTxt_OnTextChange(object sender, EventArgs e)
         {
             userDataGrid.DataSource = members.Where(x => x.EmailAddress.ToLower().Contains(memberSearchTxt.text)).ToList();
+        }
+
+        private void CheckoutHistoryCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            WireupCheckoutDetailsListBox();
         }
     }
 }

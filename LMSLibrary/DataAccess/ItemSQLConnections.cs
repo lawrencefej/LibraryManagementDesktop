@@ -11,8 +11,55 @@ namespace LMSLibrary.DataAccess
 {
     public class ItemSQLConnections : IDataConnection
     {
+        IMemberModel _memberModel;
+        IItemModel _itemModel;
+        ICheckoutModel _checkoutModel;
         private const string db = "LibraryDB";
         DynamicParameters p = new DynamicParameters();
+
+        public ItemSQLConnections(IMemberModel memberModel, IItemModel itemModel, ICheckoutModel checkoutModel)
+        {
+            _memberModel = memberModel;
+            _itemModel = itemModel;
+            _checkoutModel = checkoutModel;
+        }
+
+        public ItemSQLConnections()
+        {
+
+        }
+
+        public List<MemberModel> GetMembers()
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
+            {
+                var output = connection.Query<MemberModel>("spGetMembers2").ToList();
+
+                return output;
+            }
+        }
+
+        public MemberModel GetMembers(int ID)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnVal(db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@memberID", ID);
+                var output = connection.QueryFirst<MemberModel>("spGetMembers_ByID @MemberID", p);
+
+                return output;
+            }
+        }
+
+        public List<MemberModel> GetMembers(string search)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnVal(db)))
+            {
+                var output = connection.Query<MemberModel>("spGetMembers @Search", new { Search = search }).ToList();
+
+                return output;
+            }
+        }
 
         public List<ItemModel> GetItems(string search)
         {
@@ -23,16 +70,6 @@ namespace LMSLibrary.DataAccess
                 return output;
             }
         }
-
-        //public List<ItemModel> GetItems()
-        //{
-        //    using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnVal(db)))
-        //    {
-        //        var output = connection.Query<ItemModel>("spGetItems @Search", new { Search = search }).ToList();
-
-        //        return output;
-        //    }
-        //}
 
         public void AddItem(IItemModel item)
         {
@@ -117,15 +154,7 @@ namespace LMSLibrary.DataAccess
             }
         }
 
-        public List<MemberModel> GetMembers(string search)
-        {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnVal(db)))
-            {
-                var output = connection.Query<MemberModel>("spGetMembers @Search", new { Search = search }).ToList();
-
-                return output;
-            }
-        }
+        
 
         public List<ItemModel> GetItem()
         {
@@ -163,26 +192,49 @@ namespace LMSLibrary.DataAccess
             }
         }
 
-        public List<MemberModel> GetMembers()
-        {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(SQLHelper.CnnVal("LibraryDB")))
-            {
-                var output = connection.Query<MemberModel>("spGetMembers2").ToList();
+        
 
-                return output;
-            }
-        }
-
-        public List<ICheckoutModel> GetMemberCheckoutHistory(IMemberModel member)
+        public List<CheckoutModel> GetMemberCheckoutHistory(int memberID)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnVal(db)))
             {
-                p.Add("@MemberID", member.MemberID);
-                //var output = connection.Query<ICheckoutModel>("spGetItems @MemberID", new { MemberID = member.MemberID }).ToList();
-                var output = connection.Query<ICheckoutModel>("spGetItems", p, commandType: CommandType.StoredProcedure).ToList();
+                p.Add("@MemberID", memberID);
+
+                var output = connection.Query<CheckoutModel>("spGetMemberCheckoutHistory", p, commandType: CommandType.StoredProcedure).ToList();
+
+                foreach (CheckoutModel item in output)
+                {
+                    var i = new DynamicParameters();
+                    i.Add("@CheckoutID", item.CheckoutID);
+
+                    item.Items = connection.Query<ItemModel>("spGetCheckoutDetails", i, commandType: CommandType.StoredProcedure).ToList();
+                }
 
                 return output;
             }
         }
+
+
+        //public List<ItemModel> GetItems(int ID)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public List<CheckoutDetailsModel> GetCheckoutDetails(int CheckoutID)
+        //{
+        //    //using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnVal(db)))
+        //    //{
+        //    //    //var data = GlobalConfig.CreateCheckoutModel();
+        //    //    p.Add("@CheckoutID", CheckoutID);
+
+        //    //    foreach (var item in collection)
+        //    //    {
+
+        //    //    }
+        //    //    var output = connection.Query<CheckoutDetailsModel>("spGetMemberCheckoutHistory", p, commandType: CommandType.StoredProcedure).ToList();
+
+        //        return output;
+        //    }
+        //}
     }
 }

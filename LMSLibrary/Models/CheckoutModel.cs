@@ -13,13 +13,17 @@ namespace LMSLibrary.Models
         /// </summary>
         public int CheckoutID { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        public int ItemCount { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public int ItemCountReturned { get; set; }
+        /// <summary>
         /// Represents The list of books in the cart.
         /// </summary>
         public List<ItemModel> Items { get; set; } = new List<ItemModel>();
-        ///// <summary>
-        ///// Represents the list of media in the cart.
-        ///// </summary>
-        //public List<MediaModel> Medias { get; set; } = new List<MediaModel>();
         ///// <summary>
         /// Represents the checkout date of the session.
         /// </summary>
@@ -33,8 +37,14 @@ namespace LMSLibrary.Models
         /// </summary>
         public string ActReturnDate { get; set; }
 
-        public ItemModel itemModel { get; set; }
+        //public virtual MemberModel memberModel { get; set; }
 
-        public virtual MemberModel memberModel { get; set; }
+        public string FullName
+        {
+            get
+            {
+                return $"{CheckoutID} {CheckoutDate} {ExpReturnDate} {ActReturnDate} {Items}";
+            }
+        }
     }
 }

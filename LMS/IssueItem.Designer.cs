@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IssueItem));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.removeBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.CheckoutBtn = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -63,6 +62,8 @@
             this.itemSearchTxt = new Bunifu.Framework.UI.BunifuTextbox();
             this.itemListBox = new System.Windows.Forms.ListBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.CheckoutHistoryCB = new MetroFramework.Controls.MetroComboBox();
+            this.CheckoutHistoryListbox = new System.Windows.Forms.ListBox();
             this.selectedItemsPanel = new System.Windows.Forms.Panel();
             this.ReturnDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.itemTypeOutputLbl = new System.Windows.Forms.Label();
@@ -88,7 +89,7 @@
             this.iMemberModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iMemberModelBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.iItemModelBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.CheckoutHistoryListbox = new System.Windows.Forms.ListBox();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userDataGrid)).BeginInit();
@@ -221,7 +222,7 @@
             this.memberSearchTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(112)))));
             this.memberSearchTxt.Icon = ((System.Drawing.Image)(resources.GetObject("memberSearchTxt.Icon")));
             this.memberSearchTxt.Location = new System.Drawing.Point(6, 25);
-            this.memberSearchTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.memberSearchTxt.Margin = new System.Windows.Forms.Padding(4);
             this.memberSearchTxt.Name = "memberSearchTxt";
             this.memberSearchTxt.Size = new System.Drawing.Size(163, 31);
             this.memberSearchTxt.TabIndex = 1;
@@ -254,14 +255,6 @@
             this.phoneNumberDataGridViewTextBoxColumn,
             this.statusNameDataGridViewTextBoxColumn});
             this.userDataGrid.DataSource = this.memberModelBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.userDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
             this.userDataGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.userDataGrid.DoubleBuffered = true;
             this.userDataGrid.EnableHeadersVisualStyles = false;
@@ -491,12 +484,33 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.CheckoutHistoryCB);
             this.panel3.Controls.Add(this.CheckoutHistoryListbox);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 16);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(314, 496);
             this.panel3.TabIndex = 2;
+            // 
+            // CheckoutHistoryCB
+            // 
+            this.CheckoutHistoryCB.FormattingEnabled = true;
+            this.CheckoutHistoryCB.ItemHeight = 23;
+            this.CheckoutHistoryCB.Location = new System.Drawing.Point(14, 7);
+            this.CheckoutHistoryCB.Name = "CheckoutHistoryCB";
+            this.CheckoutHistoryCB.Size = new System.Drawing.Size(190, 29);
+            this.CheckoutHistoryCB.TabIndex = 1;
+            this.CheckoutHistoryCB.UseSelectable = true;
+            this.CheckoutHistoryCB.SelectedIndexChanged += new System.EventHandler(this.CheckoutHistoryCB_SelectedIndexChanged);
+            // 
+            // CheckoutHistoryListbox
+            // 
+            this.CheckoutHistoryListbox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.CheckoutHistoryListbox.FormattingEnabled = true;
+            this.CheckoutHistoryListbox.Location = new System.Drawing.Point(0, 297);
+            this.CheckoutHistoryListbox.Name = "CheckoutHistoryListbox";
+            this.CheckoutHistoryListbox.Size = new System.Drawing.Size(314, 199);
+            this.CheckoutHistoryListbox.TabIndex = 0;
             // 
             // selectedItemsPanel
             // 
@@ -585,6 +599,7 @@
             this.addToCartBtn.IconZoom = 50D;
             this.addToCartBtn.IsTab = false;
             this.addToCartBtn.Location = new System.Drawing.Point(126, 353);
+            this.addToCartBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addToCartBtn.Name = "addToCartBtn";
             this.addToCartBtn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(105)))), ((int)(((byte)(217)))));
             this.addToCartBtn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(170)))));
@@ -760,14 +775,12 @@
             // 
             this.iItemModelBindingSource1.DataSource = typeof(LMSLibrary.Models.IItemModel);
             // 
-            // CheckoutHistoryListbox
+            // bunifuDragControl1
             // 
-            this.CheckoutHistoryListbox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.CheckoutHistoryListbox.FormattingEnabled = true;
-            this.CheckoutHistoryListbox.Location = new System.Drawing.Point(0, 297);
-            this.CheckoutHistoryListbox.Name = "CheckoutHistoryListbox";
-            this.CheckoutHistoryListbox.Size = new System.Drawing.Size(314, 199);
-            this.CheckoutHistoryListbox.TabIndex = 0;
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = null;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // IssueItem
             // 
@@ -866,5 +879,7 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.ListBox CheckoutHistoryListbox;
+        private MetroFramework.Controls.MetroComboBox CheckoutHistoryCB;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }

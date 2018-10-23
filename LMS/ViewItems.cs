@@ -15,7 +15,7 @@ namespace LMS
 {
     public partial class ViewItems : Form
     {
-        IItemModel item = GlobalConfig.itemModel();
+        IItemModel item = GlobalConfig.CreateItemModel();
         //private IItemModel _item;
 
         private int id;
